@@ -286,6 +286,51 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Certificates Section */}
+            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700/50">
+              <h2 className="text-2xl font-semibold mb-6 text-blue-400">Sertifikalar</h2>
+              <div className="space-y-8">
+                {/* Neo Skola Certificate */}
+                <div className="relative pl-8 border-l-2 border-purple-500">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+                  <div className="mb-2">
+                    <div className="mb-2">
+                      <h3 className="text-xl font-semibold text-white">Agility: İş Hayatında Çeviklik</h3>
+                    </div>
+                    <p className="text-purple-400">Neo Skola</p>
+                    <p className="text-sm text-gray-400">Yayınlama: Mart 2025</p>
+                    <p className="text-sm text-gray-400">Yeterlilik Kimliği: 67ce94df183680903a4d2d761741631567829</p>
+                  </div>
+                </div>
+
+                {/* Udemy Certificate */}
+                <div className="relative pl-8 border-l-2 border-purple-500">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+                  <div className="mb-2">
+                    <div className="mb-2">
+                      <h3 className="text-xl font-semibold text-white">Jetpack Compose ile Android Uygulama Geliştirme Kursu | 2024</h3>
+                    </div>
+                    <p className="text-purple-400">Udemy</p>
+                    <p className="text-sm text-gray-400">Yayınlama: Mart 2024</p>
+                    <p className="text-sm text-gray-400">Yeterlilik Kimliği: UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308</p>
+                  </div>
+                </div>
+
+                {/* Meta Certificate */}
+                <div className="relative pl-8 border-l-2 border-purple-500">
+                  <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+                  <div className="mb-2">
+                    <div className="mb-2">
+                      <h3 className="text-xl font-semibold text-white">Meta Android Developer</h3>
+                    </div>
+                    <p className="text-purple-400">Meta</p>
+                    <p className="text-sm text-gray-400">Yayınlama: Şubat 2024</p>
+                    <p className="text-sm text-gray-400">Yeterlilik Kimliği: CFX39BKNZSTW</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Udemy Courses Section */}
             <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700/50">
               <h2 className="text-2xl font-semibold mb-6 text-blue-400">Udemy Kurslarım</h2>
@@ -306,7 +351,7 @@ export default function Home() {
                     </h3>
                     <p className="text-purple-400">Mart 2024 - Devam Ediyor</p>
                   </div>
-                  <p className="text-gray-300 mb-4">
+                  <p className="text-gray-300 mb-4 text-sm">
                     Android uygulama geliştirmenin geleceği Jetpack Compose ile şekilleniyor! Bu kurs, Jetpack Compose'u kullanarak çeşitli Android uygulamaları geliştirmenin inceliklerini ve ileri seviye tekniklerini öğretmek için tasarlanmıştır.
                   </p>
                   <div className="space-y-2">
@@ -346,7 +391,7 @@ export default function Home() {
                     </h3>
                     <p className="text-purple-400">Eylül 2021 - Devam Ediyor</p>
                   </div>
-                  <p className="text-gray-300 mb-4">
+                  <p className="text-gray-300 mb-4 text-sm">
                     With the rapid development of mobile applications today, artificial intelligence and machine learning technologies have gained great importance. These technologies play an important role in providing users with a richer and smarter experience. This is where the Google ML Kit library comes into play.
                   </p>
                   <div className="mt-4">

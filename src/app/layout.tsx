@@ -9,16 +9,17 @@ export const metadata: Metadata = {
   description: "Android Yazılım Geliştirici ve Teknoloji Tutkunu",
   icons: {
     icon: [
-      {
-        url: "/logo.jpg",
-        type: "image/jpeg",
-      },
+      { url: "/logo.jpg", type: "image/jpeg" },
+      { url: "/favicon.ico", sizes: "any" },
     ],
     shortcut: ["/logo.jpg"],
     apple: [
+      { url: "/logo.jpg", type: "image/jpeg" },
+    ],
+    other: [
       {
+        rel: "mask-icon",
         url: "/logo.jpg",
-        type: "image/jpeg",
       },
     ],
   },

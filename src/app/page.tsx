@@ -29,7 +29,7 @@ export default function Home() {
       } else {
         throw new Error('Form gönderimi başarısız oldu');
       }
-    } catch (error) {
+    } catch {
       setFormStatus('error');
       setFormMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
     }
@@ -143,7 +143,7 @@ export default function Home() {
                 Balıkesir Üniversitesi Endüstri Mühendisliği mezunu, kendini Android Yazılım Geliştirme alanında uzmanlaşmış bir profesyonel olarak tanıtan biriyim. Kotlin ve Java dillerinde yetkin olup, gelişmiş Android uygulamaları geliştirme ve proje mimarilerini iyileştirme konusunda kanıtlanmış bir geçmişe sahibim.
               </p>
               <p>
-                Stajlarım ve profesyonel rollerim, Türkiye&apos;nin önde gelen teknoloji firmalarında gerçekleşti. Şu anda, Ebebek&apos;te Android geliştirme sürecine katkıda bulunmaktayım ve sürekli olarak becerilerimi ve bilgimi geliştirmeye çalışıyorum. Teknolojiye olan tutkumla, aynı zamanda iOS teknolojisini de keşfetmekte ve her projede en iyi sonuçları sunmaya kararlıyım.
+                Stajlarım ve profesyonel rollerim, Türkiye'nin önde gelen teknoloji firmalarında gerçekleşti. Şu anda, Ebebek'te Android geliştirme sürecine katkıda bulunmaktayım ve sürekli olarak becerilerimi ve bilgimi geliştirmeye çalışıyorum. Teknolojiye olan tutkumla, aynı zamanda iOS teknolojisini de keşfetmekte ve her projede en iyi sonuçları sunmaya kararlıyım.
               </p>
             </div>
             <div className="mt-8 pt-6 border-t border-gray-700/50">
@@ -259,7 +259,7 @@ export default function Home() {
                   <li className="text-sm">Kişisel ve profesyonel gelişim için online eğitim programına katıldım</li>
                   <li className="text-sm">Online simülasyon ile bankacılık ürün ve hizmetlerini tanıma fırsatı</li>
                   <li className="text-sm">Bankacılık sektörü üzerine önemli proje çalışması</li>
-                  <li className="text-sm">Ekibimle hazırladığımız &quot;Yapı Kredi HAL&quot; uygulama sunumu ile birinci olduk</li>
+                  <li className="text-sm">Ekibimle hazırladığımız "Yapı Kredi HAL" uygulama sunumu ile birinci olduk</li>
                 </ul>
               </div>
 

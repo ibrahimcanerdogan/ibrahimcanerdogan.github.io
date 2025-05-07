@@ -161,10 +161,10 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-5xl font-bold mb-6 leading-relaxed bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-            İbrahim Can Erdoğan
+            İbrahim Can Erdoğan 👋
           </h1>
           <p className={`text-2xl ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-8`}>
-            Android Engineer
+            Android Engineer 💻
           </p>
           
           {/* Social Media Links */}
@@ -285,7 +285,7 @@ export default function Home() {
           <div className="space-y-8">
             {/* About Section */}
             <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Hakkımda</h2>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Hakkımda 📝</h2>
               <div className={`space-y-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   Balıkesir Üniversitesi Endüstri Mühendisliği mezunu, kendini Android Yazılım Geliştirme alanında uzmanlaşmış bir profesyonel olarak tanıtan biriyim. Kotlin ve Java dillerinde yetkin olup, gelişmiş Android uygulamaları geliştirme ve proje mimarilerini iyileştirme konusunda kanıtlanmış bir geçmişe sahibim.
@@ -309,7 +309,7 @@ export default function Home() {
 
             {/* Certificates Section */}
             <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sertifikalar</h2>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sertifikalar 🏆</h2>
               <div className="space-y-8">
                 {/* Neo Skola Certificate */}
                 <div className="relative pl-8 border-l-2 border-purple-500">
@@ -354,7 +354,7 @@ export default function Home() {
 
             {/* Udemy Courses Section */}
             <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Udemy Kurslarım</h2>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Udemy Kurslarım 📚</h2>
               <div className="space-y-8">
                 {/* Course 1 */}
                 <div className="relative pl-8 border-l-2 border-purple-500">
@@ -430,11 +430,11 @@ export default function Home() {
 
             {/* Skills Section */}
             <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Yetenekler</h2>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Yetenekler ⚡</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Programming Languages */}
                 <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Programlama Dilleri</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Programlama Dilleri 💻</h3>
                   <div className="space-y-3">
                     <div>
                       <div className="flex justify-between mb-1">
@@ -468,7 +468,7 @@ export default function Home() {
 
                 {/* Android Development */}
                 <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Geliştirme</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Geliştirme 📱</h3>
                   <div className="space-y-3">
                     <div>
                       <div className="flex justify-between mb-1">
@@ -502,7 +502,7 @@ export default function Home() {
 
                 {/* Libraries & Tools */}
                 <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Kütüphaneler & Araçlar</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Kütüphaneler & Araçlar 🛠️</h3>
                   <div className="space-y-3">
                     <div>
                       <div className="flex justify-between mb-1">
@@ -536,7 +536,7 @@ export default function Home() {
 
                 {/* Testing & Version Control */}
                 <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Test & Versiyon Kontrolü</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Test & Versiyon Kontrolü ✅</h3>
                   <div className="space-y-3">
                     <div>
                       <div className="flex justify-between mb-1">
@@ -573,7 +573,7 @@ export default function Home() {
 
           {/* Right Column - Experience */}
           <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-            <h2 className="text-2xl font-semibold mb-6 text-blue-400">Deneyim</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-blue-400">Deneyim 💼</h2>
             <div className="space-y-8">
               {/* Current Experience */}
               <div className="relative pl-8 border-l-2 border-blue-500">
@@ -705,7 +705,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              İletişime Geç
+              İletişime Geç 📬
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -717,7 +717,7 @@ export default function Home() {
                   onMouseDown={(e) => e.stopPropagation()}
                   onMouseUp={(e) => e.stopPropagation()}
                 >
-                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>İletişim Bilgileri</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>İletişim Bilgileri 📞</h3>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <svg className={`w-6 h-6 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -747,7 +747,7 @@ export default function Home() {
                   onMouseDown={(e) => e.stopPropagation()}
                   onMouseUp={(e) => e.stopPropagation()}
                 >
-                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sosyal Medya</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sosyal Medya 🌐</h3>
                   <div className="flex space-x-4">
                     <a
                       href="https://github.com/ibrahimcanerdogan"
@@ -811,7 +811,7 @@ export default function Home() {
 
               {/* Contact Form */}
               <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} rounded-lg p-6 border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">Mesaj Gönder</h3>
+                <h3 className="text-xl font-semibold mb-4 text-blue-400">Mesaj Gönder ✉️</h3>
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>

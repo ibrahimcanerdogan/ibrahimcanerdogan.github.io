@@ -6,7 +6,22 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "İbrahim Can Erdoğan | Android Engineer",
-  description: "Android Yazılım Geliştirme uzmanı İbrahim Can Erdoğan'ın kişisel portfolyo sitesi. Kotlin ve Java ile modern Android uygulamaları geliştirme deneyimi.",
+  description: "Android Yazılım Geliştirici ve Teknoloji Tutkunu",
+  icons: {
+    icon: [
+      {
+        url: "/logo.jpg",
+        type: "image/jpeg",
+      },
+    ],
+    shortcut: ["/logo.jpg"],
+    apple: [
+      {
+        url: "/logo.jpg",
+        type: "image/jpeg",
+      },
+    ],
+  },
   keywords: [
     "Android Developer",
     "Kotlin",

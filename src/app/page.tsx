@@ -106,31 +106,57 @@ export default function Home() {
             </a>
           </div>
 
-          {/* CV Download Button */}
-          <a
-            href="https://drive.google.com/file/d/1dyeqRAo6_1vXK5AMjgcjWde8QfvwoqMy/view"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          >
-            <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg group-hover:from-blue-700 group-hover:to-purple-700"></span>
-            <span className="relative flex items-center">
-              <svg 
-                className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
-                />
-              </svg>
-              Özgeçmişime Göz At
-            </span>
-          </a>
+          {/* CV Buttons */}
+          <div className="flex justify-center space-x-4">
+            <a
+              href="https://drive.google.com/file/d/1dyeqRAo6_1vXK5AMjgcjWde8QfvwoqMy/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg group-hover:from-blue-700 group-hover:to-purple-700"></span>
+              <span className="relative flex items-center">
+                <svg 
+                  className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                  />
+                </svg>
+                Özgeçmişime Göz At
+              </span>
+            </a>
+
+            <a
+              href="/source/CV - İbrahim Can Erdoğan.pdf"
+              download
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            >
+              <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg group-hover:from-purple-700 group-hover:to-blue-700"></span>
+              <span className="relative flex items-center">
+                <svg 
+                  className="w-5 h-5 mr-2 transition-transform duration-300 group-hover:scale-110" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" 
+                  />
+                </svg>
+                Özgeçmişimi İndir
+              </span>
+            </a>
+          </div>
         </div>
 
         {/* Main Content */}

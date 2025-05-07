@@ -10,18 +10,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/logo.jpg", type: "image/jpeg" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/logo.jpg", sizes: "32x32", type: "image/jpeg" },
+      { url: "/logo.jpg", sizes: "16x16", type: "image/jpeg" },
     ],
-    shortcut: ["/logo.jpg"],
-    apple: [
-      { url: "/logo.jpg", type: "image/jpeg" },
-    ],
-    other: [
-      {
-        rel: "mask-icon",
-        url: "/logo.jpg",
-      },
-    ],
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
   },
   keywords: [
     "Android Developer",

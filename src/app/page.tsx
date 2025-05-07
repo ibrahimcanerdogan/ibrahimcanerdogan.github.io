@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Home() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formMessage, setFormMessage] = useState('');
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,16 +23,26 @@ export default function Home() {
         }
       });
 
-      if (response.ok) {
+      const data = await response.json();
+      console.log('Formspree response:', data); // Debug için
+
+      if (response.ok && data.ok) {
         setFormStatus('success');
         setFormMessage('Mesajınız başarıyla gönderildi!');
-        e.currentTarget.reset();
+        if (formRef.current) {
+          formRef.current.reset();
+        }
       } else {
-        throw new Error('Form gönderimi başarısız oldu');
+        throw new Error(data.error || 'Form gönderimi başarısız oldu');
       }
-    } catch {
+    } catch (error) {
+      console.error('Form gönderim hatası:', error);
       setFormStatus('error');
-      setFormMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+      if (error instanceof Error) {
+        setFormMessage(`Bir hata oluştu: ${error.message}. Lütfen daha sonra tekrar deneyin veya e-posta ile iletişime geçin: ibrahimcan.erdogann@gmail.com`);
+      } else {
+        setFormMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya e-posta ile iletişime geçin: ibrahimcan.erdogann@gmail.com');
+      }
     }
   };
 
@@ -492,7 +503,7 @@ export default function Home() {
               {/* Contact Form */}
               <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
                 <h3 className="text-xl font-semibold mb-4 text-blue-400">Mesaj Gönder</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
                       İsim

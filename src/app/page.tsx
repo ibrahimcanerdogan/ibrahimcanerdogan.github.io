@@ -227,12 +227,12 @@ export default function Home() {
           </div>
 
           {/* CV Buttons */}
-          <div className="flex justify-center space-x-4">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
             <a
               href="https://drive.google.com/file/d/1dyeqRAo6_1vXK5AMjgcjWde8QfvwoqMy/view"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg group-hover:from-blue-700 group-hover:to-purple-700"></span>
               <span className="relative flex items-center">
@@ -256,7 +256,7 @@ export default function Home() {
             <a
               href="/source/CV - İbrahim Can Erdoğan.pdf"
               download
-              className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg group-hover:from-purple-700 group-hover:to-blue-700"></span>
               <span className="relative flex items-center">

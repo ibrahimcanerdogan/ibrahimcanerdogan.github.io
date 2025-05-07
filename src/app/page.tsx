@@ -432,84 +432,140 @@ export default function Home() {
             <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
               <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Yetenekler</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Programlama Dilleri</h3>
-                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Kotlin (İleri Seviye)
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Java (İleri Seviye)
-                    </li>
-                  </ul>
+                {/* Programming Languages */}
+                <div className="space-y-4">
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Programlama Dilleri</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Kotlin</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Java</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Swift</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Orta Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '70%' }}></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Android Geliştirme</h3>
-                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Android SDK & NDK
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Jetpack Components
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Material Design
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Jetpack Compose
-                    </li>
-                  </ul>
+                {/* Android Development */}
+                <div className="space-y-4">
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Geliştirme</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Jetpack Compose</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>MVVM Architecture</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Clean Architecture</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Mimari & Tasarım</h3>
-                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      MVVM Architecture
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Clean Architecture
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      SOLID Prensipleri
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Dependency Injection
-                    </li>
-                  </ul>
+                {/* Libraries & Tools */}
+                <div className="space-y-4">
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Kütüphaneler & Araçlar</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Dependency Injection (Hilt)</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Retrofit & OkHttp</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Room Database</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Araçlar & Teknolojiler</h3>
-                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Git & GitHub
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Firebase
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      RESTful API & Retrofit
-                    </li>
-                    <li className="flex items-center">
-                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
-                      Coroutines & Flow
-                    </li>
-                  </ul>
+                {/* Testing & Version Control */}
+                <div className="space-y-4">
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Test & Versiyon Kontrolü</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Unit Testing (JUnit, Mockito)</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>UI Testing (Espresso)</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Orta Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '75%' }}></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex justify-between mb-1">
+                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Git & GitHub</span>
+                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
+                      </div>
+                      <div className="w-full bg-gray-700/50 rounded-full h-2">
+                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

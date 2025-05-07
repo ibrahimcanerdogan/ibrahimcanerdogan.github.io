@@ -1,11 +1,22 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
+import type { Container, Engine } from "tsparticles-engine";
 
 export default function Home() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formMessage, setFormMessage] = useState('');
   const formRef = useRef<HTMLFormElement>(null);
+
+  const particlesInit = useCallback(async (engine: Engine) => {
+    await loadSlim(engine);
+  }, []);
+
+  const particlesLoaded = useCallback(async (container: Container | undefined) => {
+    console.log(container);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -24,7 +35,7 @@ export default function Home() {
       });
 
       const data = await response.json();
-      console.log('Formspree response:', data); // Debug için
+      console.log('Formspree response:', data);
 
       if (response.ok && data.ok) {
         setFormStatus('success');
@@ -47,9 +58,85 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
-      {/* Hero Section */}
-      <div className="container mx-auto px-4 py-32">
+    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black z-0"></div>
+      <Particles
+        id="tsparticles"
+        init={particlesInit}
+        loaded={particlesLoaded}
+        options={{
+          background: {
+            color: {
+              value: "transparent",
+            },
+          },
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: true,
+                mode: "push",
+              },
+              onHover: {
+                enable: true,
+                mode: "repulse",
+              },
+              resize: true,
+            },
+            modes: {
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 100,
+                duration: 0.4,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: "#60a5fa",
+            },
+            links: {
+              color: "#60a5fa",
+              distance: 150,
+              enable: true,
+              opacity: 0.4,
+              width: 1,
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outModes: {
+                default: "bounce",
+              },
+              random: false,
+              speed: 1,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+                area: 800,
+              },
+              value: 80,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: "circle",
+            },
+            size: {
+              value: { min: 1, max: 3 },
+            },
+          },
+          detectRetina: true,
+        }}
+        className="absolute inset-0 z-10"
+      />
+      
+      <div className="container mx-auto px-4 py-32 relative z-20">
         <div className="text-center mb-20">
           <h1 className="text-5xl font-bold mb-6 leading-relaxed bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
             İbrahim Can Erdoğan

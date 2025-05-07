@@ -8,6 +8,7 @@ import type { Container, Engine } from "tsparticles-engine";
 export default function Home() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formMessage, setFormMessage] = useState('');
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
   const formRef = useRef<HTMLFormElement>(null);
 
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -58,8 +59,28 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black z-0"></div>
+    <main className={`min-h-screen relative ${isDarkTheme ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gradient-to-b from-gray-100 to-white'}`}>
+      <div className={`absolute inset-0 ${isDarkTheme ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gradient-to-b from-gray-100 to-white'} z-0`}></div>
+      
+      {/* Theme Switch */}
+      <div className="fixed top-4 right-4 z-50">
+        <button
+          onClick={() => setIsDarkTheme(!isDarkTheme)}
+          className={`p-2 rounded-full ${isDarkTheme ? 'bg-gray-800 text-yellow-300' : 'bg-gray-200 text-gray-800'} hover:opacity-80 transition-all duration-300`}
+          aria-label="Toggle theme"
+        >
+          {isDarkTheme ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          )}
+        </button>
+      </div>
+
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -133,7 +154,7 @@ export default function Home() {
           },
           detectRetina: true,
         }}
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-0"
       />
       
       <div className="container mx-auto px-4 py-32 relative z-20">
@@ -142,7 +163,7 @@ export default function Home() {
           <h1 className="text-5xl font-bold mb-6 leading-relaxed bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
             İbrahim Can Erdoğan
           </h1>
-          <p className="text-2xl text-gray-300 mb-8">
+          <p className={`text-2xl ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-8`}>
             Android Engineer
           </p>
           
@@ -152,7 +173,7 @@ export default function Home() {
               href="https://github.com/icanerdogan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
               aria-label="GitHub"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -163,7 +184,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/ibrahimcanerdogan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
               aria-label="LinkedIn"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -174,7 +195,7 @@ export default function Home() {
               href="https://medium.com/@ibrahimcanerdogan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
               aria-label="Medium"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -185,7 +206,7 @@ export default function Home() {
               href="https://www.youtube.com/@ibrahimcanerdogan"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
               aria-label="YouTube"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -196,7 +217,7 @@ export default function Home() {
               href="https://www.udemy.com/user/ibrahim-can-erdogan/"
             target="_blank"
             rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
+              className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
               aria-label="Udemy"
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -263,9 +284,9 @@ export default function Home() {
           {/* Left Column - About and Skills */}
           <div className="space-y-8">
             {/* About Section */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700/50">
-              <h2 className="text-2xl font-semibold mb-6 text-blue-400">Hakkımda</h2>
-              <div className="space-y-4 text-gray-300">
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Hakkımda</h2>
+              <div className={`space-y-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
                   Balıkesir Üniversitesi Endüstri Mühendisliği mezunu, kendini Android Yazılım Geliştirme alanında uzmanlaşmış bir profesyonel olarak tanıtan biriyim. Kotlin ve Java dillerinde yetkin olup, gelişmiş Android uygulamaları geliştirme ve proje mimarilerini iyileştirme konusunda kanıtlanmış bir geçmişe sahibim.
                 </p>
@@ -274,11 +295,11 @@ export default function Home() {
                 </p>
               </div>
               <div className="mt-8 pt-6 border-t border-gray-700/50">
-                <p className="text-gray-300">
-                  <span className="text-blue-400 font-semibold">İletişim:</span>
+                <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+                  <span className={`${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} font-semibold`}>İletişim:</span>
                   <a 
                     href="mailto:ibrahimcan.erdogann@gmail.com" 
-                    className="ml-2 text-purple-400 hover:text-purple-300 transition-colors"
+                    className={`ml-2 ${isDarkTheme ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-500'} transition-colors`}
                   >
                     ibrahimcan.erdogann@gmail.com
                   </a>
@@ -287,19 +308,19 @@ export default function Home() {
             </div>
 
             {/* Certificates Section */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700/50">
-              <h2 className="text-2xl font-semibold mb-6 text-blue-400">Sertifikalar</h2>
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sertifikalar</h2>
               <div className="space-y-8">
                 {/* Neo Skola Certificate */}
                 <div className="relative pl-8 border-l-2 border-purple-500">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
                     <div className="mb-2">
-                      <h3 className="text-xl font-semibold text-white">Agility: İş Hayatında Çeviklik</h3>
+                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Agility: İş Hayatında Çeviklik</h3>
                     </div>
                     <p className="text-purple-400">Neo Skola</p>
-                    <p className="text-sm text-gray-400">Yayınlama: Mart 2025</p>
-                    <p className="text-sm text-gray-400">Yeterlilik Kimliği: 67ce94df183680903a4d2d761741631567829</p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yayınlama: Mart 2025</p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yeterlilik Kimliği: 67ce94df183680903a4d2d761741631567829</p>
                   </div>
                 </div>
 
@@ -308,11 +329,11 @@ export default function Home() {
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
                     <div className="mb-2">
-                      <h3 className="text-xl font-semibold text-white">Jetpack Compose ile Android Uygulama Geliştirme Kursu | 2024</h3>
+                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Jetpack Compose ile Android Uygulama Geliştirme Kursu | 2024</h3>
                     </div>
                     <p className="text-purple-400">Udemy</p>
-                    <p className="text-sm text-gray-400">Yayınlama: Mart 2024</p>
-                    <p className="text-sm text-gray-400">Yeterlilik Kimliği: UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308</p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yayınlama: Mart 2024</p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yeterlilik Kimliği: UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308</p>
                   </div>
                 </div>
 
@@ -321,42 +342,42 @@ export default function Home() {
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
                     <div className="mb-2">
-                      <h3 className="text-xl font-semibold text-white">Meta Android Developer</h3>
+                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Meta Android Developer</h3>
                     </div>
                     <p className="text-purple-400">Meta</p>
-                    <p className="text-sm text-gray-400">Yayınlama: Şubat 2024</p>
-                    <p className="text-sm text-gray-400">Yeterlilik Kimliği: CFX39BKNZSTW</p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yayınlama: Şubat 2024</p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yeterlilik Kimliği: CFX39BKNZSTW</p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Udemy Courses Section */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700/50">
-              <h2 className="text-2xl font-semibold mb-6 text-blue-400">Udemy Kurslarım</h2>
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Udemy Kurslarım</h2>
               <div className="space-y-8">
                 {/* Course 1 */}
                 <div className="relative pl-8 border-l-2 border-purple-500">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
                       <a 
                         href="https://www.udemy.com/course/jetpack-compose-uygulama-gelistirme-rehberi/?referralCode=FDD0C1F4F2BB4C54B325"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-blue-400 transition-colors"
+                        className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                       >
                         Jetpack Compose: İleri Seviye Uygulama Geliştirme Rehberi
                       </a>
                     </h3>
-                    <p className="text-purple-400">Mart 2024 - Devam Ediyor</p>
+                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Mart 2024 - Devam Ediyor</p>
                   </div>
-                  <p className="text-gray-300 mb-4 text-sm">
+                  <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
                     Android uygulama geliştirmenin geleceği Jetpack Compose ile şekilleniyor! Bu kurs, Jetpack Compose'u kullanarak çeşitli Android uygulamaları geliştirmenin inceliklerini ve ileri seviye tekniklerini öğretmek için tasarlanmıştır.
                   </p>
                   <div className="space-y-2">
-                    <h4 className="text-lg font-semibold text-purple-400">Kursun İçeriği:</h4>
-                    <ul className="list-disc list-inside text-gray-300 space-y-1">
+                    <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Kursun İçeriği:</h4>
+                    <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-1`}>
                       <li className="text-sm">Jetpack Compose Temelleri: Gelişmiş UI tasarımı ve layout yönetimi</li>
                       <li className="text-sm">Gelişmiş UI Tasarımı: Animasyonlar, dokunmatik etkileşimler ve modern kullanıcı deneyimi</li>
                       <li className="text-sm">Veri Yönetimi ve State Yönetimi: Veri akışları, ViewModel'ler ve state yönetimi teknikleri</li>
@@ -365,12 +386,12 @@ export default function Home() {
                     </ul>
                   </div>
                   <div className="mt-4">
-                    <h4 className="text-lg font-semibold text-purple-400">Yetenekler:</h4>
+                    <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Yetenekler:</h4>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Jetpack Compose</span>
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Android Development</span>
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Kotlin</span>
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Advanced Android</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Jetpack Compose</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Android Development</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Kotlin</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Advanced Android</span>
                     </div>
                   </div>
                 </div>
@@ -379,28 +400,28 @@ export default function Home() {
                 <div className="relative pl-8 border-l-2 border-purple-500">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
-                    <h3 className="text-xl font-semibold text-white">
+                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
                       <a 
                         href="https://www.udemy.com/course/mlkit-android-programlama/?referralCode=B671AEDDFD9DE7B8656A"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-blue-400 transition-colors"
+                        className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                       >
                         Android App Development with Google Machine Learning
                       </a>
                     </h3>
-                    <p className="text-purple-400">Eylül 2021 - Devam Ediyor</p>
+                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Eylül 2021 - Devam Ediyor</p>
                   </div>
-                  <p className="text-gray-300 mb-4 text-sm">
+                  <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
                     With the rapid development of mobile applications today, artificial intelligence and machine learning technologies have gained great importance. These technologies play an important role in providing users with a richer and smarter experience. This is where the Google ML Kit library comes into play.
                   </p>
                   <div className="mt-4">
-                    <h4 className="text-lg font-semibold text-purple-400">Yetenekler:</h4>
+                    <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Yetenekler:</h4>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Android Development</span>
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Machine Learning</span>
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Android Clean Architecture</span>
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-sm">Jetpack Compose</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Android Development</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Machine Learning</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Android Clean Architecture</span>
+                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Jetpack Compose</span>
                     </div>
                   </div>
                 </div>
@@ -408,84 +429,84 @@ export default function Home() {
             </div>
 
             {/* Skills Section */}
-            <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700/50">
-              <h2 className="text-2xl font-semibold mb-6 text-blue-400">Yetenekler</h2>
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Yetenekler</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-semibold mb-3 text-purple-400">Programlama Dilleri</h3>
-                  <ul className="space-y-2 text-gray-300">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Programlama Dilleri</h3>
+                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Kotlin (İleri Seviye)
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Java (İleri Seviye)
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3 text-purple-400">Android Geliştirme</h3>
-                  <ul className="space-y-2 text-gray-300">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Android Geliştirme</h3>
+                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Android SDK & NDK
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Jetpack Components
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Material Design
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Jetpack Compose
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3 text-purple-400">Mimari & Tasarım</h3>
-                  <ul className="space-y-2 text-gray-300">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Mimari & Tasarım</h3>
+                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       MVVM Architecture
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Clean Architecture
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       SOLID Prensipleri
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Dependency Injection
                     </li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-semibold mb-3 text-purple-400">Araçlar & Teknolojiler</h3>
-                  <ul className="space-y-2 text-gray-300">
+                  <h3 className={`text-lg font-semibold mb-3 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Araçlar & Teknolojiler</h3>
+                  <ul className={`space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Git & GitHub
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Firebase
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-4 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       RESTful API & Retrofit
                     </li>
                     <li className="flex items-center">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                      <span className={`w-2 h-2 rounded-full mr-2 ${isDarkTheme ? 'bg-blue-400' : 'bg-blue-600'}`}></span>
                       Coroutines & Flow
                     </li>
                   </ul>
@@ -495,19 +516,19 @@ export default function Home() {
           </div>
 
           {/* Right Column - Experience */}
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-700/50">
+          <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
             <h2 className="text-2xl font-semibold mb-6 text-blue-400">Deneyim</h2>
             <div className="space-y-8">
               {/* Current Experience */}
               <div className="relative pl-8 border-l-2 border-blue-500">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className="text-xl font-semibold text-white">Android Software Specialist</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Software Specialist</h3>
                   <p className="text-purple-400">ebebek</p>
-                  <p className="text-sm text-gray-400">Nisan 2023 - Devam Ediyor · Tam Zamanlı</p>
-                  <p className="text-sm text-gray-400">İstanbul, Türkiye · Uzaktan</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Nisan 2023 - Devam Ediyor · Tam Zamanlı</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İstanbul, Türkiye · Uzaktan</p>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                   <li className="text-sm">ebebek mobil uygulamasında Android Software Specialist olarak görev yapıyorum</li>
                   <li className="text-sm">SOCRadar güvenlik tarama raporları sonucunda bulunan güvenlik açıklarının giderilmesi ve uygulama içi güvenliğin sağlanması</li>
                   <li className="text-sm">Craftgate ve One-Stop Shop ödeme teknolojisi ile tüm ödeme yöntemlerinin entegrasyonu</li>
@@ -523,12 +544,12 @@ export default function Home() {
               <div className="relative pl-8 border-l-2 border-blue-500">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className="text-xl font-semibold text-white">Android Developer</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Developer</h3>
                   <p className="text-purple-400">Logo Yazılım</p>
-                  <p className="text-sm text-gray-400">Ocak 2023 - Nisan 2023 · 4 ay · Tam Zamanlı</p>
-                  <p className="text-sm text-gray-400">İzmir, Türkiye · Hibrit</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Ocak 2023 - Nisan 2023 · 4 ay · Tam Zamanlı</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İzmir, Türkiye · Hibrit</p>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                   <li className="text-sm">LOGO Mobile Sales projesinde Software Development Specialist olarak görev yaptım</li>
                   <li className="text-sm">Java ile geliştirilen projenin Kotlin'e dönüştürülmesi</li>
                   <li className="text-sm">Kotlin dil özellikleri kullanılarak projenin daha verimli, hızlı ve etkili hale getirilmesi</li>
@@ -539,12 +560,12 @@ export default function Home() {
               <div className="relative pl-8 border-l-2 border-blue-500">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className="text-xl font-semibold text-white">Jr. Android Developer</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Jr. Android Developer</h3>
                   <p className="text-purple-400">Logo Yazılım</p>
-                  <p className="text-sm text-gray-400">Nisan 2022 - Ocak 2023 · 10 ay · Yarı Zamanlı</p>
-                  <p className="text-sm text-gray-400">İzmir, Türkiye · Uzaktan</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Nisan 2022 - Ocak 2023 · 10 ay · Yarı Zamanlı</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İzmir, Türkiye · Uzaktan</p>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                   <li className="text-sm">Depo Yönetim Sistemi ve LOGO Mobile Sales projelerinde görev aldım</li>
                   <li className="text-sm">MockK ile birim testleri geliştirme</li>
                   <li className="text-sm">Clean Code Prensipleri ve MVVM Mimarisi ile kodlama</li>
@@ -556,12 +577,12 @@ export default function Home() {
               <div className="relative pl-8 border-l-2 border-blue-500">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className="text-xl font-semibold text-white">Android Developer Intern</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Developer Intern</h3>
                   <p className="text-purple-400">Logo Yazılım</p>
-                  <p className="text-sm text-gray-400">Şubat 2022 - Nisan 2022 · 3 ay</p>
-                  <p className="text-sm text-gray-400">İzmir, Türkiye</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Şubat 2022 - Nisan 2022 · 3 ay</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İzmir, Türkiye</p>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                   <li className="text-sm">LOGO Warehouse Management System (WMS) projesinde MVVM Mimarisi ile Kotlin geliştirme</li>
                   <li className="text-sm">Data & View Binding, Navigation, Room, Coroutines, Dagger-Hilt kullanımı</li>
                   <li className="text-sm">MockK, Mockito, Junit, Truth ve Espresso ile birim testleri</li>
@@ -571,12 +592,12 @@ export default function Home() {
               <div className="relative pl-8 border-l-2 border-blue-500">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className="text-xl font-semibold text-white">IT Intern</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>IT Intern</h3>
                   <p className="text-purple-400">ebebek</p>
-                  <p className="text-sm text-gray-400">Kasım 2021 - Şubat 2022 · 4 ay</p>
-                  <p className="text-sm text-gray-400">İstanbul, Türkiye</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Kasım 2021 - Şubat 2022 · 4 ay</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İstanbul, Türkiye</p>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                   <li className="text-sm">ebebek merkez ofisinde IT yöneticisi ile çalışarak staj yaptım</li>
                   <li className="text-sm">e-kamp sürecini başarıyla tamamladım</li>
                 </ul>
@@ -585,12 +606,12 @@ export default function Home() {
               <div className="relative pl-8 border-l-2 border-blue-500">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className="text-xl font-semibold text-white">Intern</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Intern</h3>
                   <p className="text-purple-400">Yapı Kredi</p>
-                  <p className="text-sm text-gray-400">Ağustos 2021 - Eylül 2021 · 2 ay</p>
-                  <p className="text-sm text-gray-400">Akhisar, Manisa, Türkiye</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Ağustos 2021 - Eylül 2021 · 2 ay</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Akhisar, Manisa, Türkiye</p>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                   <li className="text-sm">Kişisel ve profesyonel gelişim için online eğitim programına katıldım</li>
                   <li className="text-sm">Online simülasyon ile bankacılık ürün ve hizmetlerini tanıma fırsatı</li>
                   <li className="text-sm">Bankacılık sektörü üzerine önemli proje çalışması</li>
@@ -601,12 +622,12 @@ export default function Home() {
               <div className="relative pl-8 border-l-2 border-blue-500">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className="text-xl font-semibold text-white">Intern</h3>
+                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Intern</h3>
                   <p className="text-purple-400">QNB Finansbank</p>
-                  <p className="text-sm text-gray-400">Aralık 2021 · 1 ay</p>
-                  <p className="text-sm text-gray-400">Balıkesir, Türkiye</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Aralık 2021 · 1 ay</p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Balıkesir, Türkiye</p>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                   <li className="text-sm">Online Finance 101 staj programı ile bankacılık sektörünün iş birimlerini yakından tanıma fırsatı</li>
                   <li className="text-sm">Temel bankacılık eğitimi</li>
                   <li className="text-sm">Kariyer tasarım atölyesi ile kariyer yolculuğunu planlama</li>
@@ -619,7 +640,12 @@ export default function Home() {
       </div>
 
       {/* Contact Section */}
-      <div className="bg-gray-900/50 backdrop-blur-sm border-t border-gray-800">
+      <div 
+        className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-gray-100/50'} border-t ${isDarkTheme ? 'border-gray-800' : 'border-gray-200'} relative z-30`}
+        onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
+        onMouseUp={(e) => e.stopPropagation()}
+      >
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
@@ -629,38 +655,53 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Info */}
               <div className="space-y-6">
-                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
-                  <h3 className="text-xl font-semibold mb-4 text-blue-400">İletişim Bilgileri</h3>
+                <div 
+                  className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} rounded-lg p-6 border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} relative z-40`}
+                  onClick={(e) => e.stopPropagation()}
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onMouseUp={(e) => e.stopPropagation()}
+                >
+                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>İletişim Bilgileri</h3>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-6 h-6 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      <a href="mailto:ibrahimcan.erdogann@gmail.com" className="text-gray-300 hover:text-white transition-colors">
+                      <a 
+                        href="mailto:ibrahimcan.erdogann@gmail.com" 
+                        className={`${isDarkTheme ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} transition-colors cursor-pointer`}
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         ibrahimcan.erdogann@gmail.com
                       </a>
                     </div>
                     <div className="flex items-center space-x-3">
-                      <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className={`w-6 h-6 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="text-gray-300">İstanbul, Türkiye</span>
+                      <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} cursor-default`}>İstanbul, Türkiye</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
-                  <h3 className="text-xl font-semibold mb-4 text-blue-400">Sosyal Medya</h3>
+                <div 
+                  className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} rounded-lg p-6 border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}
+                  onClick={(e) => e.stopPropagation()}
+                  onMouseDown={(e) => e.stopPropagation()}
+                  onMouseUp={(e) => e.stopPropagation()}
+                >
+                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sosyal Medya</h3>
                   <div className="flex space-x-4">
                     <a
                       href="https://github.com/icanerdogan"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors cursor-pointer`}
                       aria-label="GitHub"
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                       </svg>
                     </a>
@@ -668,7 +709,7 @@ export default function Home() {
                       href="https://www.linkedin.com/in/ibrahimcanerdogan/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                       aria-label="LinkedIn"
                     >
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -679,7 +720,7 @@ export default function Home() {
                       href="https://medium.com/@ibrahimcanerdogan"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                       aria-label="Medium"
                     >
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -690,7 +731,7 @@ export default function Home() {
                       href="https://www.youtube.com/@ibrahimcanerdogan"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                       aria-label="YouTube"
                     >
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -699,9 +740,9 @@ export default function Home() {
                     </a>
                     <a
                       href="https://www.udemy.com/user/ibrahim-can-erdogan/"
-          target="_blank"
-          rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                       aria-label="Udemy"
                     >
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -713,44 +754,44 @@ export default function Home() {
               </div>
 
               {/* Contact Form */}
-              <div className="bg-gray-800/50 rounded-lg p-6 border border-gray-700/50">
+              <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} rounded-lg p-6 border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
                 <h3 className="text-xl font-semibold mb-4 text-blue-400">Mesaj Gönder</h3>
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label htmlFor="name" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
                       İsim
                     </label>
                     <input
                       type="text"
                       id="name"
                       name="name"
-                      className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
+                      className={`w-full px-4 py-2 ${isDarkTheme ? 'bg-gray-700/50 border-gray-600' : 'bg-gray-100/50 border-gray-300'} border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                       required
                       disabled={formStatus === 'sending'}
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label htmlFor="email" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
                       E-posta
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
-                      className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
+                      className={`w-full px-4 py-2 ${isDarkTheme ? 'bg-gray-700/50 border-gray-600' : 'bg-gray-100/50 border-gray-300'} border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                       required
                       disabled={formStatus === 'sending'}
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+                    <label htmlFor="message" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
                       Mesaj
                     </label>
                     <textarea
                       id="message"
                       name="message"
                       rows={4}
-                      className="w-full px-4 py-2 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white"
+                      className={`w-full px-4 py-2 ${isDarkTheme ? 'bg-gray-700/50 border-gray-600' : 'bg-gray-100/50 border-gray-300'} border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                       required
                       disabled={formStatus === 'sending'}
                     ></textarea>
@@ -788,7 +829,12 @@ export default function Home() {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-gray-900/50 backdrop-blur-sm border-t border-gray-800">
+      <footer 
+        className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-gray-100/50'} border-t ${isDarkTheme ? 'border-gray-800' : 'border-gray-200'} relative z-30`}
+        onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
+        onMouseUp={(e) => e.stopPropagation()}
+      >
         <div className="container mx-auto px-4 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
@@ -802,8 +848,9 @@ export default function Home() {
                 href="https://github.com/icanerdogan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors cursor-pointer`}
                 aria-label="GitHub"
+                onClick={(e) => e.stopPropagation()}
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
@@ -813,7 +860,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/ibrahimcanerdogan/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -824,7 +871,7 @@ export default function Home() {
                 href="https://medium.com/@ibrahimcanerdogan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                 aria-label="Medium"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -835,7 +882,7 @@ export default function Home() {
                 href="https://www.youtube.com/@ibrahimcanerdogan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                 aria-label="YouTube"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -844,9 +891,9 @@ export default function Home() {
               </a>
               <a
                 href="https://www.udemy.com/user/ibrahim-can-erdogan/"
-          target="_blank"
-          rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
                 aria-label="Udemy"
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

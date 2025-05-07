@@ -170,7 +170,7 @@ export default function Home() {
           {/* Social Media Links */}
           <div className="flex justify-center space-x-6 mb-8">
             <a
-              href="https://github.com/icanerdogan"
+              href="https://github.com/ibrahimcanerdogan"
               target="_blank"
               rel="noopener noreferrer"
               className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
@@ -750,7 +750,7 @@ export default function Home() {
                   <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sosyal Medya</h3>
                   <div className="flex space-x-4">
                     <a
-                      href="https://github.com/icanerdogan"
+                      href="https://github.com/ibrahimcanerdogan"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors cursor-pointer`}
@@ -901,7 +901,7 @@ export default function Home() {
             {/* Social Links */}
             <div className="flex space-x-6">
               <a
-                href="https://github.com/icanerdogan"
+                href="https://github.com/ibrahimcanerdogan"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors cursor-pointer`}

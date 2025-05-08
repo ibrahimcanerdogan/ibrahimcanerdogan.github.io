@@ -808,6 +808,65 @@ export default function Home() {
         </div>
       </div>
 
+      {/* YouTube Videos Section */}
+      <div className="container mx-auto px-4 py-8">
+        <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+          <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>YouTube Videolarım 🎥</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Video 1 */}
+            <div className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-white/50'} rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105`}>
+              <div className="relative pb-[56.25%] h-0">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/sVB5CDGcuBc"
+                  title="Jetpack Compose ile Android Uygulama Geliştirme"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-4">
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Jetpack Compose ile Android Uygulama Geliştirme</h3>
+                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Modern Android uygulamaları geliştirmek için Jetpack Compose'un temel ve ileri seviye özelliklerini kapsamlı bir şekilde öğrenin.</p>
+              </div>
+            </div>
+
+            {/* Video 2 */}
+            <div className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-white/50'} rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105`}>
+              <div className="relative pb-[56.25%] h-0">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/TeAg03D_gCk"
+                  title="Tek Videoda Detaylı Kotlin Temelleri [2024]"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-4">
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Tek Videoda Detaylı Kotlin Temelleri [2024]</h3>
+                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Android geliştirme yolculuğunuza başlamadan önce Kotlin'in temel kavramlarını tek videoda öğrenin.</p>
+              </div>
+            </div>
+
+            {/* Video 3 */}
+            <div className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-white/50'} rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105`}>
+              <div className="relative pb-[56.25%] h-0">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src="https://www.youtube.com/embed/zYGIMyqopWY"
+                  title="Tek Videoda Banka Retrofit API Geliştirme | Jetpack Compose"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="p-4">
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Tek Videoda Banka Retrofit API Geliştirme | Jetpack Compose</h3>
+                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Jetpack Compose ve Retrofit kullanarak gerçek bir banka API'si entegrasyonunu adım adım uygulayın.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Contact Section */}
       <div 
         className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-gray-100/50'} border-t ${isDarkTheme ? 'border-gray-800' : 'border-gray-200'} relative z-30`}

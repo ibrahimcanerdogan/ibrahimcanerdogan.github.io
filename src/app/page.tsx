@@ -4,6 +4,7 @@ import { useState, useRef, useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import type { Container, Engine } from "tsparticles-engine";
+import ScrollToTop from '@/components/ScrollToTop';
 
 export default function Home() {
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -1072,6 +1073,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <ScrollToTop />
     </main>
   );
 }

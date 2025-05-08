@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "İbrahim Can Erdoğan | Android Engineer",
   description: "Android Yazılım Geliştirme uzmanı İbrahim Can Erdoğan'ın kişisel portfolyo sitesi. Kotlin ve Java ile modern Android uygulamaları geliştirme deneyimi.",
   applicationName: "İbrahim Can Erdoğan Portfolio",
-  authors: [{ name: "İbrahim Can Erdoğan", url: "https://icanerdogan.github.io" }],
+  authors: [{ name: "İbrahim Can Erdoğan", url: "https://ibrahimcanerdogan.github.io" }],
   generator: "Next.js",
   keywords: [
     "Android Developer",
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
     apple: "/logo.jpg",
   },
   manifest: "/manifest.json",
-  metadataBase: new URL("https://icanerdogan.github.io"),
+  metadataBase: new URL("https://ibrahimcanerdogan.github.io"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://icanerdogan.github.io",
+    url: "https://ibrahimcanerdogan.github.io",
     title: "İbrahim Can Erdoğan | Android Engineer",
     description: "Android Yazılım Geliştirme uzmanı İbrahim Can Erdoğan'ın kişisel portfolyo sitesi. Kotlin ve Java ile modern Android uygulamaları geliştirme deneyimi.",
     siteName: "İbrahim Can Erdoğan Portfolio",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "İbrahim Can Erdoğan | Android Engineer",
     description: "Android Yazılım Geliştirme uzmanı İbrahim Can Erdoğan'ın kişisel portfolyo sitesi.",
-    creator: "@icanerdogan",
+    creator: "@ibrahimcanerdogan",
     images: ["/twitter-image.jpg"],
   },
   robots: {

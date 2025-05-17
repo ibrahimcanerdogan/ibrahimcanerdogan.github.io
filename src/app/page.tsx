@@ -12,6 +12,13 @@ export default function Home() {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
   const formRef = useRef<HTMLFormElement>(null);
 
+  const handleScroll = () => {
+    const mainContent = document.querySelector('.container');
+    if (mainContent) {
+      mainContent.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
   }, []);
@@ -221,7 +228,10 @@ export default function Home() {
 
             {/* Scroll Indicator */}
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <div className={`flex flex-col items-center ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
+              <button 
+                onClick={handleScroll}
+                className={`flex flex-col items-center ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
+              >
                 <span className="text-sm mb-2">Aşağı Kaydır</span>
                 <svg 
                   className="w-6 h-6" 
@@ -236,7 +246,7 @@ export default function Home() {
                     d="M19 14l-7 7m0 0l-7-7m7 7V3"
                   />
                 </svg>
-              </div>
+              </button>
             </div>
           </div>
         </div>

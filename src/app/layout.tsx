@@ -5,74 +5,61 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "İbrahim Can Erdoğan | Android Engineer",
-  description: "Android Yazılım Geliştirme uzmanı İbrahim Can Erdoğan'ın kişisel portfolyo sitesi. Kotlin ve Java ile modern Android uygulamaları geliştirme deneyimi.",
-  applicationName: "İbrahim Can Erdoğan Portfolio",
-  authors: [{ name: "İbrahim Can Erdoğan", url: "https://ibrahimcanerdogan.github.io" }],
-  generator: "Next.js",
-  keywords: [
-    "Android Developer",
-    "Kotlin",
-    "Java",
-    "Android Engineer",
-    "Mobile Development",
-    "Android SDK",
-    "Jetpack Compose",
-    "MVVM",
-    "Clean Architecture",
-    "İbrahim Can Erdoğan",
-    "Android Yazılım Geliştirici",
-    "Android Uygulama Geliştirme",
-    "Android Programlama",
-    "Android Eğitmeni",
-    "Udemy Eğitmeni"
-  ],
-  referrer: "origin-when-cross-origin",
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" }
-  ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
-  icons: {
-    icon: [
-      { url: "/logo.jpg", type: "image/jpeg" },
-      { url: "/logo.jpg", sizes: "32x32", type: "image/jpeg" },
-      { url: "/logo.jpg", sizes: "16x16", type: "image/jpeg" },
-    ],
-    shortcut: "/logo.jpg",
-    apple: "/logo.jpg",
-  },
-  manifest: "/manifest.json",
   metadataBase: new URL("https://ibrahimcanerdogan.github.io"),
-  alternates: {
-    canonical: "/",
+  title: "İbrahim Can Erdoğan | Senior Android Engineer",
+  description: "Senior Android Engineer with 4+ years of experience in Kotlin, Java, and Jetpack Compose. Expert in mobile app development, clean architecture, and modern Android technologies.",
+  keywords: [
+    "İbrahim Can Erdoğan",
+    "Android Developer",
+    "Senior Android Engineer",
+    "Kotlin Developer",
+    "Jetpack Compose",
+    "Mobile App Development",
+    "Android Development",
+    "Clean Architecture",
+    "MVVM Architecture",
+    "Android Software Specialist",
+    "ebebek",
+    "Logo Yazılım",
+    "Android Clean Architecture",
+    "Android Jetpack",
+    "Android UI Development",
+    "Android App Development",
+    "Kotlin Programming",
+    "Android Best Practices",
+    "Android Performance",
+    "Android Security"
+  ],
+  authors: [{ name: "İbrahim Can Erdoğan" }],
+  creator: "İbrahim Can Erdoğan",
+  publisher: "İbrahim Can Erdoğan",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
   openGraph: {
     type: "website",
     locale: "tr_TR",
     url: "https://ibrahimcanerdogan.github.io",
-    title: "İbrahim Can Erdoğan | Android Engineer",
-    description: "Android Yazılım Geliştirme uzmanı İbrahim Can Erdoğan'ın kişisel portfolyo sitesi. Kotlin ve Java ile modern Android uygulamaları geliştirme deneyimi.",
+    title: "İbrahim Can Erdoğan | Senior Android Engineer",
+    description: "Senior Android Engineer with 4+ years of experience in Kotlin, Java, and Jetpack Compose. Expert in mobile app development, clean architecture, and modern Android technologies.",
     siteName: "İbrahim Can Erdoğan Portfolio",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "İbrahim Can Erdoğan Portfolio",
-      }
+        alt: "İbrahim Can Erdoğan - Senior Android Engineer",
+      },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "İbrahim Can Erdoğan | Android Engineer",
-    description: "Android Yazılım Geliştirme uzmanı İbrahim Can Erdoğan'ın kişisel portfolyo sitesi.",
+    title: "İbrahim Can Erdoğan | Senior Android Engineer",
+    description: "Senior Android Engineer with 4+ years of experience in Kotlin, Java, and Jetpack Compose. Expert in mobile app development, clean architecture, and modern Android technologies.",
+    images: ["/og-image.jpg"],
     creator: "@ibrahimcanerdogan",
-    images: ["/twitter-image.jpg"],
   },
   robots: {
     index: true,
@@ -86,32 +73,29 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "google-site-verification-code", // Google Search Console doğrulama kodunuzu buraya ekleyin
-    yandex: "yandex-verification-code", // Yandex Webmaster doğrulama kodunuzu buraya ekleyin
+    google: "-BSNn58JC2hy9JHjNxthuO8RHwLD6Ii0_Lz5eeqTE9M",
   },
-  category: "technology",
-  classification: "portfolio",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  alternates: {
+    canonical: "https://ibrahimcanerdogan.github.io",
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="tr">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={`${inter.className} bg-black text-white`}>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

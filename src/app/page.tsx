@@ -157,8 +157,8 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-4">
         <div className="max-w-6xl mx-auto text-center">
           <div className="space-y-8">
-            {/* Main Title */}
-            <div className="space-y-4">
+            {/* Title */}
+            <div className="text-center relative z-20">
               <h1 className={`text-6xl md:text-7xl font-bold ${isDarkTheme ? 'text-white' : 'text-gray-900'} leading-tight`}>
                 İbrahim Can Erdoğan
               </h1>
@@ -232,7 +232,7 @@ export default function Home() {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center space-x-6 pt-8">
+            <div className="flex justify-center space-x-6 pt-4 relative z-20">
               <a href="https://github.com/ibrahimcanerdogan" target="_blank" rel="noopener noreferrer" className={`${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors transform hover:scale-110`}>
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               </a>
@@ -254,7 +254,7 @@ export default function Home() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
               <button 
                 onClick={handleScroll}
                 className={`flex flex-col items-center ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}

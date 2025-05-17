@@ -190,13 +190,15 @@ export default function Home() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
               <a
-                href="#about"
+                href="https://drive.google.com/file/d/1mPbYymPZ74-0K16h6PU0iUi0FSh3wg8N/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`px-8 py-4 rounded-xl font-medium ${isDarkTheme ? 'bg-blue-600 hover:bg-blue-700' : 'bg-blue-500 hover:bg-blue-600'} text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl`}
               >
                 Özgeçmişime Göz At
               </a>
               <a
-                href="/cv.pdf"
+                href="/source/CV - Ibrahim Can Erdogan.pdf"
                 download
                 className={`px-8 py-4 rounded-xl font-medium ${isDarkTheme ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} ${isDarkTheme ? 'text-white' : 'text-gray-800'} transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl border ${isDarkTheme ? 'border-gray-700' : 'border-gray-200'}`}
               >

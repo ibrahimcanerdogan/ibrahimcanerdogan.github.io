@@ -804,6 +804,32 @@ export default function Home() {
                 <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>MVVM</span>
               </div>
             </div>
+
+            {/* Project 5 - EcoTrack */}
+            <div className="relative pl-8 border-l-2 border-purple-500">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+              <div className="mb-2">
+                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                  <a 
+                    href="https://ibrahimcanerdogan.github.io/ecotrack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
+                  >
+                    EcoTrack 🌱
+                  </a>
+                </h3>
+                <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>2024 - Devam Ediyor</p>
+              </div>
+              <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
+                Sürdürülebilir yaşam ve çevre dostu alışkanlıkları takip etmek için geliştirilmiş web uygulaması.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Next.js</span>
+                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>TypeScript</span>
+                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Tailwind CSS</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

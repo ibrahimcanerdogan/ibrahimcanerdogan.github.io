@@ -169,21 +169,21 @@ export default function Home() {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300`}>
-                <div className={`text-3xl font-bold mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>4+</div>
-                <div className={`text-sm ${isDarkTheme ? 'text-gray-300' : 'text-gray-600'}`}>Yıl Deneyim</div>
+              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>4+</div>
+                <div className={`text-sm font-medium ${isDarkTheme ? 'text-blue-200' : 'text-blue-700'}`}>Yıl Deneyim</div>
               </div>
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300`}>
-                <div className={`text-3xl font-bold mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>10+</div>
-                <div className={`text-sm ${isDarkTheme ? 'text-gray-300' : 'text-gray-600'}`}>Proje</div>
+              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>10+</div>
+                <div className={`text-sm font-medium ${isDarkTheme ? 'text-purple-200' : 'text-purple-700'}`}>Proje</div>
               </div>
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300`}>
-                <div className={`text-3xl font-bold mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>3+</div>
-                <div className={`text-sm ${isDarkTheme ? 'text-gray-300' : 'text-gray-600'}`}>Sertifika</div>
+              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>3+</div>
+                <div className={`text-sm font-medium ${isDarkTheme ? 'text-pink-200' : 'text-pink-700'}`}>Sertifika</div>
               </div>
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300`}>
-                <div className={`text-3xl font-bold mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'}`}>2+</div>
-                <div className={`text-sm ${isDarkTheme ? 'text-gray-300' : 'text-gray-600'}`}>Kurs</div>
+              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'}`}>2+</div>
+                <div className={`text-sm font-medium ${isDarkTheme ? 'text-green-200' : 'text-green-700'}`}>Kurs</div>
               </div>
             </div>
 
@@ -195,7 +195,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className={`group relative px-8 py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                   isDarkTheme 
-                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white' 
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border border-blue-500/20' 
                     : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white'
                 }`}
               >

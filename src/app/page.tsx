@@ -248,7 +248,7 @@ export default function Home() {
           {/* Left Column - About & Certificates */}
           <div className="space-y-8">
             {/* About Section */}
-            <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+            <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
               <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Hakkımda 📝</h2>
               <div className={`space-y-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
@@ -858,7 +858,7 @@ export default function Home() {
 
       {/* Projects Section */}
       <div className="container mx-auto px-4 py-8">
-        <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+        <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
           <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
             <span className="mr-2">🚀</span>
             <span>Projelerim</span>
@@ -1071,7 +1071,7 @@ export default function Home() {
 
       {/* Skills Section */}
       <div className="container mx-auto px-4 py-8">
-        <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+        <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
           <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
             <span className="mr-2">🛠️</span>
             <span>Yeteneklerim</span>
@@ -1156,7 +1156,7 @@ export default function Home() {
 
       {/* YouTube Videos Section */}
       <div className="container mx-auto px-4 py-8">
-        <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+        <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
           <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>YouTube Videolarım 🎥</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Video 1 */}

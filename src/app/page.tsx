@@ -697,14 +697,14 @@ export default function Home() {
       </div>
 
       {/* Projects Section */}
-      <div className="container mx-auto px-4 py-8">
-        <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+      <div className="container mx-auto px-4 py-4 -mt-16">
+        <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-6 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
           <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Projelerim 🚀</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project 1 */}
+            {/* Project 1 - Jetpack Compose Samples */}
             <div className="relative pl-8 border-l-2 border-purple-500">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
-              <div className="mb-2">
+              <div className="mb-4">
                 <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
                   <a 
                     href="https://github.com/ibrahimcanerdogan/Awesome-Jetpack-Compose-App-Samples"
@@ -715,12 +715,12 @@ export default function Home() {
                     Awesome Jetpack Compose App Samples 📱
                   </a>
                 </h3>
-                <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Mart 2024 - Devam Ediyor</p>
+                <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} mt-2`}>Mart 2024 - Devam Ediyor</p>
               </div>
               <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
                 Jetpack Compose ile geliştirilmiş örnek uygulamalar koleksiyonu. Modern Android geliştirme tekniklerini ve best practice'leri içeren projeler.
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-4">
                 <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Jetpack Compose</span>
                 <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Kotlin</span>
                 <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>MVVM</span>

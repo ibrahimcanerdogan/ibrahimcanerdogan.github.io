@@ -163,12 +163,34 @@ export default function Home() {
       <div className="container mx-auto px-4 py-32 relative z-20">
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <h1 className="text-5xl font-bold mb-6 leading-relaxed bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-            İbrahim Can Erdoğan 👋
-          </h1>
+          <div className="relative inline-block">
+            <h1 className="text-5xl font-bold mb-6 leading-relaxed bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
+              İbrahim Can Erdoğan 👋
+            </h1>
+          </div>
           <p className={`text-2xl ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-8`}>
-            Android Engineer 💻
+            <span className="inline-block">Android Engineer</span> 💻
           </p>
+          
+          {/* Fun Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-8">
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} p-4 rounded-lg backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} transform hover:scale-105 transition-transform`}>
+              <div className="text-3xl font-bold text-blue-400">4+</div>
+              <div className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yıl Deneyim</div>
+            </div>
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} p-4 rounded-lg backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} transform hover:scale-105 transition-transform`}>
+              <div className="text-3xl font-bold text-purple-400">10+</div>
+              <div className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Proje</div>
+            </div>
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} p-4 rounded-lg backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} transform hover:scale-105 transition-transform`}>
+              <div className="text-3xl font-bold text-green-400">3+</div>
+              <div className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Sertifika</div>
+            </div>
+            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} p-4 rounded-lg backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} transform hover:scale-105 transition-transform`}>
+              <div className="text-3xl font-bold text-yellow-400">2+</div>
+              <div className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Kurs</div>
+            </div>
+          </div>
           
           {/* Social Media Links */}
           <div className="flex justify-center space-x-6 mb-8">
@@ -312,44 +334,83 @@ export default function Home() {
 
             {/* Certificates Section */}
             <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sertifikalar 🏆</h2>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
+                <span className="mr-2">🏆</span>
+                <span>Sertifikalar</span>
+              </h2>
               <div className="space-y-8">
                 {/* Neo Skola Certificate */}
-                <div className="relative pl-8 border-l-2 border-purple-500">
+                <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
                     <div className="mb-2">
-                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Agility: İş Hayatında Çeviklik</h3>
+                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                        <span className="mr-2">🎯</span>
+                        Agility: İş Hayatında Çeviklik
+                      </h3>
                     </div>
-                    <p className="text-purple-400">Neo Skola</p>
-                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yayınlama: Mart 2025</p>
-                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yeterlilik Kimliği: 67ce94df183680903a4d2d761741631567829</p>
+                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                      <span className="mr-2">🏢</span>
+                      Neo Skola
+                    </p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">⏳</span>
+                      Yayınlama: Mart 2025
+                    </p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">🔑</span>
+                      Yeterlilik Kimliği: 67ce94df183680903a4d2d761741631567829
+                    </p>
                   </div>
                 </div>
 
                 {/* Udemy Certificate */}
-                <div className="relative pl-8 border-l-2 border-purple-500">
+                <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
                     <div className="mb-2">
-                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Jetpack Compose ile Android Uygulama Geliştirme Kursu | 2024</h3>
+                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                        <span className="mr-2">📱</span>
+                        Jetpack Compose ile Android Uygulama Geliştirme Kursu | 2024
+                      </h3>
                     </div>
-                    <p className="text-purple-400">Udemy</p>
-                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yayınlama: Mart 2024</p>
-                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yeterlilik Kimliği: UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308</p>
+                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                      <span className="mr-2">🏢</span>
+                      Udemy
+                    </p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">⏳</span>
+                      Yayınlama: Mart 2024
+                    </p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">🔑</span>
+                      Yeterlilik Kimliği: UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308
+                    </p>
                   </div>
                 </div>
 
                 {/* Meta Certificate */}
-                <div className="relative pl-8 border-l-2 border-purple-500">
+                <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
                     <div className="mb-2">
-                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Meta Android Developer</h3>
+                      <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                        <span className="mr-2">🤖</span>
+                        Meta Android Developer
+                      </h3>
                     </div>
-                    <p className="text-purple-400">Meta</p>
-                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yayınlama: Şubat 2024</p>
-                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Yeterlilik Kimliği: CFX39BKNZSTW</p>
+                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                      <span className="mr-2">🏢</span>
+                      Meta
+                    </p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">⏳</span>
+                      Yayınlama: Şubat 2024
+                    </p>
+                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">🔑</span>
+                      Yeterlilik Kimliği: CFX39BKNZSTW
+                    </p>
                   </div>
                 </div>
               </div>
@@ -357,13 +418,17 @@ export default function Home() {
 
             {/* Udemy Courses Section */}
             <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Udemy Kurslarım 📚</h2>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
+                <span className="mr-2">📚</span>
+                <span>Udemy Kurslarım</span>
+              </h2>
               <div className="space-y-8">
                 {/* Course 1 */}
-                <div className="relative pl-8 border-l-2 border-purple-500">
+                <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
-                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                      <span className="mr-2">🎨</span>
                       <a 
                         href="https://www.udemy.com/course/jetpack-compose-uygulama-gelistirme-rehberi/?referralCode=FDD0C1F4F2BB4C54B325"
                         target="_blank"
@@ -373,37 +438,76 @@ export default function Home() {
                         Jetpack Compose: İleri Seviye Uygulama Geliştirme Rehberi
                       </a>
                     </h3>
-                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Mart 2024 - Devam Ediyor</p>
+                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                      <span className="mr-2">⏳</span>
+                      Mart 2024 - Devam Ediyor
+                    </p>
                   </div>
-                  <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                    Jetpack Compose ile geliştirilmiş örnek uygulamalar koleksiyonu. Modern Android geliştirme tekniklerini ve best practice'leri içeren projeler.
-                  </p>
-                  <div className="space-y-2">
-                    <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Kursun İçeriği:</h4>
-                    <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-1`}>
-                      <li className="text-sm">Jetpack Compose Temelleri: Gelişmiş UI tasarımı ve layout yönetimi</li>
-                      <li className="text-sm">Gelişmiş UI Tasarımı: Animasyonlar, dokunmatik etkileşimler ve modern kullanıcı deneyimi</li>
-                      <li className="text-sm">Veri Yönetimi ve State Yönetimi: Veri akışları, ViewModel'ler ve state yönetimi teknikleri</li>
-                      <li className="text-sm">Uygulama Geliştirme Stratejileri: Performans optimizasyonu, kod kalitesi ve best practices</li>
-                      <li className="text-sm">Gerçek Dünya Projeleri: Pratik uygulamalar ve senaryolar üzerinde çalışmalar</li>
-                    </ul>
-                  </div>
-                  <div className="mt-4">
-                    <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Yetenekler:</h4>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Jetpack Compose</span>
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Android Development</span>
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Kotlin</span>
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Advanced Android</span>
+                  <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-lg">
+                    <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
+                      Jetpack Compose ile geliştirilmiş örnek uygulamalar koleksiyonu. Modern Android geliştirme tekniklerini ve best practice'leri içeren projeler.
+                    </p>
+                    <div className="space-y-2">
+                      <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                        <span className="mr-2">📋</span>
+                        Kursun İçeriği:
+                      </h4>
+                      <ul className={`list-none ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
+                        <li className="text-sm flex items-start">
+                          <span className="mr-2">✨</span>
+                          Jetpack Compose Temelleri: Gelişmiş UI tasarımı ve layout yönetimi
+                        </li>
+                        <li className="text-sm flex items-start">
+                          <span className="mr-2">🎨</span>
+                          Gelişmiş UI Tasarımı: Animasyonlar, dokunmatik etkileşimler ve modern kullanıcı deneyimi
+                        </li>
+                        <li className="text-sm flex items-start">
+                          <span className="mr-2">💾</span>
+                          Veri Yönetimi ve State Yönetimi: Veri akışları, ViewModel'ler ve state yönetimi teknikleri
+                        </li>
+                        <li className="text-sm flex items-start">
+                          <span className="mr-2">⚡</span>
+                          Uygulama Geliştirme Stratejileri: Performans optimizasyonu, kod kalitesi ve best practices
+                        </li>
+                        <li className="text-sm flex items-start">
+                          <span className="mr-2">🚀</span>
+                          Gerçek Dünya Projeleri: Pratik uygulamalar ve senaryolar üzerinde çalışmalar
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="mt-4">
+                      <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                        <span className="mr-2">🎯</span>
+                        Yetenekler:
+                      </h4>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">🎨</span>
+                          Jetpack Compose
+                        </span>
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">📱</span>
+                          Android Development
+                        </span>
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">⚡</span>
+                          Kotlin
+                        </span>
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">🚀</span>
+                          Advanced Android
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Course 2 */}
-                <div className="relative pl-8 border-l-2 border-purple-500">
+                <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
-                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                      <span className="mr-2">🤖</span>
                       <a 
                         href="https://www.udemy.com/course/mlkit-android-programlama/?referralCode=B671AEDDFD9DE7B8656A"
                         target="_blank"
@@ -413,159 +517,37 @@ export default function Home() {
                         Android App Development with Google Machine Learning
                       </a>
                     </h3>
-                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Eylül 2021 - Devam Ediyor</p>
+                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                      <span className="mr-2">⏳</span>
+                      Eylül 2021 - Devam Ediyor
+                    </p>
                   </div>
-                  <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                    With the rapid development of mobile applications today, artificial intelligence and machine learning technologies have gained great importance. These technologies play an important role in providing users with a richer and smarter experience. This is where the Google ML Kit library comes into play.
-                  </p>
-                  <div className="mt-4">
-                    <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Yetenekler:</h4>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Android Development</span>
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Machine Learning</span>
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Android Clean Architecture</span>
-                      <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Jetpack Compose</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Skills Section */}
-            <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Yetenekler ⚡</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {/* Programming Languages */}
-                <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Programlama Dilleri 💻</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Kotlin</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Java</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Swift</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Orta Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '70%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Android Development */}
-                <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Geliştirme 📱</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Jetpack Compose</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>MVVM Architecture</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Clean Architecture</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Libraries & Tools */}
-                <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Kütüphaneler & Araçlar 🛠️</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Dependency Injection (Hilt)</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Retrofit & OkHttp</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '95%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Room Database</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Testing & Version Control */}
-                <div className="space-y-4">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Test & Versiyon Kontrolü ✅</h3>
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Unit Testing (JUnit, Mockito)</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '85%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>UI Testing (Espresso)</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Orta Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '75%' }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between mb-1">
-                        <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Git & GitHub</span>
-                        <span className={`${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İleri Seviye</span>
-                      </div>
-                      <div className="w-full bg-gray-700/50 rounded-full h-2">
-                        <div className="bg-blue-500 h-2 rounded-full" style={{ width: '90%' }}></div>
+                  <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg">
+                    <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
+                      With the rapid development of mobile applications today, artificial intelligence and machine learning technologies have gained great importance. These technologies play an important role in providing users with a richer and smarter experience. This is where the Google ML Kit library comes into play.
+                    </p>
+                    <div className="mt-4">
+                      <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                        <span className="mr-2">🎯</span>
+                        Yetenekler:
+                      </h4>
+                      <div className="flex flex-wrap gap-2 mt-2">
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">📱</span>
+                          Android Development
+                        </span>
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">🧠</span>
+                          Machine Learning
+                        </span>
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">🏗️</span>
+                          Android Clean Architecture
+                        </span>
+                        <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                          <span className="mr-1">🎨</span>
+                          Jetpack Compose
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -576,44 +558,87 @@ export default function Home() {
 
           {/* Right Column - Experience */}
           <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-            <h2 className="text-2xl font-semibold mb-6 text-blue-400">Deneyim 💼</h2>
+            <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
+              <span className="mr-2">💼</span>
+              <span>Deneyim</span>
+            </h2>
             <div className="space-y-8">
               {/* Current Experience */}
-              <div className="relative pl-8 border-l-2 border-blue-500">
+              <div className="relative pl-8 border-l-2 border-blue-500 transform hover:scale-105 transition-transform">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Software Specialist</h3>
-                  <p className="text-purple-400">ebebek</p>
-                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Nisan 2023 - Devam Ediyor · Tam Zamanlı</p>
-                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İstanbul, Türkiye · Uzaktan</p>
+                  <div className="mb-2">
+                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                      <span className="mr-2">🎯</span>
+                      Android Software Specialist
+                    </h3>
+                  </div>
+                  <p className="text-purple-400 flex items-center">
+                    <span className="mr-2">🏢</span>
+                    ebebek
+                  </p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                    <span className="mr-2">⏳</span>
+                    Nisan 2023 - Devam Ediyor · Tam Zamanlı
+                  </p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                    <span className="mr-2">📍</span>
+                    İstanbul, Türkiye · Uzaktan
+                  </p>
                 </div>
-                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
-                  <li className="text-sm">ebebek mobil uygulamasında Android Software Specialist olarak görev yapıyorum</li>
-                  <li className="text-sm">SOCRadar güvenlik tarama raporları sonucunda bulunan güvenlik açıklarının giderilmesi ve uygulama içi güvenliğin sağlanması</li>
-                  <li className="text-sm">Craftgate ve One-Stop Shop ödeme teknolojisi ile tüm ödeme yöntemlerinin entegrasyonu</li>
-                  <li className="text-sm">ebebek cüzdan özelliğinin uygulamaya entegrasyonu</li>
-                  <li className="text-sm">Android uygulaması için SDK implementasyonlarının ayarlanması</li>
-                  <li className="text-sm">Mimariye uygun hata düzeltmeleri</li>
-                  <li className="text-sm">Uygulamanın build ve kullanım performansının geliştirilmesi, modifiye edilmesi ve iyileştirilmesi</li>
-                  <li className="text-sm">YouTrack ve Github yazılımları ile proje geliştirme ve takibi</li>
-                </ul>
+                <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg">
+                  <ul className={`list-none space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <li className="text-sm flex items-start">
+                      <span className="mr-2">✨</span>
+                      ebebek mobil uygulamasında Android Software Specialist olarak görev yapıyorum
+                    </li>
+                    <li className="text-sm flex items-start">
+                      <span className="mr-2">🔒</span>
+                      SOCRadar güvenlik tarama raporları sonucunda bulunan güvenlik açıklarının giderilmesi
+                    </li>
+                    <li className="text-sm flex items-start">
+                      <span className="mr-2">💳</span>
+                      Craftgate ve One-Stop Shop ödeme teknolojisi entegrasyonu
+                    </li>
+                    <li className="text-sm flex items-start">
+                      <span className="mr-2">👛</span>
+                      ebebek cüzdan özelliğinin uygulamaya entegrasyonu
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               {/* Previous Experience */}
-              <div className="relative pl-8 border-l-2 border-blue-500">
+              <div className="relative pl-8 border-l-2 border-blue-500 transform hover:scale-105 transition-transform">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-blue-500"></div>
                 <div className="mb-2">
-                  <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Android Developer</h3>
-                  <p className="text-purple-400">Logo Yazılım</p>
-                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Ocak 2023 - Nisan 2023 · 4 ay · Tam Zamanlı</p>
-                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>İzmir, Türkiye · Hibrit</p>
+                  <div className="mb-2">
+                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                      <span className="mr-2">💻</span>
+                      Android Developer
+                    </h3>
+                  </div>
+                  <p className="text-purple-400 flex items-center">
+                    <span className="mr-2">🏢</span>
+                    Logo Yazılım
+                  </p>
+                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                    <span className="mr-2">⏳</span>
+                    Ocak 2023 - Nisan 2023 · 4 ay
+                  </p>
                 </div>
-                <ul className={`list-disc list-inside ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
-                  <li className="text-sm">LOGO Mobile Sales projesinde Software Development Specialist olarak görev yaptım</li>
-                  <li className="text-sm">Java ile geliştirilen projenin Kotlin'e dönüştürülmesi</li>
-                  <li className="text-sm">Kotlin dil özellikleri kullanılarak projenin daha verimli, hızlı ve etkili hale getirilmesi</li>
-                  <li className="text-sm">Coroutines, Dagger ve MVVM (Model, ViewModel, Repository) yapısının projeye uygulanması</li>
-                </ul>
+                <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-lg">
+                  <ul className={`list-none space-y-2 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
+                    <li className="text-sm flex items-start">
+                      <span className="mr-2">🔄</span>
+                      Java projesini Kotlin'e dönüştürme
+                    </li>
+                    <li className="text-sm flex items-start">
+                      <span className="mr-2">⚡</span>
+                      Coroutines ve MVVM mimarisi implementasyonu
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               <div className="relative pl-8 border-l-2 border-blue-500">
@@ -701,57 +726,90 @@ export default function Home() {
       {/* Projects Section */}
       <div className="container mx-auto px-4 py-4 -mt-16">
         <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-6 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-          <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Projelerim 🚀</h2>
+          <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
+            <span className="mr-2">🚀</span>
+            <span>Projelerim</span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Project 1 - Jetpack Compose Samples */}
-            <div className="relative pl-8 border-l-2 border-purple-500">
+            <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
               <div className="mb-4">
-                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  <span className="mr-2">📱</span>
                   <a 
                     href="https://github.com/ibrahimcanerdogan/Awesome-Jetpack-Compose-App-Samples"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                   >
-                    Awesome Jetpack Compose App Samples 📱
+                    Awesome Jetpack Compose App Samples
                   </a>
                 </h3>
-                <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} mt-2`}>Mart 2024 - Devam Ediyor</p>
+                <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} mt-2 flex items-center`}>
+                  <span className="mr-2">⏳</span>
+                  Mart 2024 - Devam Ediyor
+                </p>
               </div>
-              <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                Jetpack Compose ile geliştirilmiş örnek uygulamalar koleksiyonu. Modern Android geliştirme tekniklerini ve best practice'leri içeren projeler.
-              </p>
-              <div className="flex flex-wrap gap-2 mt-4">
-                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Jetpack Compose</span>
-                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Kotlin</span>
-                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>MVVM</span>
+              <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-lg">
+                <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
+                  Jetpack Compose ile geliştirilmiş örnek uygulamalar koleksiyonu. Modern Android geliştirme tekniklerini ve best practice'leri içeren projeler.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                    <span className="mr-1">🎨</span>
+                    Jetpack Compose
+                  </span>
+                  <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                    <span className="mr-1">⚡</span>
+                    Kotlin
+                  </span>
+                  <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                    <span className="mr-1">🏗️</span>
+                    MVVM
+                  </span>
+                </div>
               </div>
             </div>
 
             {/* Project 2 */}
-            <div className="relative pl-8 border-l-2 border-purple-500">
+            <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
               <div className="mb-2">
-                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  <span className="mr-2">🤖</span>
                   <a 
                     href="https://github.com/ibrahimcanerdogan/Google-MLKit-Android-Apps"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                   >
-                    Google ML Kit Android Apps 🤖
+                    Google ML Kit Android Apps
                   </a>
                 </h3>
-                <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>Eylül 2021 - Devam Ediyor</p>
+                <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                  <span className="mr-2">⏳</span>
+                  Eylül 2021 - Devam Ediyor
+                </p>
               </div>
-              <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                Google ML Kit kullanarak geliştirilmiş, yapay zeka özelliklerini Android uygulamalara entegre eden örnek projeler koleksiyonu.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>ML Kit</span>
-                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Yapay Zeka</span>
-                <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Android</span>
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg">
+                <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
+                  Google ML Kit kullanarak geliştirilmiş, yapay zeka özelliklerini Android uygulamalara entegre eden örnek projeler koleksiyonu.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                    <span className="mr-1">🧠</span>
+                    ML Kit
+                  </span>
+                  <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                    <span className="mr-1">🤖</span>
+                    Yapay Zeka
+                  </span>
+                  <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
+                    <span className="mr-1">📱</span>
+                    Android
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -830,6 +888,91 @@ export default function Home() {
                 <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Next.js</span>
                 <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>TypeScript</span>
                 <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm`}>Tailwind CSS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Skills Section */}
+      <div className="container mx-auto px-4 py-8">
+        <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
+          <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
+            <span className="mr-2">🛠️</span>
+            <span>Yeteneklerim</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Programming Languages */}
+            <div className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-white/50'} rounded-lg p-6 shadow-lg`}>
+              <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                <span className="mr-2">💻</span>
+                Programlama Dilleri
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Kotlin</span>
+                  <span className="text-blue-400">★★★★★</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Java</span>
+                  <span className="text-blue-400">★★★★☆</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>TypeScript</span>
+                  <span className="text-blue-400">★★★☆☆</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Android Development */}
+            <div className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-white/50'} rounded-lg p-6 shadow-lg`}>
+              <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                <span className="mr-2">📱</span>
+                Android Geliştirme
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Jetpack Compose</span>
+                  <span className="text-blue-400">★★★★★</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>MVVM Architecture</span>
+                  <span className="text-blue-400">★★★★★</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Clean Architecture</span>
+                  <span className="text-blue-400">★★★★☆</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Coroutines</span>
+                  <span className="text-blue-400">★★★★★</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Tools & Technologies */}
+            <div className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-white/50'} rounded-lg p-6 shadow-lg`}>
+              <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                <span className="mr-2">🛠️</span>
+                Araçlar & Teknolojiler
+              </h3>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Git</span>
+                  <span className="text-blue-400">★★★★★</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Dagger Hilt</span>
+                  <span className="text-blue-400">★★★★☆</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Retrofit</span>
+                  <span className="text-blue-400">★★★★★</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Room Database</span>
+                  <span className="text-blue-400">★★★★☆</span>
+                </div>
               </div>
             </div>
           </div>

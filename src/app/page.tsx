@@ -1024,19 +1024,19 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Project 4 - JetNews */}
+            {/* Project 4 - JetNves */}
             <div className="relative pl-8 border-l-2 border-indigo-500 transform hover:scale-105 transition-transform">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
               <div className="mb-4">
                 <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
                   <span className="mr-2">📰</span>
-                  <a 
-                    href="https://github.com/ibrahimcanerdogan/JetNews"
+                  <a
+                    href="https://github.com/ibrahimcanerdogan/JetNves"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`hover:text-indigo-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                   >
-                    JetNews
+                    JetNves
                   </a>
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>

@@ -159,30 +159,30 @@ export default function Home() {
           <div className="space-y-8">
             {/* Title */}
             <div className="text-center relative z-20">
-              <h1 className={`text-6xl md:text-7xl font-bold ${isDarkTheme ? 'text-white' : 'text-gray-900'} leading-tight`}>
+              <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold ${isDarkTheme ? 'text-white' : 'text-gray-900'} leading-tight`}>
                 İbrahim Can Erdoğan
               </h1>
-              <p className={`text-2xl md:text-3xl ${isDarkTheme ? 'text-gray-300' : 'text-gray-600'} font-light`}>
+              <p className={`text-xl sm:text-2xl md:text-3xl ${isDarkTheme ? 'text-gray-300' : 'text-gray-600'} font-light`}>
                 Senior Android Engineer
               </p>
             </div>
 
             {/* Stats Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 sm:px-0 max-w-[90%] sm:max-w-full mx-auto">
-              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>2+</div>
+              <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>5+</div>
                 <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-blue-200' : 'text-blue-700'}`}>Yıl Deneyim</div>
               </div>
-              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>10+</div>
+              <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>10+</div>
                 <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-purple-200' : 'text-purple-700'}`}>Proje</div>
               </div>
-              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>3+</div>
+              <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>3+</div>
                 <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-pink-200' : 'text-pink-700'}`}>Sertifika</div>
               </div>
-              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'}`}>2+</div>
+              <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'}`}>2+</div>
                 <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-green-200' : 'text-green-700'}`}>Kurs</div>
               </div>
             </div>
@@ -193,14 +193,14 @@ export default function Home() {
                 href="https://drive.google.com/file/d/1mPbYymPZ74-0K16h6PU0iUi0FSh3wg8N/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+                className={`group relative px-4 sm:px-8 py-2 sm:py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                   isDarkTheme 
                     ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border border-blue-500/20' 
                     : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white'
                 }`}
               >
-                <span className="relative z-10 flex items-center justify-center">
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
@@ -211,23 +211,18 @@ export default function Home() {
               <a
                 href="/source/CV - Ibrahim Can Erdogan.pdf"
                 download
-                className={`group relative px-8 py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+                className={`group relative px-4 sm:px-8 py-2 sm:py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                   isDarkTheme 
                     ? 'bg-gradient-to-r from-gray-800 to-gray-900 hover:from-gray-700 hover:to-gray-800 text-white border border-gray-700/50' 
                     : 'bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 border border-gray-200/50'
                 }`}
               >
-                <span className="relative z-10 flex items-center justify-center">
-                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
                   Özgeçmişimi İndir
                 </span>
-                <div className={`absolute inset-0 ${
-                  isDarkTheme 
-                    ? 'bg-gradient-to-r from-gray-700/20 to-gray-800/20' 
-                    : 'bg-gradient-to-r from-gray-200/20 to-gray-300/20'
-                } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
               </a>
             </div>
 
@@ -254,7 +249,7 @@ export default function Home() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
+            <div className="absolute bottom-8 sm:bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
               <button 
                 onClick={handleScroll}
                 className={`flex flex-col items-center ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}

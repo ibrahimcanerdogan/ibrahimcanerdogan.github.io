@@ -5,10 +5,6 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com)
 
-<div align="center">
-  <img src="public/logo.jpg" alt="İbrahim Can Erdoğan - Senior Android Engineer" width="600"/>
-</div>
-
 ## 🚀 About
 
 Welcome to my personal portfolio website! This is where I showcase my work, skills, and experience as a Senior Android Engineer. The website is built with modern web technologies and features a clean, responsive design.

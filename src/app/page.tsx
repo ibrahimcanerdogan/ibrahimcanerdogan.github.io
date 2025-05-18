@@ -1102,6 +1102,47 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
+            {/* Project 5 - GlobNews */}
+            <div className="relative pl-8 border-l-2 border-indigo-500 transform hover:scale-105 transition-transform">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
+              <div className="mb-4">
+                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  <span className="mr-2">🌍</span>
+                  <a
+                    href="https://github.com/ibrahimcanerdogan/globnews"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`hover:text-indigo-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
+                  >
+                    GlobNews
+                  </a>
+                </h3>
+                <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
+                  <span className="mr-2">⏳</span>
+                  2024 - Devam Ediyor
+                </p>
+              </div>
+              <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
+                <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
+                  GlobNews is a modern news aggregation platform built with Next.js, providing users with the latest news from around the world in a clean and intuitive interface.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
+                    Next.js
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'}`}>
+                    TypeScript
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'}`}>
+                    Tailwind CSS
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-700'}`}>
+                    News API
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

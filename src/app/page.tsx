@@ -249,7 +249,7 @@ export default function Home() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-8 sm:bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
+            <div className="absolute bottom-30 sm:bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
               <button 
                 onClick={handleScroll}
                 className={`flex flex-col items-center ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}

@@ -168,32 +168,32 @@ export default function Home() {
             </div>
 
             {/* Stats Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>4+</div>
-                <div className={`text-sm font-medium ${isDarkTheme ? 'text-blue-200' : 'text-blue-700'}`}>Yıl Deneyim</div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 sm:px-0 max-w-[90%] sm:max-w-full mx-auto">
+              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>2+</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-blue-200' : 'text-blue-700'}`}>Yıl Deneyim</div>
               </div>
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>10+</div>
-                <div className={`text-sm font-medium ${isDarkTheme ? 'text-purple-200' : 'text-purple-700'}`}>Proje</div>
+              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>10+</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-purple-200' : 'text-purple-700'}`}>Proje</div>
               </div>
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>3+</div>
-                <div className={`text-sm font-medium ${isDarkTheme ? 'text-pink-200' : 'text-pink-700'}`}>Sertifika</div>
+              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>3+</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-pink-200' : 'text-pink-700'}`}>Sertifika</div>
               </div>
-              <div className={`p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                <div className={`text-4xl font-bold mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'}`}>2+</div>
-                <div className={`text-sm font-medium ${isDarkTheme ? 'text-green-200' : 'text-green-700'}`}>Kurs</div>
+              <div className={`p-4 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
+                <div className={`text-3xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'}`}>2+</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-green-200' : 'text-green-700'}`}>Kurs</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 sm:pt-8 px-4 sm:px-0 max-w-[90%] sm:max-w-full mx-auto">
               <a
                 href="https://drive.google.com/file/d/1mPbYymPZ74-0K16h6PU0iUi0FSh3wg8N/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group relative px-8 py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+                className={`group relative px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                   isDarkTheme 
                     ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border border-blue-500/20' 
                     : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white'
@@ -548,7 +548,7 @@ export default function Home() {
                       <span className="mr-2">🎯</span>
                       Android Software Specialist
                     </h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'}`}>
+                    <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'} whitespace-nowrap text-center`}>
                       Devam Ediyor
                     </span>
                   </div>
@@ -698,7 +698,7 @@ export default function Home() {
                       <span className="mr-2">🎓</span>
                       Android Developer Intern
                     </h3>
-                    <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-yellow-500/20 text-yellow-300' : 'bg-yellow-100 text-yellow-700'}`}>
+                    <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-yellow-500/20 text-yellow-300' : 'bg-yellow-100 text-yellow-700'} whitespace-nowrap`}>
                       3 ay
                     </span>
                   </div>

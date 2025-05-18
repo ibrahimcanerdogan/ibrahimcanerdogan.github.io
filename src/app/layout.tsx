@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://ibrahimcanerdogan.github.io"),
   title: "İbrahim Can Erdoğan | Senior Android Engineer",
-  description: "Senior Android Engineer with 4+ years of experience in Kotlin, Java, and Jetpack Compose. Expert in mobile app development, clean architecture, and modern Android technologies.",
+  description: "Kotlin, Java ve Jetpack Compose konularında 4+ yıl deneyime sahip Kıdemli Android Geliştirici. Mobil uygulama geliştirme, temiz mimari ve modern Android teknolojileri konusunda uzman.",
   keywords: [
     "İbrahim Can Erdoğan",
     "Android Developer",
@@ -28,7 +28,18 @@ export const metadata: Metadata = {
     "Kotlin Programming",
     "Android Best Practices",
     "Android Performance",
-    "Android Security"
+    "Android Security",
+    "Android Geliştirme",
+    "Android Yazılım Uzmanı",
+    "Kıdemli Android Geliştirici",
+    "Mobil Uygulama Geliştirme",
+    "Android Uygulama Geliştirme",
+    "Kotlin Programlama",
+    "Android Temiz Mimari",
+    "Android UI Tasarımı",
+    "Android Performans Optimizasyonu",
+    "Android Güvenlik",
+    "Android Jetpack Bileşenleri"
   ],
   authors: [{ name: "İbrahim Can Erdoğan" }],
   creator: "İbrahim Can Erdoğan",
@@ -94,6 +105,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
+        <meta property="og:image" content="https://ibrahimcanerdogan.github.io/logo.jpg" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

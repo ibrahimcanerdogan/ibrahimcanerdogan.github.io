@@ -249,22 +249,23 @@ export default function Home() {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="absolute bottom-30 sm:bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
+            <div className="absolute bottom-16 sm:bottom-2 left-1/2 transform -translate-x-1/2 animate-bounce z-0">
               <button 
                 onClick={handleScroll}
                 className={`flex flex-col items-center ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
               >
                 <span className="text-sm mb-2">Aşağı Kaydır</span>
-                <svg 
-                  className="w-6 h-6" 
-                  fill="none" 
-                  stroke="currentColor" 
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    strokeWidth={2} 
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
                     d="M19 14l-7 7m0 0l-7-7m7 7V3"
                   />
                 </svg>
@@ -1551,6 +1552,7 @@ export default function Home() {
         </div>
       </footer>
       <ScrollToTop />
+      <meta property="og:image" content="https://ibrahimcanerdogan.github.io/logo.jpg" />
     </main>
   );
 }

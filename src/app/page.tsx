@@ -350,9 +350,9 @@ export default function Home() {
                       <span className="mr-2">🏢</span>
                       Udemy
                     </p>
-                    <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                    <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Yayınlama: Mart 2024
+                      2024 - Devam Ediyor
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">🔑</span>
@@ -412,7 +412,7 @@ export default function Home() {
                     </h3>
                     <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Mart 2024 - Devam Ediyor
+                      2025 - Devam Ediyor
                     </p>
                   </div>
                   <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-lg">
@@ -491,7 +491,7 @@ export default function Home() {
                     </h3>
                     <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Eylül 2021 - Devam Ediyor
+                      2021 - Devam Ediyor
                     </p>
                   </div>
                   <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg">
@@ -955,7 +955,7 @@ export default function Home() {
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                   <span className="mr-2">⏳</span>
-                  2024 - Devam Ediyor
+                  2021 - Devam Ediyor
                 </p>
               </div>
               <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
@@ -1020,55 +1020,14 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Project 4 - JetNves */}
-            <div className="relative pl-8 border-l-2 border-indigo-500 transform hover:scale-105 transition-transform">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
-              <div className="mb-4">
-                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
-                  <span className="mr-2">📰</span>
-                  <a
-                    href="https://github.com/ibrahimcanerdogan/JetNves"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`hover:text-indigo-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
-                  >
-                    JetNves
-                  </a>
-                </h3>
-                <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
-                  <span className="mr-2">⏳</span>
-                  2024 - Devam Ediyor
-                </p>
-              </div>
-              <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
-                <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  Jetpack Compose ile geliştirilmiş modern haber uygulaması. Clean Architecture ve MVVM pattern kullanılarak geliştirilmiş. Material Design 3 ve modern UI/UX pratikleri içerir.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
-                    Kotlin
-                  </span>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'}`}>
-                    Jetpack Compose
-                  </span>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'}`}>
-                    Material3
-                  </span>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-700'}`}>
-                    MVVM
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 5 - EcoTrack */}
+            {/* Project 4 - EcoTrack */}
             <div className="relative pl-8 border-l-2 border-indigo-500 transform hover:scale-105 transition-transform">
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
               <div className="mb-4">
                 <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
                   <span className="mr-2">🌱</span>
-                  <a 
-                    href="https://ibrahimcanerdogan.github.io/ecotrack"
+                  <a
+                    href="https://github.com/ibrahimcanerdogan/ecotrack"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`hover:text-indigo-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
@@ -1078,50 +1037,12 @@ export default function Home() {
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                   <span className="mr-2">⏳</span>
-                  2024 - Devam Ediyor
+                  2025 - Devam Ediyor
                 </p>
               </div>
               <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  Sürdürülebilir yaşam ve çevre dostu alışkanlıkları takip etmek için geliştirilmiş web uygulaması.
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
-                    Next.js
-                  </span>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'}`}>
-                    TypeScript
-                  </span>
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'}`}>
-                    Tailwind CSS
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Project 5 - GlobNews */}
-            <div className="relative pl-8 border-l-2 border-indigo-500 transform hover:scale-105 transition-transform">
-              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
-              <div className="mb-4">
-                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
-                  <span className="mr-2">🌍</span>
-                  <a
-                    href="https://github.com/ibrahimcanerdogan/globnews"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`hover:text-indigo-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
-                  >
-                    GlobNews
-                  </a>
-                </h3>
-                <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
-                  <span className="mr-2">⏳</span>
-                  2024 - Devam Ediyor
-                </p>
-              </div>
-              <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
-                <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  GlobNews is a modern news aggregation platform built with Next.js, providing users with the latest news from around the world in a clean and intuitive interface.
+                  Sürdürülebilir yaşam için geliştirilmiş, karbon ayak izini takip etmeye ve azaltmaya yardımcı olan bir web uygulaması.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
@@ -1134,8 +1055,71 @@ export default function Home() {
                     Tailwind CSS
                   </span>
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-700'}`}>
-                    News API
+                    Prisma
                   </span>
+                </div>
+                <div className="mt-4">
+                  <a
+                    href="https://ibrahimcanerdogan.github.io/ecotrack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center px-4 py-2 rounded-lg ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30' : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'} transition-colors`}
+                  >
+                    <span className="mr-2">🌐</span>
+                    Canlı Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Project 5 - NextCalculator */}
+            <div className="relative pl-8 border-l-2 border-indigo-500 transform hover:scale-105 transition-transform">
+              <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-500"></div>
+              <div className="mb-4">
+                <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                  <span className="mr-2">🧮</span>
+                  <a
+                    href="https://github.com/ibrahimcanerdogan/NextCalculator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`hover:text-indigo-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
+                  >
+                    NextCalculator
+                  </a>
+                </h3>
+                <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
+                  <span className="mr-2">⏳</span>
+                  2025 - Devam Ediyor
+                </p>
+              </div>
+              <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
+                <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
+                  Next.js ile geliştirilmiş modern ve kullanıcı dostu bir hesap makinesi uygulaması. Material Design 3 ve modern UI/UX pratikleri içerir.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
+                    Next.js
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'}`}>
+                    TypeScript
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'}`}>
+                    Tailwind CSS
+                  </span>
+                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-700'}`}>
+                    Material Design 3
+                  </span>
+                </div>
+                <div className="mt-4">
+                  <a
+                    href="https://ibrahimcanerdogan.github.io/NextCalculator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center px-4 py-2 rounded-lg ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30' : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'} transition-colors`}
+                  >
+                    <span className="mr-2">🌐</span>
+                    Canlı Demo
+                  </a>
                 </div>
               </div>
             </div>

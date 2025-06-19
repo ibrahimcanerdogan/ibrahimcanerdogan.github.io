@@ -190,13 +190,13 @@ export default function Home() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 sm:pt-8 px-4 sm:px-0 max-w-[90%] sm:max-w-full mx-auto">
               <a
-                href="https://drive.google.com/file/d/1mPbYymPZ74-0K16h6PU0iUi0FSh3wg8N/view?usp=sharing"
+                href="https://drive.google.com/file/d/1C7Z2dq72Rf2M9uNx2R8bz_Zdu4mkiKv1/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`group relative px-4 sm:px-8 py-2 sm:py-4 rounded-xl font-medium overflow-hidden transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
                   isDarkTheme 
                     ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white border border-blue-500/20' 
-                    : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white'
+                    : 'bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 to-blue-500 text-white'
                 }`}
               >
                 <span className="relative z-10 flex items-center justify-center text-sm sm:text-base">

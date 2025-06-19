@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ isDarkTheme }) => {
       {/* CV Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
         <a
-          href="https://drive.google.com/file/d/1dyeqRAo6_1vXK5AMjgcjWde8QfvwoqMy/view"
+          href="https://drive.google.com/file/d/1C7Z2dq72Rf2M9uNx2R8bz_Zdu4mkiKv1/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-300 ease-in-out transform rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"

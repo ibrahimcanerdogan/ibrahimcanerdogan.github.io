@@ -5,8 +5,11 @@ import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import type { Container, Engine } from "tsparticles-engine";
 import ScrollToTop from '@/components/ScrollToTop';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [formMessage, setFormMessage] = useState('');
   const [isDarkTheme, setIsDarkTheme] = useState(true);
@@ -48,7 +51,7 @@ export default function Home() {
 
       if (response.ok && data.ok) {
         setFormStatus('success');
-        setFormMessage('Mesajınız başarıyla gönderildi!');
+        setFormMessage(t('contact.form.success'));
         if (formRef.current) {
           formRef.current.reset();
         }
@@ -59,15 +62,18 @@ export default function Home() {
       console.error('Form gönderim hatası:', error);
       setFormStatus('error');
       if (error instanceof Error) {
-        setFormMessage(`Bir hata oluştu: ${error.message}. Lütfen daha sonra tekrar deneyin veya e-posta ile iletişime geçin: ibrahimcan.erdogann@gmail.com`);
+        setFormMessage(t('contact.form.error'));
       } else {
-        setFormMessage('Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya e-posta ile iletişime geçin: ibrahimcan.erdogann@gmail.com');
+        setFormMessage(t('contact.form.error'));
       }
     }
   };
 
   return (
     <main className={`min-h-screen relative ${isDarkTheme ? 'bg-gray-950' : 'bg-white'} transition-colors duration-500`}>
+      {/* Language Switcher */}
+      <LanguageSwitcher />
+
       {/* Theme Switch Button */}
       <button
         onClick={() => setIsDarkTheme(!isDarkTheme)}
@@ -160,10 +166,10 @@ export default function Home() {
             {/* Title */}
             <div className="text-center relative z-20">
               <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold ${isDarkTheme ? 'text-white' : 'text-gray-900'} leading-tight`}>
-                İbrahim Can Erdoğan
+                {t('hero.title')}
               </h1>
               <p className={`text-xl sm:text-2xl md:text-3xl ${isDarkTheme ? 'text-gray-300' : 'text-gray-600'} font-light`}>
-                Senior Android Engineer
+                {t('hero.subtitle')}
               </p>
             </div>
 
@@ -171,19 +177,19 @@ export default function Home() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 sm:px-0 max-w-[90%] sm:max-w-full mx-auto">
               <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
                 <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>5+</div>
-                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-blue-200' : 'text-blue-700'}`}>Yıl Deneyim</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-blue-200' : 'text-blue-700'}`}>{t('hero.experience')}</div>
               </div>
               <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
                 <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`}>10+</div>
-                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-purple-200' : 'text-purple-700'}`}>Proje</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-purple-200' : 'text-purple-700'}`}>{t('hero.projects')}</div>
               </div>
               <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
                 <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'}`}>3+</div>
-                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-pink-200' : 'text-pink-700'}`}>Sertifika</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-pink-200' : 'text-pink-700'}`}>{t('hero.certificates')}</div>
               </div>
               <div className={`p-3 sm:p-6 rounded-2xl ${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} backdrop-blur-sm border ${isDarkTheme ? 'border-gray-700/30' : 'border-gray-200/30'} transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
                 <div className={`text-2xl sm:text-4xl font-bold mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'}`}>2+</div>
-                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-green-200' : 'text-green-700'}`}>Kurs</div>
+                <div className={`text-xs sm:text-sm font-medium ${isDarkTheme ? 'text-green-200' : 'text-green-700'}`}>{t('hero.courses')}</div>
               </div>
             </div>
 
@@ -204,7 +210,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                   </svg>
-                  Özgeçmişime Göz At
+                  {t('hero.viewResume')}
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-400/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
@@ -221,7 +227,7 @@ export default function Home() {
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                   </svg>
-                  Özgeçmişimi İndir
+                  {t('hero.downloadResume')}
                 </span>
               </a>
             </div>
@@ -254,7 +260,7 @@ export default function Home() {
                 onClick={handleScroll}
                 className={`flex flex-col items-center ${isDarkTheme ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'} transition-colors`}
               >
-                <span className="text-sm mb-2">Aşağı Kaydır</span>
+                <span className="text-sm mb-2">{t('hero.scrollDown')}</span>
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -282,23 +288,23 @@ export default function Home() {
           <div className="space-y-8">
             {/* About Section */}
             <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
-              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Hakkımda 📝</h2>
+              <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>{t('about.title')}</h2>
               <div className={`space-y-4 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                 <p>
-                  Balıkesir Üniversitesi Endüstri Mühendisliği mezunu, kendini Android Yazılım Geliştirme alanında uzmanlaşmış bir profesyonel olarak tanıtan biriyim. Kotlin ve Java dillerinde yetkin olup, gelişmiş Android uygulamaları geliştirme ve proje mimarilerini iyileştirme konusunda kanıtlanmış bir geçmişe sahibim.
+                  {t('about.description1')}
                 </p>
                 <p>
-                  Stajlarım ve profesyonel rollerim, Türkiye'nin önde gelen teknoloji firmalarında gerçekleşti. Şu anda, Ebebek'te Android geliştirme sürecine katkıda bulunmaktayım ve sürekli olarak becerilerimi ve bilgimi geliştirmeye çalışıyorum. Teknolojiye olan tutkumla, aynı zamanda iOS teknolojisini de keşfetmekte ve her projede en iyi sonuçları sunmaya kararlıyım.
+                  {t('about.description2')}
                 </p>
               </div>
               <div className="mt-8 pt-6 border-t border-gray-700/50">
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
-                  <span className={`${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} font-semibold`}>İletişim:</span>
+                  <span className={`${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} font-semibold`}>{t('about.contact')}</span>
                   <a 
                     href="mailto:ibrahimcan.erdogann@gmail.com" 
                     className={`ml-2 ${isDarkTheme ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-500'} transition-colors`}
                   >
-                    ibrahimcan.erdogann@gmail.com
+                    {t('about.email')}
                   </a>
                 </p>
               </div>
@@ -308,7 +314,7 @@ export default function Home() {
             <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
               <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
                 <span className="mr-2">🏆</span>
-                <span>Sertifikalar</span>
+                <span>{t('certificates.title')}</span>
               </h2>
               <div className="space-y-8">
                 {/* Neo Skola Certificate */}
@@ -318,16 +324,16 @@ export default function Home() {
                     <div className="mb-2">
                       <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
                         <span className="mr-2">🎯</span>
-                        Agility: İş Hayatında Çeviklik
+                        {t('certificates.neo.title')}
                       </h3>
                     </div>
                     <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                       <span className="mr-2">🏢</span>
-                      Neo Skola
+                      {t('certificates.neo.company')}
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Yayınlama: Mart 2025
+                      {t('certificates.neo.date')}
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">🔑</span>
@@ -343,16 +349,16 @@ export default function Home() {
                     <div className="mb-2">
                       <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
                         <span className="mr-2">📱</span>
-                        Jetpack Compose ile Android Uygulama Geliştirme Kursu | 2024
+                        {t('certificates.udemy.title')}
                       </h3>
                     </div>
                     <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                       <span className="mr-2">🏢</span>
-                      Udemy
+                      {t('certificates.udemy.company')}
                     </p>
                     <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      2024 - Devam Ediyor
+                      {t('certificates.udemy.date')}
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">🔑</span>
@@ -368,16 +374,16 @@ export default function Home() {
                     <div className="mb-2">
                       <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
                         <span className="mr-2">🤖</span>
-                        Meta Android Developer
+                        {t('certificates.meta.title')}
                       </h3>
                     </div>
                     <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                       <span className="mr-2">🏢</span>
-                      Meta
+                      {t('certificates.meta.company')}
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Yayınlama: Şubat 2024
+                      {t('certificates.meta.date')}
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">🔑</span>
@@ -392,38 +398,38 @@ export default function Home() {
             <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
               <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
                 <span className="mr-2">📚</span>
-                <span>Udemy Kurslarım</span>
+                <span>{t('courses.title')}</span>
               </h2>
               <div className="space-y-8">
                 {/* Course 1 */}
                 <div className="relative pl-8 border-l-2 border-purple-500 transform hover:scale-105 transition-transform">
                   <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500"></div>
                   <div className="mb-2">
-                    <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
-                      <span className="mr-2">🎨</span>
-                      <a 
-                        href="https://www.udemy.com/course/jetpack-compose-uygulama-gelistirme-rehberi/?referralCode=FDD0C1F4F2BB4C54B325"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
-                      >
-                        Jetpack Compose: İleri Seviye Uygulama Geliştirme Rehberi
-                      </a>
-                    </h3>
-                    <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
-                      <span className="mr-2">⏳</span>
-                      2025 - Devam Ediyor
-                    </p>
+                                          <h3 className={`text-xl font-semibold ${isDarkTheme ? 'text-white' : 'text-gray-900'} flex items-center`}>
+                        <span className="mr-2">🎨</span>
+                        <a 
+                          href="https://www.udemy.com/course/jetpack-compose-uygulama-gelistirme-rehberi/?referralCode=FDD0C1F4F2BB4C54B325"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
+                        >
+                          {t('courses.compose.title')}
+                        </a>
+                      </h3>
+                      <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                        <span className="mr-2">⏳</span>
+                        {t('courses.compose.date')}
+                      </p>
                   </div>
                   <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-lg">
                     <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                      Jetpack Compose ile geliştirilmiş örnek uygulamalar koleksiyonu. Modern Android geliştirme tekniklerini ve best practice'leri içeren projeler.
+                      {t('courses.compose.description')}
                     </p>
                     <div className="space-y-2">
-                      <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
-                        <span className="mr-2">📋</span>
-                        Kursun İçeriği:
-                      </h4>
+                                              <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
+                          <span className="mr-2">📋</span>
+                          {t('courses.compose.content')}
+                        </h4>
                       <ul className={`list-none ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                         <li className="text-sm flex items-start">
                           <span className="mr-2">✨</span>
@@ -450,7 +456,7 @@ export default function Home() {
                     <div className="mt-4">
                       <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                         <span className="mr-2">🎯</span>
-                        Yetenekler:
+                        {t('courses.compose.skills')}
                       </h4>
                       <div className="flex flex-wrap gap-2 mt-2">
                         <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
@@ -486,22 +492,22 @@ export default function Home() {
                         rel="noopener noreferrer"
                         className={`hover:text-blue-400 transition-colors ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}
                       >
-                        Android App Development with Google Machine Learning
+                        {t('courses.mlkit.title')}
                       </a>
                     </h3>
                     <p className={`${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      2021 - Devam Ediyor
+                      {t('courses.mlkit.date')}
                     </p>
                   </div>
                   <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg">
                     <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                      With the rapid development of mobile applications today, artificial intelligence and machine learning technologies have gained great importance. These technologies play an important role in providing users with a richer and smarter experience. This is where the Google ML Kit library comes into play.
+                      {t('courses.mlkit.description')}
                     </p>
                     <div className="mt-4">
                       <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                         <span className="mr-2">🎯</span>
-                        Yetenekler:
+                        {t('courses.compose.skills')}
                       </h4>
                       <div className="flex flex-wrap gap-2 mt-2">
                         <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
@@ -532,7 +538,7 @@ export default function Home() {
           <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
             <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
               <span className="mr-2">💼</span>
-              <span>Deneyim</span>
+              <span>{t('experience.title')}</span>
             </h2>
             <div className="space-y-8">
               {/* Current Experience */}
@@ -545,7 +551,7 @@ export default function Home() {
                       Android Software Specialist
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700'} whitespace-nowrap text-center`}>
-                      Devam Ediyor
+                      {t('experience.current')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 mb-3">
@@ -555,35 +561,35 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Nisan 2023 - Devam Ediyor
+                      {t('experience.ebebek.current.date')}
                     </p>
                   </div>
-                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
-                    <span className="mr-2">📍</span>
-                    İstanbul, Türkiye · Uzaktan
-                  </p>
+                                      <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">📍</span>
+                      İstanbul, Türkiye · {t('experience.remote')}
+                    </p>
                 </div>
                 <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center`}>
                     <span className="mr-2">🎯</span>
-                    Sorumluluklar ve Başarılar
+                    {t('experience.responsibilities')}
                   </h4>
                   <ul className={`space-y-1.5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">✨</span>
-                      <span className="text-xs">ebebek mobil uygulamasında Android Software Specialist olarak görev yapıyorum</span>
+                      <span className="text-xs">{t('experience.ebebek.current')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🔒</span>
-                      <span className="text-xs">SOCRadar güvenlik tarama raporları sonucunda bulunan güvenlik açıklarının giderilmesi</span>
+                      <span className="text-xs">{t('experience.ebebek.security')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">💳</span>
-                      <span className="text-xs">Craftgate ve One-Stop Shop ödeme teknolojisi entegrasyonu</span>
+                      <span className="text-xs">{t('experience.ebebek.payment')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">👛</span>
-                      <span className="text-xs">ebebek cüzdan özelliğinin uygulamaya entegrasyonu</span>
+                      <span className="text-xs">{t('experience.ebebek.wallet')}</span>
                     </li>
                   </ul>
                 </div>
@@ -599,7 +605,7 @@ export default function Home() {
                       Android Developer
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'}`}>
-                      4 ay
+                      4 {t('experience.months')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 mb-3">
@@ -609,23 +615,23 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Ocak 2023 - Nisan 2023
+                      {t('experience.logo.android.date')}
                     </p>
                   </div>
                 </div>
                 <div className="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                     <span className="mr-2">🎯</span>
-                    Sorumluluklar ve Başarılar
+                    {t('experience.responsibilities')}
                   </h4>
                   <ul className={`space-y-1.5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🔄</span>
-                      <span className="text-xs">Java projesini Kotlin'e dönüştürme</span>
+                      <span className="text-xs">{t('experience.logo.conversion')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">⚡</span>
-                      <span className="text-xs">Coroutines ve MVVM mimarisi implementasyonu</span>
+                      <span className="text-xs">{t('experience.logo.architecture')}</span>
                     </li>
                   </ul>
                 </div>
@@ -641,7 +647,7 @@ export default function Home() {
                       Jr. Android Developer
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-green-500/20 text-green-300' : 'bg-green-100 text-green-700'}`}>
-                      10 ay
+                      10 {t('experience.months')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 mb-3">
@@ -651,35 +657,35 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Nisan 2022 - Ocak 2023
+                      {t('experience.logo.jr.date')}
                     </p>
                   </div>
-                  <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
-                    <span className="mr-2">📍</span>
-                    İzmir, Türkiye · Uzaktan
-                  </p>
+                                      <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                      <span className="mr-2">📍</span>
+                      İzmir, Türkiye · {t('experience.remote')}
+                    </p>
                 </div>
                 <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'} flex items-center`}>
                     <span className="mr-2">🎯</span>
-                    Sorumluluklar ve Başarılar
+                    {t('experience.responsibilities')}
                   </h4>
                   <ul className={`space-y-1.5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">📱</span>
-                      <span className="text-xs">Depo Yönetim Sistemi ve LOGO Mobile Sales projelerinde görev aldım</span>
+                      <span className="text-xs">{t('experience.logo.projects')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🧪</span>
-                      <span className="text-xs">MockK ile birim testleri geliştirme</span>
+                      <span className="text-xs">{t('experience.logo.testing')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🏗️</span>
-                      <span className="text-xs">Clean Code Prensipleri ve MVVM Mimarisi ile kodlama</span>
+                      <span className="text-xs">{t('experience.logo.clean')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🔄</span>
-                      <span className="text-xs">Bitbucket, Jira ve Sonar ile mobil uygulama takibi</span>
+                      <span className="text-xs">{t('experience.logo.tracking')}</span>
                     </li>
                   </ul>
                 </div>
@@ -695,7 +701,7 @@ export default function Home() {
                       Android Developer Intern
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-yellow-500/20 text-yellow-300' : 'bg-yellow-100 text-yellow-700'} whitespace-nowrap`}>
-                      3 ay
+                      3 {t('experience.months')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 mb-3">
@@ -705,7 +711,7 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Şubat 2022 - Nisan 2022
+                      {t('experience.logo.intern.date')}
                     </p>
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
@@ -716,20 +722,20 @@ export default function Home() {
                 <div className="bg-gradient-to-r from-yellow-500/10 to-blue-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-yellow-400' : 'text-yellow-600'} flex items-center`}>
                     <span className="mr-2">🎯</span>
-                    Sorumluluklar ve Başarılar
+                    {t('experience.responsibilities')}
                   </h4>
                   <ul className={`space-y-1.5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">📱</span>
-                      <span className="text-xs">LOGO Warehouse Management System (WMS) projesinde MVVM Mimarisi ile Kotlin geliştirme</span>
+                      <span className="text-xs">{t('experience.logo.wms')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🛠️</span>
-                      <span className="text-xs">Data & View Binding, Navigation, Room, Coroutines, Dagger-Hilt kullanımı</span>
+                      <span className="text-xs">{t('experience.logo.tools')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🧪</span>
-                      <span className="text-xs">MockK, Mockito, Junit, Truth ve Espresso ile birim testleri</span>
+                      <span className="text-xs">{t('experience.logo.testing2')}</span>
                     </li>
                   </ul>
                 </div>
@@ -745,7 +751,7 @@ export default function Home() {
                       IT Intern
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-pink-500/20 text-pink-300' : 'bg-pink-100 text-pink-700'}`}>
-                      4 ay
+                      4 {t('experience.months')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 mb-3">
@@ -755,7 +761,7 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Kasım 2021 - Şubat 2022
+                      {t('experience.ebebek.intern.date')}
                     </p>
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
@@ -766,16 +772,16 @@ export default function Home() {
                 <div className="bg-gradient-to-r from-pink-500/10 to-blue-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-pink-400' : 'text-pink-600'} flex items-center`}>
                     <span className="mr-2">🎯</span>
-                    Sorumluluklar ve Başarılar
+                    {t('experience.responsibilities')}
                   </h4>
                   <ul className={`space-y-1.5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">💼</span>
-                      <span className="text-xs">ebebek merkez ofisinde IT yöneticisi ile çalışarak staj yaptım</span>
+                      <span className="text-xs">{t('experience.ebebek.intern')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🎓</span>
-                      <span className="text-xs">e-kamp sürecini başarıyla tamamladım</span>
+                      <span className="text-xs">{t('experience.ebebek.ekamp')}</span>
                     </li>
                   </ul>
                 </div>
@@ -791,7 +797,7 @@ export default function Home() {
                       Intern
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-red-500/20 text-red-300' : 'bg-red-100 text-red-700'}`}>
-                      2 ay
+                      2 {t('experience.months')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 mb-3">
@@ -801,7 +807,7 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Ağustos 2021 - Eylül 2021
+                      {t('experience.yapikredi.date')}
                     </p>
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
@@ -812,20 +818,20 @@ export default function Home() {
                 <div className="bg-gradient-to-r from-red-500/10 to-blue-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-red-400' : 'text-red-600'} flex items-center`}>
                     <span className="mr-2">🎯</span>
-                    Sorumluluklar ve Başarılar
+                    {t('experience.responsibilities')}
                   </h4>
                   <ul className={`space-y-1.5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">📚</span>
-                      <span className="text-xs">Kişisel ve profesyonel gelişim için online eğitim programına katıldım</span>
+                      <span className="text-xs">{t('experience.yapikredi')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">💡</span>
-                      <span className="text-xs">Online simülasyon ile bankacılık ürün ve hizmetlerini tanıma fırsatı</span>
+                      <span className="text-xs">{t('experience.yapikredi.products')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🏆</span>
-                      <span className="text-xs">Ekibimle hazırladığımız "Yapı Kredi HAL" uygulama sunumu ile birinci olduk</span>
+                      <span className="text-xs">{t('experience.yapikredi.winner')}</span>
                     </li>
                   </ul>
                 </div>
@@ -841,7 +847,7 @@ export default function Home() {
                       Intern
                     </h3>
                     <span className={`px-3 py-1 rounded-full text-sm ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
-                      1 ay
+                      1 {t('experience.months')}
                     </span>
                   </div>
                   <div className="flex items-center space-x-4 mb-3">
@@ -851,7 +857,7 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">⏳</span>
-                      Aralık 2021
+                      {t('experience.qnb.date')}
                     </p>
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
@@ -862,24 +868,24 @@ export default function Home() {
                 <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} flex items-center`}>
                     <span className="mr-2">🎯</span>
-                    Sorumluluklar ve Başarılar
+                    {t('experience.responsibilities')}
                   </h4>
                   <ul className={`space-y-1.5 ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">📚</span>
-                      <span className="text-xs">Online Finance 101 staj programı ile bankacılık sektörünün iş birimlerini yakından tanıma fırsatı</span>
+                      <span className="text-xs">{t('experience.qnb')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">💡</span>
-                      <span className="text-xs">Temel bankacılık eğitimi</span>
+                      <span className="text-xs">{t('experience.qnb.basic')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🎯</span>
-                      <span className="text-xs">Kariyer tasarım atölyesi ile kariyer yolculuğunu planlama</span>
+                      <span className="text-xs">{t('experience.qnb.career')}</span>
                     </li>
                     <li className="flex items-start">
                       <span className="mr-1.5 mt-0.5 text-xs">🏆</span>
-                      <span className="text-xs">Başarı sertifikası ile programı tamamlama</span>
+                      <span className="text-xs">{t('experience.qnb.certificate')}</span>
                     </li>
                   </ul>
                 </div>
@@ -894,7 +900,7 @@ export default function Home() {
         <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
           <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
             <span className="mr-2">🚀</span>
-            <span>Projelerim</span>
+            <span>{t('projects.title')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Project 1 - Awesome Jetpack Compose App Samples */}
@@ -914,12 +920,12 @@ export default function Home() {
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                   <span className="mr-2">⏳</span>
-                  2024 - Devam Ediyor
+                  {t('projects.compose.date')}
                 </p>
               </div>
               <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  Jetpack Compose ile geliştirilmiş örnek uygulamalar koleksiyonu. Modern UI tasarımları ve best practice'ler içerir.
+                  {t('projects.compose.description')}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
@@ -955,12 +961,12 @@ export default function Home() {
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                   <span className="mr-2">⏳</span>
-                  2021 - Devam Ediyor
+                  {t('projects.mlkit.date')}
                 </p>
               </div>
               <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  Google ML Kit kullanarak geliştirilmiş yapay zeka destekli Android uygulamaları. Görüntü işleme, metin tanıma ve nesne algılama özellikleri içerir.
+                  {t('projects.mlkit.description')}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
@@ -996,12 +1002,12 @@ export default function Home() {
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                   <span className="mr-2">⏳</span>
-                  2024 - Devam Ediyor
+                  {t('projects.boruto.date')}
                 </p>
               </div>
               <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  Jetpack Compose ile geliştirilmiş Boruto karakterleri uygulaması ve Ktor ile yazılmış backend servisi. Full-stack Android geliştirme örneği.
+                  {t('projects.boruto.description')}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
@@ -1037,12 +1043,12 @@ export default function Home() {
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                   <span className="mr-2">⏳</span>
-                  2025 - Devam Ediyor
+                  {t('projects.ecotrack.date')}
                 </p>
               </div>
               <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  Sürdürülebilir yaşam için geliştirilmiş, karbon ayak izini takip etmeye ve azaltmaya yardımcı olan bir web uygulaması.
+                  {t('projects.ecotrack.description')}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
@@ -1066,7 +1072,7 @@ export default function Home() {
                     className={`inline-flex items-center px-4 py-2 rounded-lg ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30' : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'} transition-colors`}
                   >
                     <span className="mr-2">🌐</span>
-                    Canlı Demo
+                    {t('projects.liveDemo')}
                   </a>
                 </div>
               </div>
@@ -1089,12 +1095,12 @@ export default function Home() {
                 </h3>
                 <p className={`${isDarkTheme ? 'text-indigo-400' : 'text-indigo-600'} mt-2 flex items-center`}>
                   <span className="mr-2">⏳</span>
-                  2025 - Devam Ediyor
+                  {t('projects.calculator.date')}
                 </p>
               </div>
               <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-4 text-sm`}>
-                  Next.js ile geliştirilmiş modern ve kullanıcı dostu bir hesap makinesi uygulaması. Material Design 3 ve modern UI/UX pratikleri içerir.
+                  {t('projects.calculator.description')}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className={`px-3 py-1 rounded-full text-xs font-medium ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300' : 'bg-indigo-100 text-indigo-700'}`}>
@@ -1118,7 +1124,7 @@ export default function Home() {
                     className={`inline-flex items-center px-4 py-2 rounded-lg ${isDarkTheme ? 'bg-indigo-500/20 text-indigo-300 hover:bg-indigo-500/30' : 'bg-indigo-100 text-indigo-700 hover:bg-indigo-200'} transition-colors`}
                   >
                     <span className="mr-2">🌐</span>
-                    Canlı Demo
+                    {t('projects.liveDemo')}
                   </a>
                 </div>
               </div>
@@ -1132,14 +1138,14 @@ export default function Home() {
         <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
           <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center justify-center`}>
             <span className="mr-2">🛠️</span>
-            <span>Yeteneklerim</span>
+            <span>{t('skills.title')}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Programming Languages */}
             <div className={`${isDarkTheme ? 'bg-gray-900/80' : 'bg-white/80'} rounded-lg p-6 shadow-lg`}>
               <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                 <span className="mr-2">💻</span>
-                Programlama Dilleri
+                {t('skills.languages')}
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -1161,7 +1167,7 @@ export default function Home() {
             <div className={`${isDarkTheme ? 'bg-gray-900/80' : 'bg-white/80'} rounded-lg p-6 shadow-lg`}>
               <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                 <span className="mr-2">📱</span>
-                Android Geliştirme
+                {t('skills.android')}
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -1187,7 +1193,7 @@ export default function Home() {
             <div className={`${isDarkTheme ? 'bg-gray-900/80' : 'bg-white/80'} rounded-lg p-6 shadow-lg`}>
               <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                 <span className="mr-2">🛠️</span>
-                Araçlar & Teknolojiler
+                {t('skills.tools')}
               </h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -1215,7 +1221,7 @@ export default function Home() {
       {/* YouTube Videos Section */}
       <div className="container mx-auto px-4 py-8">
         <div className={`${isDarkTheme ? 'bg-gray-800/95' : 'bg-white/95'} rounded-2xl p-8 shadow-xl border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'} backdrop-blur-sm`}>
-          <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>YouTube Videolarım 🎥</h2>
+          <h2 className={`text-2xl font-semibold mb-6 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>{t('youtube.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Video 1 */}
             <div className={`${isDarkTheme ? 'bg-gray-900/50' : 'bg-white/50'} rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105`}>
@@ -1229,8 +1235,8 @@ export default function Home() {
                 ></iframe>
               </div>
               <div className="p-4">
-                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Jetpack Compose ile Android Uygulama Geliştirme</h3>
-                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Modern Android uygulamaları geliştirmek için Jetpack Compose'un temel ve ileri seviye özelliklerini kapsamlı bir şekilde öğrenin.</p>
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{t('youtube.video1.title')}</h3>
+                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t('youtube.video1.description')}</p>
               </div>
             </div>
 
@@ -1246,8 +1252,8 @@ export default function Home() {
                 ></iframe>
               </div>
               <div className="p-4">
-                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Tek Videoda Detaylı Kotlin Temelleri [2024]</h3>
-                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Android geliştirme yolculuğunuza başlamadan önce Kotlin'in temel kavramlarını tek videoda öğrenin.</p>
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{t('youtube.video2.title')}</h3>
+                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t('youtube.video2.description')}</p>
               </div>
             </div>
 
@@ -1263,8 +1269,8 @@ export default function Home() {
                 ></iframe>
               </div>
               <div className="p-4">
-                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>Tek Videoda Banka Retrofit API Geliştirme | Jetpack Compose</h3>
-                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>Jetpack Compose ve Retrofit kullanarak gerçek bir banka API'si entegrasyonunu adım adım uygulayın.</p>
+                <h3 className={`text-lg font-semibold mb-2 ${isDarkTheme ? 'text-white' : 'text-gray-900'}`}>{t('youtube.video3.title')}</h3>
+                <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'}`}>{t('youtube.video3.description')}</p>
               </div>
             </div>
           </div>
@@ -1281,7 +1287,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text">
-              İletişime Geç 📬
+              {t('contact.title')}
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -1293,7 +1299,7 @@ export default function Home() {
                   onMouseDown={(e) => e.stopPropagation()}
                   onMouseUp={(e) => e.stopPropagation()}
                 >
-                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>İletişim Bilgileri 📞</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>{t('contact.info.title')}</h3>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <svg className={`w-6 h-6 ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1323,7 +1329,7 @@ export default function Home() {
                   onMouseDown={(e) => e.stopPropagation()}
                   onMouseUp={(e) => e.stopPropagation()}
                 >
-                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>Sosyal Medya 🌐</h3>
+                  <h3 className={`text-xl font-semibold mb-4 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'}`}>{t('contact.social.title')}</h3>
                   <div className="flex space-x-4">
                     <a
                       href="https://github.com/ibrahimcanerdogan"
@@ -1386,12 +1392,12 @@ export default function Home() {
 
               {/* Contact Form */}
               <div className={`${isDarkTheme ? 'bg-gray-800/50' : 'bg-white/50'} rounded-lg p-6 border ${isDarkTheme ? 'border-gray-700/50' : 'border-gray-200/50'}`}>
-                <h3 className="text-xl font-semibold mb-4 text-blue-400">Mesaj Gönder ✉️</h3>
+                <h3 className="text-xl font-semibold mb-4 text-blue-400">{t('contact.form.title')}</h3>
                 <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="name" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
-                      İsim
-                    </label>
+                                          <label htmlFor="name" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
+                        {t('contact.form.name')}
+                      </label>
                     <input
                       type="text"
                       id="name"
@@ -1402,9 +1408,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
-                      E-posta
-                    </label>
+                                          <label htmlFor="email" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
+                        {t('contact.form.email')}
+                      </label>
                     <input
                       type="email"
                       id="email"
@@ -1415,9 +1421,9 @@ export default function Home() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
-                      Mesaj
-                    </label>
+                                          <label htmlFor="message" className={`block text-sm font-medium ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} mb-1`}>
+                        {t('contact.form.message')}
+                      </label>
                     <textarea
                       id="message"
                       name="message"
@@ -1442,15 +1448,15 @@ export default function Home() {
                       formStatus === 'sending' ? 'opacity-50 cursor-not-allowed' : ''
                     }`}
                   >
-                    {formStatus === 'sending' ? (
-                      <span className="flex items-center justify-center">
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        Gönderiliyor...
-                      </span>
-                    ) : 'Gönder'}
+                                          {formStatus === 'sending' ? (
+                        <span className="flex items-center justify-center">
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          {t('contact.form.sending')}
+                        </span>
+                      ) : t('contact.form.send')}
                   </button>
                 </form>
               </div>
@@ -1470,7 +1476,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             {/* Copyright */}
             <div className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} İbrahim Can Erdoğan. Tüm hakları saklıdır.
+              {t('footer.copyright')}
             </div>
 
             {/* Social Links */}

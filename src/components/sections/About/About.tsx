@@ -20,10 +20,10 @@ const About: React.FC<AboutProps> = ({ isDarkTheme }) => {
         <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
           <span className={`${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} font-semibold`}>İletişim:</span>
           <a 
-            href="mailto:ibrahimcan.erdogann@gmail.com" 
+            href="mailto:ibrahimcanerdogan@outlook.com" 
             className={`ml-2 ${isDarkTheme ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-500'} transition-colors`}
           >
-            ibrahimcan.erdogann@gmail.com
+            ibrahimcanerdogan@outlook.com
           </a>
         </p>
       </div>

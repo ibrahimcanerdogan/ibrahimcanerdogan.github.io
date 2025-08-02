@@ -301,7 +301,7 @@ export default function Home() {
                 <p className={`${isDarkTheme ? 'text-gray-300' : 'text-gray-700'}`}>
                   <span className={`${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} font-semibold`}>{t('about.contact')}</span>
                   <a 
-                    href="mailto:ibrahimcan.erdogann@gmail.com" 
+                    href="mailto:ibrahimcanerdogan@outlook.com" 
                     className={`ml-2 ${isDarkTheme ? 'text-purple-400 hover:text-purple-300' : 'text-purple-600 hover:text-purple-500'} transition-colors`}
                   >
                     {t('about.email')}
@@ -1306,11 +1306,11 @@ export default function Home() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                       <a 
-                        href="mailto:ibrahimcan.erdogann@gmail.com" 
+                        href="mailto:ibrahimcanerdogan@outlook.com" 
                         className={`${isDarkTheme ? 'text-gray-300 hover:text-white' : 'text-gray-700 hover:text-gray-900'} transition-colors cursor-pointer`}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        ibrahimcan.erdogann@gmail.com
+                        ibrahimcanerdogan@outlook.com
                       </a>
                     </div>
                     <div className="flex items-center space-x-3">

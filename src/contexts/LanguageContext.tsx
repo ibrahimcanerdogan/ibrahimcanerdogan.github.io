@@ -31,7 +31,7 @@ const translations = {
     'about.description1': 'I am a graduate of Balıkesir University Industrial Engineering, who has specialized in Android Software Development. I have proven experience in developing advanced Android applications and improving project architectures in Kotlin and Java languages.',
     'about.description2': 'My internships and professional roles took place at leading technology companies in Turkey. I am currently contributing to the Android development process at Ebebek and continuously working to improve my skills and knowledge. With my passion for technology, I am also exploring iOS technology and determined to deliver the best results in every project.',
     'about.contact': 'Contact:',
-    'about.email': 'ibrahimcan.erdogann@gmail.com',
+    'about.email': 'ibrahimcanerdogan@outlook.com',
 
     // Experience Section
     'experience.title': 'Experience 💼',
@@ -135,7 +135,7 @@ const translations = {
     'contact.form.send': 'Send',
     'contact.form.sending': 'Sending...',
     'contact.form.success': 'Your message has been sent successfully!',
-    'contact.form.error': 'An error occurred. Please try again later or contact via email: ibrahimcan.erdogann@gmail.com',
+    'contact.form.error': 'An error occurred. Please try again later or contact via email: ibrahimcanerdogan@outlook.com',
 
     // YouTube Section
     'youtube.title': 'My YouTube Videos 🎥',
@@ -170,7 +170,7 @@ const translations = {
     'about.description1': 'Balıkesir Üniversitesi Endüstri Mühendisliği mezunu, kendini Android Yazılım Geliştirme alanında uzmanlaşmış bir profesyonel olarak tanıtan biriyim. Kotlin ve Java dillerinde yetkin olup, gelişmiş Android uygulamaları geliştirme ve proje mimarilerini iyileştirme konusunda kanıtlanmış bir geçmişe sahibim.',
     'about.description2': 'Stajlarım ve profesyonel rollerim, Türkiye\'nin önde gelen teknoloji firmalarında gerçekleşti. Şu anda, Ebebek\'te Android geliştirme sürecine katkıda bulunmaktayım ve sürekli olarak becerilerimi ve bilgimi geliştirmeye çalışıyorum. Teknolojiye olan tutkumla, aynı zamanda iOS teknolojisini de keşfetmekte ve her projede en iyi sonuçları sunmaya kararlıyım.',
     'about.contact': 'İletişim:',
-    'about.email': 'ibrahimcan.erdogann@gmail.com',
+    'about.email': 'ibrahimcanerdogan@outlook.com',
 
     // Experience Section
     'experience.title': 'Deneyim 💼',
@@ -274,7 +274,7 @@ const translations = {
     'contact.form.send': 'Gönder',
     'contact.form.sending': 'Gönderiliyor...',
     'contact.form.success': 'Mesajınız başarıyla gönderildi!',
-    'contact.form.error': 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya e-posta ile iletişime geçin: ibrahimcan.erdogann@gmail.com',
+    'contact.form.error': 'Bir hata oluştu. Lütfen daha sonra tekrar deneyin veya e-posta ile iletişime geçin: ibrahimcanerdogan@outlook.com',
 
     // YouTube Section
     'youtube.title': 'YouTube Videolarım 🎥',

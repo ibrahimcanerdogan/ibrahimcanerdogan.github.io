@@ -71,6 +71,14 @@ const translations = {
     'experience.yapikredi.date': 'August 2021 - September 2021',
     'experience.qnb.date': 'December 2021',
 
+    // Cities
+    'cities.istanbul': 'Istanbul',
+    'cities.izmir': 'Izmir',
+    'cities.akhisar': 'Akhisar',
+    'cities.manisa': 'Manisa',
+    'cities.balikesir': 'Balikesir',
+    'cities.turkey': 'Turkey',
+
     // Certificates Section
     'certificates.title': 'Certificates 🏆',
     'certificates.neo.title': 'Agility: Agility in Business Life',
@@ -82,6 +90,7 @@ const translations = {
     'certificates.meta.title': 'Meta Android Developer',
     'certificates.meta.company': 'Meta',
     'certificates.meta.date': 'Publication: February 2024',
+    'certificates.qualification': 'Qualification ID',
 
     // Courses Section
     'courses.title': 'My Udemy Courses 📚',
@@ -98,6 +107,7 @@ const translations = {
     'courses.mlkit.title': 'Android App Development with Google Machine Learning',
     'courses.mlkit.date': '2021 - Ongoing',
     'courses.mlkit.description': 'With the rapid development of mobile applications today, artificial intelligence and machine learning technologies have gained great importance. These technologies play an important role in providing users with a richer and smarter experience. This is where the Google ML Kit library comes into play.',
+    'courses.mlkit.skills': 'Skills:',
 
     // Projects Section
     'projects.title': 'My Projects 🚀',
@@ -210,6 +220,14 @@ const translations = {
     'experience.yapikredi.date': 'Ağustos 2021 - Eylül 2021',
     'experience.qnb.date': 'Aralık 2021',
 
+    // Cities
+    'cities.istanbul': 'İstanbul',
+    'cities.izmir': 'İzmir',
+    'cities.akhisar': 'Akhisar',
+    'cities.manisa': 'Manisa',
+    'cities.balikesir': 'Balıkesir',
+    'cities.turkey': 'Türkiye',
+
     // Certificates Section
     'certificates.title': 'Sertifikalar 🏆',
     'certificates.neo.title': 'Agility: İş Hayatında Çeviklik',
@@ -221,6 +239,7 @@ const translations = {
     'certificates.meta.title': 'Meta Android Developer',
     'certificates.meta.company': 'Meta',
     'certificates.meta.date': 'Publication: February 2024',
+    'certificates.qualification': 'Yeterlilik Kimliği',
 
     // Courses Section
     'courses.title': 'Udemy Kurslarım 📚',
@@ -237,6 +256,7 @@ const translations = {
     'courses.mlkit.title': 'Android App Development with Google Machine Learning',
     'courses.mlkit.date': '2021 - Ongoing',
     'courses.mlkit.description': 'With the rapid development of mobile applications today, artificial intelligence and machine learning technologies have gained great importance. These technologies play an important role in providing users with a richer and smarter experience. This is where the Google ML Kit library comes into play.',
+    'courses.mlkit.skills': 'Yetenekler:',
 
     // Projects Section
     'projects.title': 'Projelerim 🚀',

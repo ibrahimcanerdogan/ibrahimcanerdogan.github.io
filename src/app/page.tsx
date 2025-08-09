@@ -337,7 +337,7 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">🔑</span>
-                      Yeterlilik Kimliği: 67ce94df183680903a4d2d761741631567829
+                      {t('certificates.qualification')}: 67ce94df183680903a4d2d761741631567829
                     </p>
                   </div>
                 </div>
@@ -362,7 +362,7 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">🔑</span>
-                      Yeterlilik Kimliği: UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308
+                      {t('certificates.qualification')}: UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308
                     </p>
                   </div>
                 </div>
@@ -387,7 +387,7 @@ export default function Home() {
                     </p>
                     <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                       <span className="mr-2">🔑</span>
-                      Yeterlilik Kimliği: CFX39BKNZSTW
+                      {t('certificates.qualification')}: CFX39BKNZSTW
                     </p>
                   </div>
                 </div>
@@ -433,23 +433,23 @@ export default function Home() {
                       <ul className={`list-none ${isDarkTheme ? 'text-gray-300' : 'text-gray-700'} space-y-2`}>
                         <li className="text-sm flex items-start">
                           <span className="mr-2">✨</span>
-                          Jetpack Compose Temelleri: Gelişmiş UI tasarımı ve layout yönetimi
+                          {t('courses.compose.topic1')}
                         </li>
                         <li className="text-sm flex items-start">
                           <span className="mr-2">🎨</span>
-                          Gelişmiş UI Tasarımı: Animasyonlar, dokunmatik etkileşimler ve modern kullanıcı deneyimi
+                          {t('courses.compose.topic2')}
                         </li>
                         <li className="text-sm flex items-start">
                           <span className="mr-2">💾</span>
-                          Veri Yönetimi ve State Yönetimi: Veri akışları, ViewModel'ler ve state yönetimi teknikleri
+                          {t('courses.compose.topic3')}
                         </li>
                         <li className="text-sm flex items-start">
                           <span className="mr-2">⚡</span>
-                          Uygulama Geliştirme Stratejileri: Performans optimizasyonu, kod kalitesi ve best practices
+                          {t('courses.compose.topic4')}
                         </li>
                         <li className="text-sm flex items-start">
                           <span className="mr-2">🚀</span>
-                          Gerçek Dünya Projeleri: Pratik uygulamalar ve senaryolar üzerinde çalışmalar
+                          {t('courses.compose.topic5')}
                         </li>
                       </ul>
                     </div>
@@ -507,7 +507,7 @@ export default function Home() {
                     <div className="mt-4">
                       <h4 className={`text-lg font-semibold ${isDarkTheme ? 'text-purple-400' : 'text-purple-600'} flex items-center`}>
                         <span className="mr-2">🎯</span>
-                        {t('courses.compose.skills')}
+                        {t('courses.mlkit.skills')}
                       </h4>
                       <div className="flex flex-wrap gap-2 mt-2">
                         <span className={`px-3 py-1 ${isDarkTheme ? 'bg-purple-500/20 text-purple-300' : 'bg-purple-100 text-purple-700'} rounded-full text-sm flex items-center`}>
@@ -564,10 +564,10 @@ export default function Home() {
                       {t('experience.ebebek.current.date')}
                     </p>
                   </div>
-                                      <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
-                      <span className="mr-2">📍</span>
-                      İstanbul, Türkiye · {t('experience.remote')}
-                    </p>
+                                                        <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                    <span className="mr-2">📍</span>
+                    {t('cities.istanbul')}, {t('cities.turkey')} · {t('experience.remote')}
+                  </p>
                 </div>
                 <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-blue-400' : 'text-blue-600'} flex items-center`}>
@@ -660,10 +660,10 @@ export default function Home() {
                       {t('experience.logo.jr.date')}
                     </p>
                   </div>
-                                      <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
-                      <span className="mr-2">📍</span>
-                      İzmir, Türkiye · {t('experience.remote')}
-                    </p>
+                                                        <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
+                    <span className="mr-2">📍</span>
+                    {t('cities.izmir')}, {t('cities.turkey')} · {t('experience.remote')}
+                  </p>
                 </div>
                 <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 p-4 rounded-lg">
                   <h4 className={`text-sm font-medium mb-2 ${isDarkTheme ? 'text-green-400' : 'text-green-600'} flex items-center`}>
@@ -716,7 +716,7 @@ export default function Home() {
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                     <span className="mr-2">📍</span>
-                    İzmir, Türkiye
+                    {t('cities.izmir')}, {t('cities.turkey')}
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-yellow-500/10 to-blue-500/10 p-4 rounded-lg">
@@ -766,7 +766,7 @@ export default function Home() {
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                     <span className="mr-2">📍</span>
-                    İstanbul, Türkiye
+                    {t('cities.istanbul')}, {t('cities.turkey')}
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-pink-500/10 to-blue-500/10 p-4 rounded-lg">
@@ -812,7 +812,7 @@ export default function Home() {
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                     <span className="mr-2">📍</span>
-                    Akhisar, Manisa, Türkiye
+                    {t('cities.akhisar')}, {t('cities.manisa')}, {t('cities.turkey')}
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-red-500/10 to-blue-500/10 p-4 rounded-lg">
@@ -862,7 +862,7 @@ export default function Home() {
                   </div>
                   <p className={`text-sm ${isDarkTheme ? 'text-gray-400' : 'text-gray-600'} flex items-center`}>
                     <span className="mr-2">📍</span>
-                    Balıkesir, Türkiye
+                    {t('cities.balikesir')}, {t('cities.turkey')}
                   </p>
                 </div>
                 <div className="bg-gradient-to-r from-indigo-500/10 to-blue-500/10 p-4 rounded-lg">

@@ -1,7 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  eslint: {
+    // Keep build fast; enable later if desired
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

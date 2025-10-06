@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     siteName: "İbrahim Can Erdoğan Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/logo.jpg",
         width: 1200,
         height: 630,
         alt: "İbrahim Can Erdoğan - Senior Android Engineer",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "İbrahim Can Erdoğan | Senior Android Engineer",
     description: "Senior Android Engineer with 4+ years of experience in Kotlin, Java, and Jetpack Compose. Expert in mobile app development, clean architecture, and modern Android technologies.",
-    images: ["/og-image.jpg"],
+    images: ["/logo.jpg"],
     creator: "@ibrahimcanerdogan",
   },
   robots: {

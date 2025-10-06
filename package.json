@@ -1,5 +1,5 @@
 {
-  "name": "icanerdogan.github.io",
+  "name": "ibrahimcanerdogan.github.io",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,7 +13,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-tsparticles": "^2.12.2",
-    "tsparticles": "^3.8.1",
+    "tsparticles": "^2.12.0",
     "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {

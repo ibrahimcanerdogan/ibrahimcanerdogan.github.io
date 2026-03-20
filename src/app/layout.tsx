@@ -1,16 +1,35 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#030712" },
+  ],
+};
+
 const inter = Inter({ subsets: ["latin"] });
 
+const SITE_URL = "https://ibrahimcanerdogan.github.io";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ibrahimcanerdogan.github.io"),
-  title: "İbrahim Can Erdoğan | Senior Android Engineer",
-  description: "Kotlin, Java ve Jetpack Compose konularında 4+ yıl deneyime sahip Kıdemli Android Geliştirici. Mobil uygulama geliştirme, temiz mimari ve modern Android teknolojileri konusunda uzman.",
+  metadataBase: new URL(SITE_URL),
+  applicationName: "İbrahim Can Erdoğan — Portfolio",
+  title: {
+    default:
+      "İbrahim Can Erdoğan | Senior Android Engineer · Freelance Mobile & Web",
+    template: "%s | İbrahim Can Erdoğan",
+  },
+  description:
+    "Kıdemli Android mühendisi: Kotlin, Jetpack Compose, temiz mimari. Ana uzmanlık Android; freelance cross-platform mobil uygulama ve Next.js ile modern web projeleri. İstanbul — uzaktan uyumlu.",
   keywords: [
     "İbrahim Can Erdoğan",
+    "Ibrahim Can Erdogan",
     "Android Developer",
     "Senior Android Engineer",
     "Kotlin Developer",
@@ -40,9 +59,27 @@ export const metadata: Metadata = {
     "Android UI Tasarımı",
     "Android Performans Optimizasyonu",
     "Android Güvenlik",
-    "Android Jetpack Bileşenleri"
+    "Android Jetpack Bileşenleri",
+    "Freelance Android developer",
+    "Freelance Android",
+    "Freelance mobile developer",
+    "Freelance yazılım geliştirici",
+    "Freelance mobil uygulama geliştirici",
+    "Cross-platform mobile development",
+    "Cross-platform mobil uygulama",
+    "Cross-platform app developer",
+    "Next.js developer",
+    "Next.js freelance",
+    "Web development",
+    "Modern web development",
+    "React Next.js portfolio",
+    "Hire Android developer Turkey",
+    "İstanbul Android developer",
+    "Remote Android developer",
+    "Kotlin freelancer",
+    "Mobile and web developer",
   ],
-  authors: [{ name: "İbrahim Can Erdoğan" }],
+  authors: [{ name: "İbrahim Can Erdoğan", url: SITE_URL }],
   creator: "İbrahim Can Erdoğan",
   publisher: "İbrahim Can Erdoğan",
   formatDetection: {
@@ -53,23 +90,28 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://ibrahimcanerdogan.github.io",
-    title: "İbrahim Can Erdoğan | Senior Android Engineer",
-    description: "Senior Android Engineer with 4+ years of experience in Kotlin, Java, and Jetpack Compose. Expert in mobile app development, clean architecture, and modern Android technologies.",
-    siteName: "İbrahim Can Erdoğan Portfolio",
+    alternateLocale: ["en_US"],
+    url: SITE_URL,
+    title:
+      "İbrahim Can Erdoğan | Android Engineer — Freelance Cross-Platform Mobile & Web",
+    description:
+      "Production Android (Kotlin, Compose). Freelance: cross-platform mobile apps + fast Next.js websites. Open for project-based work.",
+    siteName: "İbrahim Can Erdoğan — Android & Freelance Portfolio",
     images: [
       {
         url: "/logo.jpg",
         width: 1200,
         height: 630,
-        alt: "İbrahim Can Erdoğan - Senior Android Engineer",
+        alt: "İbrahim Can Erdoğan — Senior Android Engineer, freelance mobile & web",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "İbrahim Can Erdoğan | Senior Android Engineer",
-    description: "Senior Android Engineer with 4+ years of experience in Kotlin, Java, and Jetpack Compose. Expert in mobile app development, clean architecture, and modern Android technologies.",
+    title:
+      "İbrahim Can Erdoğan | Android Engineer — Freelance Mobile & Web",
+    description:
+      "Senior Android (Kotlin, Jetpack Compose). Freelance cross-platform mobile + Next.js web. Istanbul · Remote-friendly.",
     images: ["/logo.jpg"],
     creator: "@ibrahimcanerdogan",
   },
@@ -88,9 +130,55 @@ export const metadata: Metadata = {
     google: "-BSNn58JC2hy9JHjNxthuO8RHwLD6Ii0_Lz5eeqTE9M",
   },
   alternates: {
-    canonical: "https://ibrahimcanerdogan.github.io",
+    canonical: SITE_URL,
+    languages: {
+      "en-US": SITE_URL,
+      "tr-TR": SITE_URL,
+      "x-default": SITE_URL,
+    },
   },
+  icons: {
+    icon: [{ url: "/logo.jpg", type: "image/jpeg", sizes: "any" }],
+    apple: [{ url: "/logo.jpg", type: "image/jpeg" }],
+  },
+  manifest: "/site.webmanifest",
 };
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "İbrahim Can Erdoğan",
+  alternateName: ["Ibrahim Can Erdogan", "İbrahim Can Erdoğan"],
+  url: SITE_URL,
+  image: `${SITE_URL}/logo.jpg`,
+  jobTitle: "Senior Android Engineer",
+  description:
+    "Senior Android engineer focused on Kotlin and Jetpack Compose. Offers freelance development for cross-platform mobile applications and modern websites using Next.js.",
+  knowsAbout: [
+    "Android software development",
+    "Kotlin",
+    "Java",
+    "Jetpack Compose",
+    "Mobile application development",
+    "Cross-platform mobile development",
+    "Next.js",
+    "Web development",
+    "Clean architecture",
+    "Freelance software engineering",
+  ],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Istanbul",
+    addressCountry: "TR",
+  },
+  sameAs: [
+    "https://github.com/ibrahimcanerdogan",
+    "https://www.linkedin.com/in/ibrahimcanerdogan/",
+    "https://www.youtube.com/@ibrahimcanerdogan",
+    "https://medium.com/@ibrahimcanerdogan",
+    "https://www.udemy.com/user/ibrahim-can-erdogan/",
+  ],
+} as const;
 
 export default function RootLayout({
   children,
@@ -98,17 +186,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="tr">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#ffffff" />
-        <meta property="og:image" content="https://ibrahimcanerdogan.github.io/logo.jpg" />
-      </head>
-      <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className} suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <LanguageProvider>
           {children}
         </LanguageProvider>

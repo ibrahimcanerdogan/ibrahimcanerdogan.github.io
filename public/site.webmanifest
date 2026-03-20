@@ -1,0 +1,17 @@
+{
+  "name": "İbrahim Can Erdoğan — Portfolio",
+  "short_name": "İ. C. Erdoğan",
+  "description": "Senior Android Engineer — portfolio and freelance.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#030712",
+  "icons": [
+    {
+      "src": "/logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

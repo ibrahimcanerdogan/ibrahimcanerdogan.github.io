@@ -158,36 +158,7 @@ export default function LandingHero({ isDarkTheme, onScrollToContent }: LandingH
               ))}
             </ul>
 
-            <div className="hero-enter hero-enter-delay-4 mt-6 flex flex-col gap-2.5 touch-manipulation sm:mt-8 sm:flex-row sm:items-center sm:gap-3 md:mt-10">
-              <a
-                href="https://drive.google.com/file/d/1C7Z2dq72Rf2M9uNx2R8bz_Zdu4mkiKv1/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-zinc-950 shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 active:scale-[0.98] sm:min-h-0 sm:px-6 sm:py-3.5"
-              >
-                <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                </svg>
-                {t("hero.viewResume")}
-              </a>
-              <a
-                href="/source/cv-ibrahim-can-erdogan.pdf"
-                download
-                className={`inline-flex min-h-11 items-center justify-center rounded-xl border px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 active:scale-[0.98] sm:min-h-0 sm:px-6 sm:py-3.5 ${
-                  isDarkTheme
-                    ? "border-emerald-500/40 text-emerald-100 hover:border-emerald-400/60 hover:bg-emerald-500/10 focus-visible:outline-emerald-400"
-                    : "border-emerald-700/30 text-emerald-900 hover:bg-emerald-50 focus-visible:outline-emerald-600"
-                }`}
-              >
-                <svg className="mr-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                {t("hero.downloadResume")}
-              </a>
-            </div>
-
-            <nav
+                        <nav
               className="hero-enter hero-enter-delay-5 mt-5 w-full min-w-0 sm:mt-8 md:mt-10"
               aria-label="Social links"
             >

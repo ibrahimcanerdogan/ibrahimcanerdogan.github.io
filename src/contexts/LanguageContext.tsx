@@ -432,8 +432,8 @@ const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('tr');
+export const LanguageProvider: React.FC<{ children: ReactNode; initialLanguage?: Language }> = ({ children, initialLanguage = 'tr' }) => {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
 
   useEffect(() => {
     document.documentElement.lang = language === 'tr' ? 'tr' : 'en';
@@ -456,4 +456,4 @@ export const useLanguage = (): LanguageContextType => {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
-}; 
+};

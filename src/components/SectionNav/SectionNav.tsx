@@ -2,6 +2,8 @@
 
 import { useLanguage } from "@/contexts/LanguageContext";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import Link from "next/link";
+import { routeFor } from "@/lib/seo";
 
 export type SectionId =
   | "hero"
@@ -88,7 +90,7 @@ type SectionNavProps = {
 };
 
 export default function SectionNav({ isDarkTheme, activeSection, onSectionChange }: SectionNavProps) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const rail = isDarkTheme
     ? "border-white/10 bg-zinc-950/85 shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
@@ -129,11 +131,10 @@ export default function SectionNav({ isDarkTheme, activeSection, onSectionChange
               const isActive = activeSection === id;
               const label = t(labelKey);
               return (
-                <button
+                <Link
                   id={"section-nav-" + id}
                   key={id}
-                  type="button"
-                  onClick={() => onSectionChange(id)}
+                  href={routeFor(language, id)}
                   onKeyDown={(event) => {
                     if (event.key === "ArrowDown" || event.key === "ArrowRight") {
                       event.preventDefault();
@@ -154,7 +155,7 @@ export default function SectionNav({ isDarkTheme, activeSection, onSectionChange
                   <span className={"pointer-events-none absolute left-11 whitespace-nowrap rounded-lg border px-2.5 py-1.5 text-[11px] font-semibold opacity-0 shadow-lg backdrop-blur-xl transition group-hover:opacity-100 group-focus-visible:opacity-100 " + (isDarkTheme ? "border-white/10 bg-zinc-950/95 text-zinc-200" : "border-zinc-200 bg-white/95 text-zinc-800")}>
                     {label}
                   </span>
-                </button>
+                </Link>
               );
             })}
           </div>
@@ -168,16 +169,15 @@ export default function SectionNav({ isDarkTheme, activeSection, onSectionChange
         {NAV_CONFIG.map(({ id, labelKey }) => {
           const isActive = activeSection === id;
           return (
-            <button
+            <Link
               key={id}
-              type="button"
-              onClick={() => onSectionChange(id)}
+              href={routeFor(language, id)}
               aria-label={t(labelKey)}
               aria-current={isActive ? "page" : undefined}
               className={"flex h-8 w-8 items-center justify-center rounded-xl transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-400 " + (isActive ? active : idle)}
             >
               <NavIcon id={id} className="h-[13px] w-[13px]" />
-            </button>
+            </Link>
           );
         })}
       </nav>

@@ -7,14 +7,16 @@
 
 ## About
 
-Personal portfolio: experience, projects, Udemy courses, certificates, and YouTube content. Built as a static Next.js app (App Router) and deployed to **GitHub Pages**.
+TR-first personal portfolio for İbrahim Can Erdoğan: software engineer, product builder, technical educator, and founder of Akhisar Dijital. Built as a route-driven, single-screen Next.js app and deployed to **GitHub Pages**.
 
 ## Features
 
 - Dark / light theme
-- English / Turkish UI copy
-- Responsive layout and section navigation
-- SEO metadata, Open Graph, Twitter cards, and Person JSON-LD
+- Turkish default plus crawlable English routes under `/en`
+- Route-driven section navigation without page-level scrolling
+- Per-route canonical, hreflang, Open Graph, Twitter, and localized metadata
+- ProfilePage, Person, and Akhisar Dijital Organization JSON-LD entity graph
+- `robots.txt`, `sitemap.xml`, app icons, manifest, and dedicated social image
 - Static export (`output: 'export'`) for static hosting
 
 ## Built With
@@ -22,7 +24,6 @@ Personal portfolio: experience, projects, Udemy courses, certificates, and YouTu
 - [Next.js](https://nextjs.org) — React framework
 - [TypeScript](https://www.typescriptlang.org)
 - [Tailwind CSS](https://tailwindcss.com)
-- [tsParticles](https://particles.js.org/) — hero background
 
 ## Getting Started
 
@@ -45,6 +46,8 @@ npm ci
 - `npm run build` — production static export to `out/`
 - `npm run start` — serves the static `out/` folder on port 3000 (run `npm run build` first)
 - `npm run lint` — ESLint
+- `npm run verify:seo` — validates SEO/GEO source and static-export contracts
+- `npm run quality` — SEO checks, TypeScript, ESLint, build, and exported-output checks
 
 ### Local preview of the static build
 
@@ -58,16 +61,17 @@ npx --yes serve out
 ```
 ├── public/              # Static assets (logo, CV PDF, verification files)
 ├── src/
-│   ├── app/             # App Router: layout, page, global styles
+│   ├── app/             # Static TR/EN routes, metadata routes, layout, styles
 │   ├── components/      # UI sections and shared components
 │   └── contexts/        # Language (i18n) context
+├── scripts/             # SEO/GEO verification
 ├── .github/workflows/   # GitHub Pages deploy workflow
 └── package.json
 ```
 
 ## Deployment
 
-Pushes to `main` trigger [.github/workflows/nextjs.yml](.github/workflows/nextjs.yml): lint, `next build`, then upload of the `out/` directory to GitHub Pages.
+Pull requests run TypeScript, ESLint, build, and SEO verification. Pushes to `main` trigger [.github/workflows/nextjs.yml](.github/workflows/nextjs.yml) and upload the static `out/` directory to GitHub Pages.
 
 ## Connect
 

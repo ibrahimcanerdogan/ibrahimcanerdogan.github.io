@@ -1,4 +1,5 @@
 import React from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 type LanguageSwitcherProps = {
@@ -8,6 +9,15 @@ type LanguageSwitcherProps = {
 
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isDarkTheme, className }) => {
   const { language, setLanguage } = useLanguage();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const changeLanguage = (code: 'en' | 'tr') => {
+    const localizedPath = pathname.startsWith('/en') ? pathname.slice(3) || '/' : pathname;
+    const target = code === 'en' ? `/en${localizedPath === '/' ? '' : localizedPath}` : localizedPath;
+    setLanguage(code);
+    router.push(target || '/');
+  };
 
   const shell = isDarkTheme
     ? 'border-white/10 bg-gray-900/70 shadow-lg shadow-black/20'
@@ -31,7 +41,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ isDarkTheme, classN
         <button
           key={code}
           type="button"
-          onClick={() => setLanguage(code)}
+          onClick={() => changeLanguage(code)}
           aria-pressed={language === code}
           className={`min-w-[2.25rem] rounded-full px-2.5 py-1.5 text-[10px] font-semibold tracking-wide transition ${
             language === code ? active : inactive

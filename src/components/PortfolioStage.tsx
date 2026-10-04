@@ -110,9 +110,9 @@ function ScreenShell({ eyebrow, title, description, children, isDarkTheme }: She
         <p className={"text-[10px] font-semibold uppercase tracking-[0.24em] sm:text-xs " + (isDarkTheme ? "text-emerald-400/90" : "text-emerald-700")}>
           {eyebrow}
         </p>
-        <h2 className={display.className + " mt-1.5 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl lg:text-4xl " + (isDarkTheme ? "text-white" : "text-zinc-950")}>
+        <h1 className={display.className + " mt-1.5 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl lg:text-4xl " + (isDarkTheme ? "text-white" : "text-zinc-950")}>
           {title}
-        </h2>
+        </h1>
         {description ? (
           <p className={"mt-2 max-w-3xl text-xs leading-relaxed sm:text-sm lg:text-base " + (isDarkTheme ? "text-zinc-400" : "text-zinc-600")}>
             {description}

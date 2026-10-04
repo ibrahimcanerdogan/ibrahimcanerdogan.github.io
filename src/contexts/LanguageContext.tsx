@@ -23,8 +23,6 @@ const translations = {
     'hero.projects': 'Projects',
     'hero.certificates': 'Certificates',
     'hero.courses': 'Courses',
-    'hero.viewResume': 'View Resume',
-    'hero.downloadResume': 'Download Resume',
     'hero.scrollDown': 'Scroll Down',
     'hero.intro':
       'I design and build software products across mobile and web, combining hands-on engineering with product thinking and entrepreneurship. After three years at ebebek, I founded Akhisar Dijital in April 2026 while continuing to build, teach, and ship digital products.',
@@ -231,8 +229,6 @@ const translations = {
     'hero.projects': 'Proje',
     'hero.certificates': 'Sertifika',
     'hero.courses': 'Kurs',
-    'hero.viewResume': 'Özgeçmişime Göz At',
-    'hero.downloadResume': 'Özgeçmişimi İndir',
     'hero.scrollDown': 'Aşağı Kaydır',
     'hero.intro':
       'Mobil ve web tarafında yazılım ürünleri geliştiriyor; mühendislik, ürün bakışı ve girişimciliği birlikte yürütüyorum. ebebek’teki üç yıllık deneyimimin ardından Nisan 2026’da Akhisar Dijital’i kurdum; yazılım üretmeye, ürün geliştirmeye ve teknik içerik üretmeye devam ediyorum.',

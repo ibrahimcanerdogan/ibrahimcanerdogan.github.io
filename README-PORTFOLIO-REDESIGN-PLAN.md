@@ -2,7 +2,7 @@
 
 ## Goal
 
-Modernize the portfolio into a cleaner, more premium software-engineer / product-engineer experience without changing the core stack or removing the existing bilingual content.
+Modernize the portfolio into a cleaner, more premium and broader professional profile: software engineer, product builder, founder, and technical educator. The site should no longer frame Ibrahim primarily as an Android engineer.
 
 ## Design Direction
 
@@ -16,7 +16,9 @@ Modernize the portfolio into a cleaner, more premium software-engineer / product
 
 1. Hero
    - Ibrahim Can Erdogan
-   - Software Engineer / Android / Product Engineering positioning
+   - Software Engineer / Founder / Product Builder positioning
+   - Make Android an important expertise area, not the whole identity
+   - Present Akhisar Dijital as the current entrepreneurial chapter
    - Primary CTAs: View Work, Download CV, Contact
    - GitHub / LinkedIn / YouTube links
 
@@ -27,8 +29,9 @@ Modernize the portfolio into a cleaner, more premium software-engineer / product
    - Certifications / credentials
 
 3. What I Do
-   - Mobile Engineering
-   - Product Development
+   - Software Engineering
+   - Mobile & Web Product Development
+   - Entrepreneurship / Akhisar Dijital
    - Technical Education
 
 4. About
@@ -38,7 +41,9 @@ Modernize the portfolio into a cleaner, more premium software-engineer / product
 
 5. Experience
    - Cleaner career timeline
-   - Emphasize impact and ownership over long task lists
+   - Akhisar Dijital — Founder & Software Engineer — April 2026 - Present
+   - ebebek — Android Software Specialist — April 2023 - April 2026
+   - Emphasize impact, ownership, product thinking, and entrepreneurship over long task lists
    - Current role expanded by default; previous roles compact
 
 6. Featured Work / Case Studies
@@ -49,12 +54,14 @@ Modernize the portfolio into a cleaner, more premium software-engineer / product
    - Outcome
    - Repository / live demo links where available
 
-7. Engineering Expertise
+7. Engineering & Product Expertise
    - Android / Kotlin / Compose
+   - Web / Next.js / TypeScript
    - Architecture
    - Testing / quality
-   - Backend / Web
+   - Product development
    - CI/CD
+   - Founder / business-building perspective
 
 8. Teaching & Community
    - Udemy

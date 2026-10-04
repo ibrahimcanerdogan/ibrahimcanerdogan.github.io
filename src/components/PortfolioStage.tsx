@@ -196,7 +196,6 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         credentialsDescription: "Resmî programlar ve teknik uzmanlığı destekleyen eğitimler.",
         available: "İş birliklerine açığım",
         akhisarDigital: "Akhisar Dijital",
-        downloadCv: "CV indir",
         previous: "Önceki deneyimler",
       }
     : {
@@ -259,7 +258,6 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         credentialsDescription: "Formal programs and learning that support hands-on engineering experience.",
         available: "Open to collaborations",
         akhisarDigital: "Akhisar Dijital",
-        downloadCv: "Download CV",
         previous: "Previous experience",
       };
 

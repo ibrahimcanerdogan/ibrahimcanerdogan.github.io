@@ -27,7 +27,7 @@ Current career truth that must be consistent across all public sources:
 The same dates and role positioning must be consistent across:
 
 - Portfolio
-- CV
+
 - LinkedIn
 - GitHub profile
 - Akhisar Dijital references
@@ -46,7 +46,6 @@ The same dates and role positioning must be consistent across:
 | sitemap.xml | Missing | Search engines do not receive a canonical URL inventory | Add `src/app/sitemap.ts` |
 | Section URLs | Hash-based: `/#experience`, `/#projects` | Hash-based state is weak for crawlability and direct indexing | Move to real crawlable paths while preserving single-screen UX |
 | Indexable section content | Active section rendered conditionally on client | Crawlers may primarily see default Home content | Pre-render section content through real routes |
-| Old CV content | Public PDF still contains outdated employment state | Search engines / AI systems may learn conflicting career facts | Replace/update CV and remove stale copies |
 | Entity consistency | New site data and indexed historical data disagree | Weak GEO trust and ambiguous entity resolution | Align all public profile sources |
 
 ---
@@ -187,33 +186,7 @@ Do not hide core SEO content behind user interaction only.
 
 ---
 
-# P0.5 — CV / indexed document consistency
-
-The current public CV must be reviewed before production launch.
-
-Known profile truth:
-
-- ebebek ended in **April 2026**
-- Akhisar Dijital started in **April 2026**
-
-The published CV must no longer state:
-
-`ebebek — Present`
-
-## Required jobs
-
-1. Produce the updated CV.
-2. Replace `public/source/cv-ibrahim-can-erdogan.pdf`.
-3. Review the root-level duplicate CV:
-   - `CV - Ibrahim Can Erdogan.pdf`
-4. Prefer a single canonical public CV asset.
-5. Remove obsolete duplicate copies if unnecessary.
-6. Verify whether sensitive personal information such as phone number should remain publicly indexable.
-7. After release, request recrawl / removal of stale indexed PDF versions where necessary.
-
----
-
-# P0.6 — Entity consistency
+# P0.5 — Entity consistency
 
 All public sources must tell the same story.
 
@@ -234,7 +207,7 @@ Before production release, compare:
 - Portfolio metadata
 - Page copy
 - JSON-LD
-- CV
+
 - LinkedIn
 - GitHub profile
 - Akhisar Dijital website
@@ -620,7 +593,7 @@ Generative systems benefit from content that is explicit, consistent, and verifi
 - Artificial keyword repetition
 - Hidden SEO-only text
 - Contradictory dates
-- Multiple stale CV versions
+
 - Important facts available only after client interaction
 
 ---
@@ -760,7 +733,7 @@ After merge/deploy:
 - [ ] Schema.org validator
 - [ ] Open Graph preview validation
 - [ ] Twitter/X card preview validation where available
-- [ ] Search indexed CV URLs
+
 - [ ] Request stale PDF recrawl/removal where needed
 
 ---
@@ -934,29 +907,9 @@ Acceptance:
 
 ---
 
-## Phase 5 — CV and External Consistency
+## Phase 5 — External Consistency
 
-### JOB-GEO-005 — Update public CV
-
-Acceptance:
-
-- ebebek end date corrected.
-- Akhisar Dijital added.
-- Profile positioning matches site.
-- Public personal information reviewed.
-
----
-
-### JOB-GEO-006 — Remove stale CV duplicates
-
-Acceptance:
-
-- One intentional canonical public CV remains.
-- Old duplicate files removed or intentionally redirected/replaced where possible.
-
----
-
-### JOB-GEO-007 — External profile audit
+### JOB-GEO-005 — External profile audit
 
 Manually compare:
 
@@ -1021,7 +974,7 @@ SEO/GEO hardening is complete when:
 - [ ] localized metadata is correct
 - [ ] ProfilePage / Person / Organization schema is valid
 - [ ] Akhisar Dijital founder relationship is explicit
-- [ ] CV career dates match the website
+
 - [ ] stale public career information is addressed
 - [ ] manifest is updated
 - [ ] dedicated OG image exists

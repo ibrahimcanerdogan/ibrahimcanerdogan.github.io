@@ -26,10 +26,19 @@ type RoadmapStep = {
 
 const STEPS: RoadmapStep[] = [
   {
+    id: "akhisar-dijital",
+    role: "Founder & Software Engineer",
+    company: "Akhisar Dijital",
+    badge: { kind: "current" },
+    dateKey: "experience.akhisarDijital.date",
+    locationKeys: ["cities.akhisar", "cities.manisa", "cities.turkey"],
+    summaryKey: "experience.akhisarDijital.summary",
+  },
+  {
     id: "ebebek-android",
     role: "Android Software Specialist",
     company: "ebebek",
-    badge: { kind: "current" },
+    badge: { kind: "months", count: 36 },
     dateKey: "experience.ebebek.current.date",
     locationKeys: ["cities.istanbul", "cities.turkey", "remote"],
     summaryKey: "experience.summary.ebebek-android",

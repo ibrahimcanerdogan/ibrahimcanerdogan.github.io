@@ -37,7 +37,6 @@ The site has one persistent application shell:
    - Software Engineer / Founder / Product Builder positioning
    - Make Android an important expertise area, not the whole identity
    - Present Akhisar Dijital as the current entrepreneurial chapter
-   - Primary CTAs: View Work, Download CV, Contact
    - GitHub / LinkedIn / YouTube links
 
 2. About
@@ -93,7 +92,7 @@ The site has one persistent application shell:
 - Use `min-h-[100dvh]` / `h-[100dvh]` carefully with safe-area handling; avoid accidental body overflow.
 - Main stage should use `min-h-0` and overflow containment so content does not push the document beyond the viewport.
 - Preserve TR/EN language support.
-- Preserve SEO metadata, verification files, CV assets, and public URLs.
+- Preserve SEO metadata, verification files, and public URLs.
 - Remove `react-tsparticles` if the redesign no longer uses particles.
 - Consolidate repeated visual tokens into shared design primitives / CSS variables where practical.
 - Keep accessibility, focus states, reduced-motion support, semantic landmarks, and responsive behavior.

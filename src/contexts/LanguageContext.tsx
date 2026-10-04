@@ -17,24 +17,24 @@ const translations = {
   en: {
     // Hero Section
     'hero.title': 'Ibrahim Can Erdogan',
-    'hero.eyebrow': 'Android-first · Freelance mobile & web',
-    'hero.subtitle': 'Senior Android Engineer',
+    'hero.eyebrow': 'Software engineering · Product building · Entrepreneurship',
+    'hero.subtitle': 'Software Engineer · Founder',
     'hero.experience': 'Years Experience',
     'hero.projects': 'Projects',
     'hero.certificates': 'Certificates',
     'hero.courses': 'Courses',
-    'hero.viewResume': 'View Resume',
-    'hero.downloadResume': 'Download Resume',
     'hero.scrollDown': 'Scroll Down',
     'hero.intro':
-      'I build polished Android products—clean architecture, Compose UI, and apps people use every day. Alongside that core focus, I take on freelance work: cross-platform mobile apps and modern websites when scope and timeline are a good match.',
-    'hero.statsHint': 'A quick snapshot — scroll for the full story.',
+      'I design and build software products across mobile and web, combining hands-on engineering with product thinking and entrepreneurship. After three years at ebebek, I founded Akhisar Dijital in April 2026 while continuing to build, teach, and ship digital products.',
+    'hero.statsHint': 'Use the section rail to explore the portfolio.',
 
     'nav.ariaLabel': 'Page sections',
     'nav.hero': 'Home',
     'nav.about': 'About',
     'nav.experience': 'Experience',
-    'nav.projects': 'Projects',
+    'nav.projects': 'Work',
+    'nav.expertise': 'Expertise',
+    'nav.teaching': 'Teaching',
     'nav.courses': 'Courses',
     'nav.certificates': 'Certificates',
     'nav.youtube': 'YouTube',
@@ -45,14 +45,14 @@ const translations = {
     'about.title': 'About Me',
     'about.eyebrow': 'Profile',
     'about.highlight':
-      'Shipping production Android apps—from architecture to UI polish—with Kotlin, Jetpack Compose, and maintainable design. I also deliver cross-platform mobile and web projects for clients as a freelancer.',
+      'I build digital products across mobile and web, combining software engineering, product thinking, and entrepreneurship. Android remains one of my strongest technical areas, but my work now spans a broader product and business perspective.',
     'about.stackTitle': 'Core stack',
     'about.description1':
       'I hold a degree in Industrial Engineering from Balıkesir University and ship Android products end to end. I work in Kotlin and Java with a focus on maintainable architecture, Jetpack Compose, and reliable features in apps people use every day.',
     'about.description2':
-      'My path includes internships and full-time roles at technology companies across Turkey. Today I contribute to the ebebek app—payments, security, and core product work—while keeping pace with the Android stack. I am also building familiarity with the Apple ecosystem to grow as a broader mobile engineer.',
+      'My path includes internships and full-time engineering roles at technology companies across Turkey. I worked at ebebek from April 2023 to April 2026 on payments, wallet, security, and core mobile product work. In April 2026, I founded Akhisar Dijital and moved into a broader role that combines engineering, product development, and entrepreneurship.',
     'about.freelance':
-      'Freelance: Android stays my primary strength; I also build cross-platform mobile solutions and fast, maintainable websites (for example with Next.js). If you need a focused engineer for a product slice, integration, or a small site—reach out with your goals and timeline.',
+      'Through Akhisar Dijital and independent product work, I build mobile and web solutions with a practical focus on maintainability, delivery, and business value. I continue to work hands-on in software while growing products, services, and technical content.',
     'about.contact': 'Contact:',
     'about.email': 'ibrahimcanerdogan@outlook.com',
 
@@ -60,7 +60,7 @@ const translations = {
     'experience.title': 'Experience',
     'experience.eyebrow': 'Career path',
     'experience.roadmapSubtitle':
-      'A chronological roadmap of roles, teams, and the work that shaped my Android practice.',
+      'A chronological roadmap of the engineering roles, products, and entrepreneurial work that shaped how I build software today.',
     'experience.current': 'Current',
     'experience.months': 'months',
     'experience.expandRole': 'Show details',
@@ -69,7 +69,7 @@ const translations = {
     'experience.responsibilities': 'Responsibilities and Achievements',
     'experience.summaryHeading': 'Overview',
     'experience.summary.ebebek-android':
-      'I own feature and integration work on the ebebek Android app—payments, wallet, security fixes, and day-to-day Kotlin product delivery.',
+      'I worked on the ebebek Android app across payments, wallet, security fixes, and day-to-day Kotlin product delivery from April 2023 to April 2026.',
     'experience.summary.logo-android':
       'I modernized a legacy codebase by moving Java to Kotlin and establishing Coroutines with MVVM.',
     'experience.summary.logo-jr':
@@ -82,7 +82,7 @@ const translations = {
       'I joined an online banking discovery program blending simulations, product learning, and a first-place team pitch.',
     'experience.summary.qnb':
       'I finished an introductory banking internship covering fundamentals, business units, career design, and certified completion.',
-    'experience.ebebek.current': 'Working as Android Software Specialist in ebebek mobile application',
+    'experience.ebebek.current': 'Worked as Android Software Specialist on the ebebek mobile application',
     'experience.ebebek.security': 'Resolving security vulnerabilities found in SOCRadar security scan reports',
     'experience.ebebek.payment': 'Craftgate and One-Stop Shop payment technology integration',
     'experience.ebebek.wallet': 'Integration of ebebek wallet feature into the application',
@@ -106,7 +106,10 @@ const translations = {
     'experience.qnb.certificate': 'Successfully completed program with certificate',
 
     // Experience Dates
-    'experience.ebebek.current.date': 'April 2023 - Ongoing',
+    'experience.akhisarDijital.date': 'April 2026 - Present',
+    'experience.akhisarDijital.summary':
+      'I founded Akhisar Dijital to bring software engineering, digital product development, and entrepreneurship together under one brand.',
+    'experience.ebebek.current.date': 'April 2023 - April 2026',
     'experience.logo.android.date': 'January 2023 - April 2023',
     'experience.logo.jr.date': 'April 2022 - January 2023',
     'experience.logo.intern.date': 'February 2022 - April 2022',
@@ -208,8 +211,8 @@ const translations = {
     // Footer
     'footer.eyebrow': 'Connect',
     'footer.subtitle':
-      'Android engineering, courses, and open source. Available for freelance cross-platform mobile and web—say hello with your project brief.',
-    'footer.location': 'Istanbul, Türkiye',
+      'Software engineering, product building, entrepreneurship, technical education, and open source. Reach out for product, software, or collaboration opportunities.',
+    'footer.location': 'Türkiye',
     'footer.socialLabel': 'Elsewhere',
     'footer.copyright': '© 2026 Ibrahim Can Erdogan. All rights reserved.',
 
@@ -220,24 +223,24 @@ const translations = {
   tr: {
     // Hero Section
     'hero.title': 'İbrahim Can Erdoğan',
-    'hero.eyebrow': 'Android öncelikli · Freelance mobil ve web',
-    'hero.subtitle': 'Senior Android Engineer',
+    'hero.eyebrow': 'Yazılım mühendisliği · Ürün geliştirme · Girişimcilik',
+    'hero.subtitle': 'Software Engineer · Founder',
     'hero.experience': 'Yıl Deneyim',
     'hero.projects': 'Proje',
     'hero.certificates': 'Sertifika',
     'hero.courses': 'Kurs',
-    'hero.viewResume': 'Özgeçmişime Göz At',
-    'hero.downloadResume': 'Özgeçmişimi İndir',
     'hero.scrollDown': 'Aşağı Kaydır',
     'hero.intro':
-      'Temiz mimari, Jetpack Compose arayüzü ve insanların her gün kullandığı uygulamalar geliştiriyorum. Bu ana odağın yanında freelance olarak cross-platform mobil uygulamalar ve modern web siteleri üzerinde de proje bazlı çalışıyorum.',
-    'hero.statsHint': 'Kısa bir özet — detaylar için aşağı kaydır.',
+      'Mobil ve web tarafında yazılım ürünleri geliştiriyor; mühendislik, ürün bakışı ve girişimciliği birlikte yürütüyorum. ebebek’teki üç yıllık deneyimimin ardından Nisan 2026’da Akhisar Dijital’i kurdum; yazılım üretmeye, ürün geliştirmeye ve teknik içerik üretmeye devam ediyorum.',
+    'hero.statsHint': 'Portföyü keşfetmek için bölüm çizgisini kullan.',
 
     'nav.ariaLabel': 'Sayfa bölümleri',
     'nav.hero': 'Giriş',
     'nav.about': 'Hakkımda',
     'nav.experience': 'Deneyim',
-    'nav.projects': 'Projeler',
+    'nav.projects': 'Çalışmalar',
+    'nav.expertise': 'Uzmanlık',
+    'nav.teaching': 'Eğitim',
     'nav.courses': 'Kurslar',
     'nav.certificates': 'Sertifikalar',
     'nav.youtube': 'YouTube',
@@ -248,14 +251,14 @@ const translations = {
     'about.title': 'Hakkımda',
     'about.eyebrow': 'Profil',
     'about.highlight':
-      'Mimarından arayüz cilasına kadar Kotlin, Jetpack Compose ve sürdürülebilir tasarımla canlı ortamda Android uygulamaları geliştiriyorum. Müşteri projelerinde cross-platform mobil ve web tarafında da freelance teslimatlar yapıyorum.',
+      'Mobil ve web tarafında dijital ürünler geliştiriyor; yazılım mühendisliği, ürün düşüncesi ve girişimciliği bir araya getiriyorum. Android en güçlü teknik alanlarımdan biri olmaya devam ederken profilimi daha geniş bir ürün ve iş perspektifiyle ilerletiyorum.',
     'about.stackTitle': 'Öne çıkan stack',
     'about.description1':
       'Balıkesir Üniversitesi Endüstri Mühendisliği mezunuyum; Android tarafında uçtan uca ürün çıkarıyorum. Kotlin ve Java ile sürdürülebilir mimari, Jetpack Compose ve günlük kullanımda stabil çalışan özellikler üzerinde çalışıyorum.',
     'about.description2':
-      'Kariyerimde Türkiye\'deki teknoloji şirketlerinde staj ve tam zamanlı deneyimlerim var. Şu anda ebebek uygulamasında ödeme, güvenlik ve ürün özellikleri gibi alanlara katkı veriyor; Android ekosistemini yakından takip ediyorum. Daha geniş bir mobil mühendis olmak için Apple ekosisteminde de kendimi geliştiriyorum.',
+      'Kariyerimde Türkiye’deki teknoloji şirketlerinde staj ve tam zamanlı mühendislik deneyimlerim var. Nisan 2023 – Nisan 2026 arasında ebebek mobil uygulamasında ödeme, cüzdan, güvenlik ve temel ürün geliştirme alanlarında çalıştım. Nisan 2026’da Akhisar Dijital’i kurarak mühendislik, ürün geliştirme ve girişimciliği bir araya getiren daha geniş bir role geçtim.',
     'about.freelance':
-      'Freelance: Güçlü tarafım Android; buna ek olarak cross-platform mobil çözümler ve hızlı, sürdürülebilir web siteleri (ör. Next.js) geliştiriyorum. Ürün parçası, entegrasyon veya küçük ölçekli bir site için hedef ve zaman çizelgenizle yazabilirsiniz.',
+      'Akhisar Dijital ve bağımsız ürün çalışmalarım üzerinden mobil ve web çözümleri geliştiriyorum. Yazılım tarafında aktif üretmeye devam ederken ürün, hizmet ve teknik içerik taraflarını da birlikte büyütüyorum.',
     'about.contact': 'İletişim:',
     'about.email': 'ibrahimcanerdogan@outlook.com',
 
@@ -263,7 +266,7 @@ const translations = {
     'experience.title': 'Deneyim',
     'experience.eyebrow': 'Kariyer yolu',
     'experience.roadmapSubtitle':
-      'Android pratiğimi şekillendiren roller, ekipler ve işlerin kronolojik bir özeti.',
+      'Bugünkü yazılım ve ürün yaklaşımımı şekillendiren mühendislik rolleri, ürünler ve girişimcilik yolculuğumun kronolojik özeti.',
     'experience.current': 'Devam Ediyor',
     'experience.months': 'ay',
     'experience.expandRole': 'Detayı göster',
@@ -272,7 +275,7 @@ const translations = {
     'experience.responsibilities': 'Sorumluluklar ve Başarılar',
     'experience.summaryHeading': 'Özet',
     'experience.summary.ebebek-android':
-      'ebebek Android uygulamasında ödeme, cüzdan, güvenlik ve günlük Kotlin ürün geliştirme süreçlerinde sürekli sorumluluk alıyorum.',
+      'Nisan 2023 – Nisan 2026 arasında ebebek Android uygulamasında ödeme, cüzdan, güvenlik ve günlük Kotlin ürün geliştirme süreçlerinde sorumluluk aldım.',
     'experience.summary.logo-android':
       'Java tabanlı kodu Kotlin’e taşıyarak ve Coroutines ile MVVM mimarisini yerleştirerek kod tabanını modernize ettim.',
     'experience.summary.logo-jr':
@@ -285,7 +288,7 @@ const translations = {
       'Online bankacılık keşif programında simülasyonlar, ürün öğrenimi ve birinci biten takım sunumuyla yer aldım.',
     'experience.summary.qnb':
       'Temel bankacılık, iş birimleri ve kariyer atölyelerini kapsayan giriş stajını sertifikayla tamamladım.',
-    'experience.ebebek.current': 'ebebek mobil uygulamasında Android Software Specialist olarak görev yapıyorum',
+    'experience.ebebek.current': 'ebebek mobil uygulamasında Android Software Specialist olarak görev yaptım',
     'experience.ebebek.security': 'SOCRadar güvenlik tarama raporları sonucunda bulunan güvenlik açıklarının giderilmesi',
     'experience.ebebek.payment': 'Craftgate ve One-Stop Shop ödeme teknolojisi entegrasyonu',
     'experience.ebebek.wallet': 'ebebek cüzdan özelliğinin uygulamaya entegrasyonu',
@@ -309,7 +312,10 @@ const translations = {
     'experience.qnb.certificate': 'Başarı sertifikası ile programı tamamlama',
 
     // Experience Dates
-    'experience.ebebek.current.date': 'Nisan 2023 - Devam Ediyor',
+    'experience.akhisarDijital.date': 'Nisan 2026 - Devam Ediyor',
+    'experience.akhisarDijital.summary':
+      'Yazılım mühendisliği, dijital ürün geliştirme ve girişimciliği tek bir marka altında bir araya getirmek için Akhisar Dijital’i kurdum.',
+    'experience.ebebek.current.date': 'Nisan 2023 - Nisan 2026',
     'experience.logo.android.date': 'Ocak 2023 - Nisan 2023',
     'experience.logo.jr.date': 'Nisan 2022 - Ocak 2023',
     'experience.logo.intern.date': 'Şubat 2022 - Nisan 2022',
@@ -411,8 +417,8 @@ const translations = {
     // Footer
     'footer.eyebrow': 'İletişim',
     'footer.subtitle':
-      'Android mühendisliği, kurslar ve açık kaynak. Cross-platform mobil ve web için freelance projelere açığım — kısa bir brief ile iletişime geçebilirsiniz.',
-    'footer.location': 'İstanbul, Türkiye',
+      'Yazılım mühendisliği, ürün geliştirme, girişimcilik, teknik eğitim ve açık kaynak. Ürün, yazılım veya iş birliği fırsatları için iletişime geçebilirsiniz.',
+    'footer.location': 'Türkiye',
     'footer.socialLabel': 'Diğer platformlar',
     'footer.copyright': '© 2026 İbrahim Can Erdoğan. Tüm hakları saklıdır.',
 
@@ -422,8 +428,8 @@ const translations = {
   }
 };
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+export const LanguageProvider: React.FC<{ children: ReactNode; initialLanguage?: Language }> = ({ children, initialLanguage = 'tr' }) => {
+  const [language, setLanguage] = useState<Language>(initialLanguage);
 
   useEffect(() => {
     document.documentElement.lang = language === 'tr' ? 'tr' : 'en';
@@ -446,4 +452,4 @@ export const useLanguage = (): LanguageContextType => {
     throw new Error('useLanguage must be used within a LanguageProvider');
   }
   return context;
-}; 
+};

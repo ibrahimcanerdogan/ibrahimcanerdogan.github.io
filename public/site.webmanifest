@@ -1,16 +1,22 @@
 {
   "name": "İbrahim Can Erdoğan — Portfolio",
-  "short_name": "İ. C. Erdoğan",
-  "description": "Senior Android Engineer — portfolio and freelance.",
+  "short_name": "İbrahim Erdoğan",
+  "description": "Yazılım mühendisi, ürün geliştirici, teknik eğitmen ve Akhisar Dijital kurucusu.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#030712",
-  "theme_color": "#030712",
+  "background_color": "#f7f7f4",
+  "theme_color": "#f7f7f4",
   "icons": [
     {
-      "src": "/logo.jpg",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     }
   ]

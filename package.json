@@ -4,17 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && node scripts/localize-static-html.mjs",
     "start": "serve out -l 3000",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "verify:seo": "node scripts/verify-seo.mjs",
+    "quality": "npm run verify:seo && tsc --noEmit && eslint . && npm run build && npm run verify:seo"
   },
   "dependencies": {
     "next": "^15.5.14",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-tsparticles": "^2.12.2",
-    "tsparticles": "^2.12.0",
-    "tsparticles-slim": "^2.12.0"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

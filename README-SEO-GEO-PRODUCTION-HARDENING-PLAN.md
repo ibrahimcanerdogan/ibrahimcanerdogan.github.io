@@ -36,6 +36,47 @@ The same dates and role positioning must be consistent across:
 
 ---
 
+## Current Implementation Status
+
+### Repository development — completed
+
+- [x] robots.txt route
+- [x] sitemap.xml route
+- [x] Real TR section routes
+- [x] Separate `/en/*` routes
+- [x] Route-specific canonical metadata
+- [x] Correct TR/EN hreflang pairs
+- [x] Localized title / description / Open Graph / Twitter metadata
+- [x] Static crawlable HTML for all main screens
+- [x] ProfilePage + Person + Organization entity graph
+- [x] ProfilePage schema scoped to profile home routes only
+- [x] Akhisar Dijital founder / worksFor relationships
+- [x] Project case-study semantics: Problem / Role / Outcome
+- [x] Credential IDs exposed
+- [x] Public verification links added where a deterministic verification URL is available
+- [x] Dedicated Open Graph image
+- [x] Manifest aligned with Software Engineer / Founder positioning
+- [x] Optimized PNG app / Apple touch icons
+- [x] Oversized legacy favicon removed
+- [x] Public CV and all CV / Resume UI references removed by product decision
+- [x] Unused legacy long-page section components removed
+- [x] tsParticles runtime dependencies removed
+- [x] SEO/GEO contract verification script
+- [x] PR quality workflow includes SEO verification, TypeScript, ESLint and production build
+
+### Deploy / external operations — pending after merge
+
+These are not repository-development tasks and must be completed against the deployed production URL:
+
+- [ ] Google Search Console URL Inspection
+- [ ] Submit `/sitemap.xml` in Google Search Console
+- [ ] Bing Webmaster Tools verification
+- [ ] Submit `/sitemap.xml` in Bing Webmaster Tools
+- [ ] Google Rich Results / Schema validation on production
+- [ ] Open Graph / social preview validation on production
+- [ ] Request recrawl/removal for any stale indexed historical assets if they remain
+- [ ] Review LinkedIn, GitHub profile, YouTube, Medium, Udemy and Akhisar Dijital public profile copy for career-date consistency
+
 # Executive Findings
 
 ## P0 — Critical
@@ -961,27 +1002,34 @@ must all pass before merge.
 
 # Definition of Done
 
-SEO/GEO hardening is complete when:
+Repository-side SEO/GEO hardening is complete when:
 
-- [ ] robots.txt exists
-- [ ] sitemap.xml exists
-- [ ] real route-based section navigation is implemented
-- [ ] all main screens are statically crawlable
-- [ ] Turkish is the default indexed experience
-- [ ] English has separate crawlable URLs
-- [ ] canonical URLs are correct
-- [ ] hreflang is correct
-- [ ] localized metadata is correct
-- [ ] ProfilePage / Person / Organization schema is valid
-- [ ] Akhisar Dijital founder relationship is explicit
+- [x] robots.txt exists
+- [x] sitemap.xml exists
+- [x] real route-based section navigation is implemented
+- [x] all main screens are statically crawlable
+- [x] Turkish is the default indexed experience
+- [x] English has separate crawlable URLs
+- [x] canonical URLs are correct
+- [x] hreflang is correct
+- [x] localized metadata is correct
+- [x] ProfilePage / Person / Organization schema is implemented
+- [x] Akhisar Dijital founder relationship is explicit
+- [x] manifest is updated
+- [x] dedicated OG image exists
+- [x] project case-study semantics are present
+- [x] credential IDs and available verification links are present
+- [x] CV / Resume assets and UI references are removed
+- [x] oversized legacy favicon and dead long-page components are removed
+- [x] SEO/GEO verification is included in the PR quality gate
 
-- [ ] stale public career information is addressed
-- [ ] manifest is updated
-- [ ] dedicated OG image exists
-- [ ] Google Search Console is configured
-- [ ] Bing Webmaster Tools is configured
+Production rollout is complete only after:
+
+- [ ] Google Search Console is configured / reviewed
+- [ ] Bing Webmaster Tools is configured / reviewed
 - [ ] sitemap is submitted after deployment
-- [ ] TypeScript / ESLint / build / SEO verification all pass
+- [ ] production rich-result / schema / social-preview checks pass
+- [ ] stale public search results are recrawled or removed where necessary
 
 ---
 

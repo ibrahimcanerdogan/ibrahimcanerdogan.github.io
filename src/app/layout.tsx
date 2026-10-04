@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { entityGraph, SITE_URL } from "@/lib/seo";
+import { SITE_URL } from "@/lib/seo";
 
 export const viewport: Viewport = {
   width: "device-width", initialScale: 1, viewportFit: "cover",
@@ -28,7 +28,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="tr" suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(entityGraph) }} />
         {children}
       </body>
     </html>

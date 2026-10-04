@@ -80,7 +80,7 @@ export default function Home() {
         onClick={() => setIsDarkTheme((value) => !value)}
         aria-label={isDarkTheme ? "Switch to light theme" : "Switch to dark theme"}
         className={
-          "fixed right-[max(0.75rem,env(safe-area-inset-right))] top-[max(0.75rem,env(safe-area-inset-top))] z-[120] flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-xl transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 " +
+          "fixed right-[max(0.75rem,env(safe-area-inset-right))] top-[max(0.75rem,env(safe-area-inset-top))] z-[120] flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-xl transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 md:right-8 md:top-8 " +
           (isDarkTheme
             ? "border-white/10 bg-zinc-950/80 text-zinc-300 hover:text-emerald-300"
             : "border-zinc-200 bg-white/80 text-zinc-700 hover:text-emerald-700")

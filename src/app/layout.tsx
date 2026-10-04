@@ -8,76 +8,48 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#030712" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f7f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#090a0b" },
   ],
 };
 
 const inter = Inter({ subsets: ["latin"] });
-
 const SITE_URL = "https://ibrahimcanerdogan.github.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "İbrahim Can Erdoğan — Portfolio",
   title: {
-    default:
-      "İbrahim Can Erdoğan | Senior Android Engineer · Freelance Mobile & Web",
+    default: "İbrahim Can Erdoğan | Software Engineer · Founder",
     template: "%s | İbrahim Can Erdoğan",
   },
   description:
-    "Kıdemli Android mühendisi: Kotlin, Jetpack Compose, temiz mimari. Ana uzmanlık Android; freelance cross-platform mobil uygulama ve Next.js ile modern web projeleri. İstanbul — uzaktan uyumlu.",
+    "Software engineer, product builder and founder of Akhisar Dijital. Mobile and web product development, Android/Kotlin, Next.js, technical education and open-source work.",
   keywords: [
     "İbrahim Can Erdoğan",
     "Ibrahim Can Erdogan",
+    "Software Engineer",
+    "Software Developer",
+    "Founder",
+    "Akhisar Dijital",
+    "Product Engineer",
+    "Product Development",
+    "Mobile App Development",
+    "Web Development",
     "Android Developer",
-    "Senior Android Engineer",
     "Kotlin Developer",
     "Jetpack Compose",
-    "Mobile App Development",
-    "Android Development",
+    "Next.js Developer",
+    "TypeScript",
     "Clean Architecture",
-    "MVVM Architecture",
-    "Android Software Specialist",
-    "ebebek",
-    "Logo Yazılım",
-    "Android Clean Architecture",
-    "Android Jetpack",
-    "Android UI Development",
-    "Android App Development",
-    "Kotlin Programming",
-    "Android Best Practices",
-    "Android Performance",
-    "Android Security",
-    "Android Geliştirme",
-    "Android Yazılım Uzmanı",
-    "Kıdemli Android Geliştirici",
-    "Mobil Uygulama Geliştirme",
-    "Android Uygulama Geliştirme",
-    "Kotlin Programlama",
-    "Android Temiz Mimari",
-    "Android UI Tasarımı",
-    "Android Performans Optimizasyonu",
-    "Android Güvenlik",
-    "Android Jetpack Bileşenleri",
-    "Freelance Android developer",
-    "Freelance Android",
-    "Freelance mobile developer",
-    "Freelance yazılım geliştirici",
-    "Freelance mobil uygulama geliştirici",
-    "Cross-platform mobile development",
-    "Cross-platform mobil uygulama",
-    "Cross-platform app developer",
-    "Next.js developer",
-    "Next.js freelance",
-    "Web development",
-    "Modern web development",
-    "React Next.js portfolio",
-    "Hire Android developer Turkey",
-    "İstanbul Android developer",
-    "Remote Android developer",
-    "Kotlin freelancer",
-    "Mobile and web developer",
+    "MVVM",
+    "CI/CD",
+    "Technical Education",
+    "Udemy Instructor",
+    "YouTube Developer",
+    "Open Source",
+    "Türkiye Software Engineer",
+    "Akhisar Software",
   ],
   authors: [{ name: "İbrahim Can Erdoğan", url: SITE_URL }],
   creator: "İbrahim Can Erdoğan",
@@ -92,26 +64,24 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     alternateLocale: ["en_US"],
     url: SITE_URL,
-    title:
-      "İbrahim Can Erdoğan | Android Engineer — Freelance Cross-Platform Mobile & Web",
+    title: "İbrahim Can Erdoğan | Software Engineer · Founder",
     description:
-      "Production Android (Kotlin, Compose). Freelance: cross-platform mobile apps + fast Next.js websites. Open for project-based work.",
-    siteName: "İbrahim Can Erdoğan — Android & Freelance Portfolio",
+      "Software engineering, digital product development, entrepreneurship, technical education and open-source work.",
+    siteName: "İbrahim Can Erdoğan — Portfolio",
     images: [
       {
         url: "/logo.jpg",
         width: 1200,
         height: 630,
-        alt: "İbrahim Can Erdoğan — Senior Android Engineer, freelance mobile & web",
+        alt: "İbrahim Can Erdoğan — Software Engineer and Founder",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "İbrahim Can Erdoğan | Android Engineer — Freelance Mobile & Web",
+    title: "İbrahim Can Erdoğan | Software Engineer · Founder",
     description:
-      "Senior Android (Kotlin, Jetpack Compose). Freelance cross-platform mobile + Next.js web. Istanbul · Remote-friendly.",
+      "Software engineering, product development, entrepreneurship, technical education and open source.",
     images: ["/logo.jpg"],
     creator: "@ibrahimcanerdogan",
   },
@@ -150,25 +120,33 @@ const personJsonLd = {
   name: "İbrahim Can Erdoğan",
   alternateName: ["Ibrahim Can Erdogan", "İbrahim Can Erdoğan"],
   url: SITE_URL,
-  image: `${SITE_URL}/logo.jpg`,
-  jobTitle: "Senior Android Engineer",
+  image: SITE_URL + "/logo.jpg",
+  jobTitle: "Software Engineer & Founder",
   description:
-    "Senior Android engineer focused on Kotlin and Jetpack Compose. Offers freelance development for cross-platform mobile applications and modern websites using Next.js.",
+    "Software engineer, product builder, technical educator and founder of Akhisar Dijital.",
   knowsAbout: [
+    "Software engineering",
+    "Product development",
     "Android software development",
     "Kotlin",
     "Java",
     "Jetpack Compose",
     "Mobile application development",
-    "Cross-platform mobile development",
     "Next.js",
+    "TypeScript",
     "Web development",
     "Clean architecture",
-    "Freelance software engineering",
+    "CI/CD",
+    "Technical education",
+    "Entrepreneurship",
   ],
+  affiliation: {
+    "@type": "Organization",
+    name: "Akhisar Dijital",
+    url: "https://akhisardijital.com/",
+  },
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Istanbul",
     addressCountry: "TR",
   },
   sameAs: [
@@ -182,9 +160,9 @@ const personJsonLd = {
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
@@ -192,9 +170,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>
   );

@@ -97,8 +97,8 @@ export default function SectionNav({ isDarkTheme, activeSection, onSectionChange
     ? "bg-gradient-to-b from-emerald-500/15 via-emerald-400/35 to-emerald-500/15"
     : "bg-gradient-to-b from-emerald-400/20 via-emerald-600/35 to-emerald-400/20";
   const idle = isDarkTheme
-    ? "text-zinc-500 hover:bg-white/[0.06] hover:text-zinc-200"
-    : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900";
+    ? "bg-zinc-950 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200"
+    : "bg-white text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900";
   const active = isDarkTheme
     ? "bg-emerald-400 text-zinc-950 shadow-[0_0_22px_rgba(52,211,153,0.3)]"
     : "bg-emerald-600 text-white shadow-[0_0_18px_rgba(5,150,105,0.2)]";

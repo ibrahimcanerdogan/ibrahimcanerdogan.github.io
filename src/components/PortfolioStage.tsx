@@ -125,7 +125,6 @@ function SocialIcon({ id }: { id: SocialId }) {
 type Props = {
   activeSection: SectionId;
   isDarkTheme: boolean;
-  onNavigate: (section: SectionId) => void;
 };
 
 type ShellProps = {
@@ -165,7 +164,7 @@ function ArrowIcon() {
   );
 }
 
-export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate }: Props) {
+export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
   const { t, language } = useLanguage();
 
   const c = language === "tr"
@@ -199,7 +198,6 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         students: "öğrenci+",
         projects: "seçilmiş proje",
         current: "güncel girişim",
-        viewWork: "Çalışmaları gör",
         contact: "İletişim",
         visit: "Siteyi aç",
         timeline: "Kariyer çizgisi",
@@ -266,7 +264,6 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         students: "students+",
         projects: "selected projects",
         current: "current venture",
-        viewWork: "View work",
         contact: "Contact",
         visit: "Visit site",
         timeline: "Career timeline",

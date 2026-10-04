@@ -115,4 +115,24 @@ Implementation should be completed incrementally on this branch, starting with:
 10. Responsive / keyboard / accessibility polish
 11. Build / lint verification
 
+## Implementation Status
+
+- [x] Fixed single-screen application shell
+- [x] State-driven left section rail
+- [x] Compact mobile section selector
+- [x] Home / Profile screen
+- [x] About screen
+- [x] Experience screen with Akhisar Dijital as the current chapter
+- [x] Selected Work screen
+- [x] Engineering & Product Expertise screen
+- [x] Teaching & Community screen
+- [x] Certifications screen
+- [x] Contact screen
+- [x] TR/EN navigation alignment
+- [x] General Software Engineer / Founder SEO positioning
+- [x] Page-level scrolling removed
+- [x] Pull-request quality workflow added
+- [ ] Quality workflow green
+- [ ] Visual QA at common desktop and mobile viewport sizes
+
 This PR is intentionally opened before implementation so the redesign can be developed and reviewed incrementally.

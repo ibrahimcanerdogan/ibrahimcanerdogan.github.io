@@ -14,21 +14,54 @@ const EMAIL = "ibrahimcanerdogan@outlook.com";
 const PROJECTS = [
   {
     titleKey: "projects.compose.title",
-    descriptionKey: "projects.compose.description",
     href: "https://github.com/ibrahimcanerdogan/Awesome-Jetpack-Compose-App-Samples",
     tags: ["Kotlin", "Compose", "Material 3"],
+    caseStudy: {
+      tr: {
+        problem: "Modern Compose yaklaşımları çoğu zaman dağınık ve tekil örneklerde kalıyor.",
+        role: "Yeniden kullanılabilir örnek uygulamaları ve UI/mimari kalıplarını tasarlayıp sürdürüyorum.",
+        outcome: "Geliştiriciler için pratik Compose ve Material 3 karşılaştırma referansı oluştu.",
+      },
+      en: {
+        problem: "Modern Compose patterns are often scattered across isolated examples.",
+        role: "I design and maintain reusable sample apps covering UI and architecture patterns.",
+        outcome: "A practical public reference for comparing Compose and Material 3 implementations.",
+      },
+    },
   },
   {
     titleKey: "projects.mlkit.title",
-    descriptionKey: "projects.mlkit.description",
     href: "https://github.com/ibrahimcanerdogan/Google-MLKit-Android-Apps",
     tags: ["Kotlin", "ML Kit", "CameraX"],
+    caseStudy: {
+      tr: {
+        problem: "On-device ML özelliklerinde dokümantasyonun ötesinde gerçek Android entegrasyon örnekleri gerekiyor.",
+        role: "ML Kit ve CameraX ile metin tanıma, görüntü analizi ve nesne algılama örnekleri geliştirdim.",
+        outcome: "Android projelerine ML yetenekleri eklemek için yeniden kullanılabilir bir referans seti oluştu.",
+      },
+      en: {
+        problem: "On-device ML features need practical Android integration examples beyond API documentation.",
+        role: "I built examples for text recognition, image analysis, and object detection with ML Kit and CameraX.",
+        outcome: "A reusable reference set for integrating ML capabilities into Android products.",
+      },
+    },
   },
   {
     titleKey: "projects.boruto.title",
-    descriptionKey: "projects.boruto.description",
     href: "https://github.com/ibrahimcanerdogan/JetBorutoKtorServerApp",
     tags: ["Kotlin", "Ktor", "Full stack"],
+    caseStudy: {
+      tr: {
+        problem: "Yalnızca UI değil, Kotlin ile uçtan uca client-server mimarisini gösterecek bir örnek gerekiyordu.",
+        role: "Jetpack Compose istemciyi, Ktor backend'i ve Clean Architecture katmanlarını birlikte geliştirdim.",
+        outcome: "API, UI ve mimari kararlarını tek projede gösteren full-stack Kotlin örneği ortaya çıktı.",
+      },
+      en: {
+        problem: "A complete Kotlin client-server example was needed instead of another UI-only sample.",
+        role: "I built the Jetpack Compose client, Ktor backend, and Clean Architecture layers together.",
+        outcome: "An end-to-end Kotlin example showing API, UI, and architecture decisions in one project.",
+      },
+    },
   },
 ] as const;
 
@@ -172,6 +205,11 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         timeline: "Kariyer çizgisi",
         workTitle: "Seçilmiş ürün & projeler",
         workDescription: "Kod deposu listesinden çok, farklı problem alanlarında nasıl ürün geliştirdiğimi gösteren seçilmiş işler.",
+        problemLabel: "Problem",
+        roleLabel: "Rol",
+        outcomeLabel: "Sonuç",
+        credentialId: "Yeterlilik ID",
+        verifyCredential: "Doğrula",
         moreWork: "Diğer çalışmalar",
         mobileEngineering: "Mobile Engineering",
         mobileEngineeringText: "Kotlin, Jetpack Compose, Android architecture, performans ve ürün kalitesi.",
@@ -234,6 +272,11 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         timeline: "Career timeline",
         workTitle: "Selected products & projects",
         workDescription: "A focused set of work that shows how I approach different product and engineering problems.",
+        problemLabel: "Problem",
+        roleLabel: "Role",
+        outcomeLabel: "Outcome",
+        credentialId: "Credential ID",
+        verifyCredential: "Verify",
         moreWork: "More work",
         mobileEngineering: "Mobile Engineering",
         mobileEngineeringText: "Kotlin, Jetpack Compose, Android architecture, performance, and product quality.",
@@ -449,8 +492,19 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
                   <ArrowIcon />
                 </div>
                 <h3 className={display.className + " mt-4 text-base font-semibold leading-tight sm:text-lg " + title}>{t(project.titleKey)}</h3>
-                <p className={"mt-3 line-clamp-4 text-xs leading-5 sm:text-sm sm:leading-6 " + body}>{t(project.descriptionKey)}</p>
-                <div className="mt-auto flex flex-wrap gap-1.5 pt-4">
+                <dl className="mt-3 space-y-2">
+                  {[
+                    [c.problemLabel, project.caseStudy[language].problem],
+                    [c.roleLabel, project.caseStudy[language].role],
+                    [c.outcomeLabel, project.caseStudy[language].outcome],
+                  ].map(([label, value]) => (
+                    <div key={label}>
+                      <dt className={"text-[9px] font-semibold uppercase tracking-[0.14em] " + (isDarkTheme ? "text-emerald-300/80" : "text-emerald-800")}>{label}</dt>
+                      <dd className={"mt-0.5 line-clamp-2 text-[10px] leading-4 sm:text-[11px] " + body}>{value}</dd>
+                    </div>
+                  ))}
+                </dl>
+                <div className="mt-auto flex flex-wrap gap-1.5 pt-3">
                   {project.tags.map((tag) => (
                     <span key={tag} className={"rounded-full border px-2 py-1 text-[9px] font-medium sm:text-[10px] " + chip}>{tag}</span>
                   ))}
@@ -538,20 +592,53 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
 
   if (activeSection === "certificates") {
     const certs = [
-      [t("certificates.meta.title"), t("certificates.meta.company"), t("certificates.meta.date")],
-      [t("certificates.neo.title"), t("certificates.neo.company"), t("certificates.neo.date")],
-      [t("certificates.udemy.title"), t("certificates.udemy.company"), t("certificates.udemy.date")],
-    ];
+      {
+        name: t("certificates.meta.title"),
+        issuer: t("certificates.meta.company"),
+        date: t("certificates.meta.date"),
+        qualificationId: "CFX39BKNZSTW",
+        verifyHref: "https://www.coursera.org/account/accomplishments/professional-cert/CFX39BKNZSTW",
+      },
+      {
+        name: t("certificates.neo.title"),
+        issuer: t("certificates.neo.company"),
+        date: t("certificates.neo.date"),
+        qualificationId: "67ce94df183680903a4d2d761741631567829",
+        verifyHref: null,
+      },
+      {
+        name: t("certificates.udemy.title"),
+        issuer: t("certificates.udemy.company"),
+        date: t("certificates.udemy.date"),
+        qualificationId: "UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308",
+        verifyHref: "https://www.udemy.com/certificate/UC-cfb6d7d6-efd1-4a65-80d8-de0add5f6308/",
+      },
+    ] as const;
 
     return (
       <ScreenShell eyebrow={c.credentials} title={c.credentialsTitle} description={c.credentialsDescription} isDarkTheme={isDarkTheme}>
         <div className="grid h-full min-h-0 gap-3 sm:grid-cols-3 lg:gap-4">
-          {certs.map(([name, issuer, date], index) => (
-            <article key={name} className={"flex min-h-0 flex-col rounded-2xl border p-4 sm:p-5 " + (index === 0 ? accentCard : card)}>
+          {certs.map((certificate, index) => (
+            <article key={certificate.name} className={"flex min-h-0 flex-col rounded-2xl border p-4 sm:p-5 " + (index === 0 ? accentCard : card)}>
               <span className={"text-[10px] font-semibold uppercase tracking-[0.16em] " + muted}>0{index + 1}</span>
-              <h3 className={display.className + " mt-4 text-base font-semibold leading-snug sm:text-lg " + title}>{name}</h3>
-              <p className={"mt-2 text-xs font-semibold " + (isDarkTheme ? "text-emerald-300/90" : "text-emerald-800")}>{issuer}</p>
-              <p className={"mt-auto pt-4 text-xs " + muted}>{date}</p>
+              <h3 className={display.className + " mt-4 text-base font-semibold leading-snug sm:text-lg " + title}>{certificate.name}</h3>
+              <p className={"mt-2 text-xs font-semibold " + (isDarkTheme ? "text-emerald-300/90" : "text-emerald-800")}>{certificate.issuer}</p>
+              <p className={"mt-2 text-xs " + muted}>{certificate.date}</p>
+              <div className="mt-auto pt-4">
+                <p className={"text-[9px] font-semibold uppercase tracking-[0.14em] " + muted}>{c.credentialId}</p>
+                <p className={"mt-1 break-all font-mono text-[9px] leading-4 sm:text-[10px] " + body}>{certificate.qualificationId}</p>
+                {certificate.verifyHref ? (
+                  <a
+                    href={certificate.verifyHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={"mt-2 inline-flex items-center gap-1.5 text-[10px] font-semibold sm:text-xs " + (isDarkTheme ? "text-emerald-300" : "text-emerald-800")}
+                  >
+                    {c.verifyCredential}
+                    <ArrowIcon />
+                  </a>
+                ) : null}
+              </div>
             </article>
           ))}
         </div>

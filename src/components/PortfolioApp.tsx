@@ -25,7 +25,7 @@ function PortfolioScreen({ initialSection, locale }: { initialSection: SectionId
       </button>
       <div className="relative z-10 h-full min-h-0 px-3 pb-[4.8rem] pt-[4.5rem] sm:px-5 md:pb-5 md:pl-[6rem] md:pr-5 md:pt-5 lg:pl-[7rem] lg:pr-8">
         <div className={"mx-auto h-full min-h-0 w-full max-w-[1380px] overflow-hidden rounded-[1.6rem] border backdrop-blur-sm sm:rounded-[2rem] " + (isDarkTheme ? "border-white/[0.07] bg-white/[0.018] shadow-[0_24px_100px_rgba(0,0,0,0.28)]" : "border-zinc-200/80 bg-white/55 shadow-[0_24px_80px_rgba(24,24,27,0.06)]")}>
-          <div className="h-full min-h-0 p-4 sm:p-6 lg:p-8 xl:p-10"><PortfolioStage activeSection={initialSection} isDarkTheme={isDarkTheme} onNavigate={handleSectionChange} /></div>
+          <div className="h-full min-h-0 p-4 sm:p-6 lg:p-8 xl:p-10"><PortfolioStage activeSection={initialSection} isDarkTheme={isDarkTheme} /></div>
         </div>
       </div>
     </main>

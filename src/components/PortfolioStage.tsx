@@ -404,7 +404,7 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
                 </div>
                 <div className="mt-auto pt-2 sm:pt-5">
                   <p className={display.className + " text-sm font-semibold leading-tight sm:text-lg " + title}>{item.title}</p>
-                  <p className={"mt-1 line-clamp-2 text-[9px] leading-3.5 sm:mt-2 sm:line-clamp-3 sm:text-xs sm:leading-5 " + body}>{item.description}</p>
+                  <p className={"mt-1 line-clamp-2 text-[9px] leading-[0.875rem] sm:mt-2 sm:line-clamp-3 sm:text-xs sm:leading-5 " + body}>{item.description}</p>
                   <p className={"mt-1.5 truncate text-[8px] font-medium leading-tight sm:mt-3 sm:text-[10px] " + (index === 2 ? (isDarkTheme ? "text-emerald-300" : "text-emerald-800") : muted)}>
                     {item.meta}
                   </p>
@@ -497,7 +497,7 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
                   ].map(([label, value]) => (
                     <div key={label}>
                       <dt className={"text-[8px] font-semibold uppercase tracking-[0.12em] sm:text-[9px] sm:tracking-[0.14em] " + (isDarkTheme ? "text-emerald-300/80" : "text-emerald-800")}>{label}</dt>
-                      <dd className={"mt-0.5 line-clamp-1 text-[9px] leading-3.5 sm:line-clamp-2 sm:text-[11px] sm:leading-4 " + body}>{value}</dd>
+                      <dd className={"mt-0.5 line-clamp-1 text-[9px] leading-[0.875rem] sm:line-clamp-2 sm:text-[11px] sm:leading-4 " + body}>{value}</dd>
                     </div>
                   ))}
                 </dl>
@@ -535,13 +535,13 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
 
     return (
       <ScreenShell eyebrow={c.expertise} title={c.expertiseTitle} description={c.expertiseDescription} isDarkTheme={isDarkTheme}>
-        <div className="grid h-full min-h-0 grid-cols-2 gap-2.5 sm:grid-cols-3 lg:gap-4">
+        <div className="grid h-full min-h-0 grid-cols-2 grid-rows-3 gap-2 sm:grid-cols-3 sm:grid-rows-2 sm:gap-2.5 lg:gap-4">
           {expertise.map(([name, text, stack], index) => (
-            <article key={name} className={"flex min-h-0 flex-col rounded-2xl border p-3.5 sm:p-5 " + (index === 5 ? accentCard : card)}>
+            <article key={name} className={"flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 sm:rounded-2xl sm:p-5 " + (index === 5 ? accentCard : card)}>
               <span className={"text-[9px] font-semibold uppercase tracking-[0.15em] " + muted}>0{index + 1}</span>
-              <h3 className={display.className + " mt-2 text-sm font-semibold sm:text-base lg:text-lg " + title}>{name}</h3>
-              <p className={"mt-2 line-clamp-3 text-[11px] leading-4 sm:text-xs sm:leading-5 " + body}>{text}</p>
-              <p className={"mt-auto pt-3 text-[9px] font-medium sm:text-[10px] " + (isDarkTheme ? "text-emerald-300/80" : "text-emerald-800")}>{stack}</p>
+              <h3 className={display.className + " mt-1.5 line-clamp-2 text-[13px] font-semibold sm:mt-2 sm:text-base lg:text-lg " + title}>{name}</h3>
+              <p className={"mt-1 line-clamp-2 text-[9px] leading-[0.875rem] sm:mt-2 sm:line-clamp-3 sm:text-xs sm:leading-5 " + body}>{text}</p>
+              <p className={"mt-auto truncate pt-1.5 text-[8px] font-medium sm:pt-3 sm:text-[10px] " + (isDarkTheme ? "text-emerald-300/80" : "text-emerald-800")}>{stack}</p>
             </article>
           ))}
         </div>

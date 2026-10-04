@@ -297,31 +297,6 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
               {t("hero.intro")}
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-2.5">
-              <button
-                type="button"
-                onClick={() => onNavigate("projects")}
-                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-400"
-              >
-                {c.viewWork}
-                <ArrowIcon />
-              </button>
-              <button
-                type="button"
-                onClick={() => onNavigate("contact")}
-                className={"inline-flex items-center rounded-xl border px-4 py-2.5 text-sm font-semibold transition " + card + " " + cardHover + " " + title}
-              >
-                {c.contact}
-              </button>
-              <a
-                href="/source/cv-ibrahim-can-erdogan.pdf"
-                download
-                className={"inline-flex items-center rounded-xl border px-4 py-2.5 text-sm font-semibold transition " + card + " " + cardHover + " " + title}
-              >
-                {c.downloadCv}
-              </a>
-            </div>
-
             <div className="mt-6 grid max-w-2xl grid-cols-4 gap-2 sm:mt-8 sm:gap-3">
               {[
                 ["5+", c.years],

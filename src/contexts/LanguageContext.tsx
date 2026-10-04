@@ -28,13 +28,15 @@ const translations = {
     'hero.scrollDown': 'Scroll Down',
     'hero.intro':
       'I design and build software products across mobile and web, combining hands-on engineering with product thinking and entrepreneurship. After three years at ebebek, I founded Akhisar Dijital in April 2026 while continuing to build, teach, and ship digital products.',
-    'hero.statsHint': 'A quick snapshot — scroll for the full story.',
+    'hero.statsHint': 'Use the section rail to explore the portfolio.',
 
     'nav.ariaLabel': 'Page sections',
     'nav.hero': 'Home',
     'nav.about': 'About',
     'nav.experience': 'Experience',
-    'nav.projects': 'Projects',
+    'nav.projects': 'Work',
+    'nav.expertise': 'Expertise',
+    'nav.teaching': 'Teaching',
     'nav.courses': 'Courses',
     'nav.certificates': 'Certificates',
     'nav.youtube': 'YouTube',
@@ -82,7 +84,7 @@ const translations = {
       'I joined an online banking discovery program blending simulations, product learning, and a first-place team pitch.',
     'experience.summary.qnb':
       'I finished an introductory banking internship covering fundamentals, business units, career design, and certified completion.',
-    'experience.ebebek.current': 'Working as Android Software Specialist in ebebek mobile application',
+    'experience.ebebek.current': 'Worked as Android Software Specialist on the ebebek mobile application',
     'experience.ebebek.security': 'Resolving security vulnerabilities found in SOCRadar security scan reports',
     'experience.ebebek.payment': 'Craftgate and One-Stop Shop payment technology integration',
     'experience.ebebek.wallet': 'Integration of ebebek wallet feature into the application',
@@ -234,13 +236,15 @@ const translations = {
     'hero.scrollDown': 'Aşağı Kaydır',
     'hero.intro':
       'Mobil ve web tarafında yazılım ürünleri geliştiriyor; mühendislik, ürün bakışı ve girişimciliği birlikte yürütüyorum. ebebek’teki üç yıllık deneyimimin ardından Nisan 2026’da Akhisar Dijital’i kurdum; yazılım üretmeye, ürün geliştirmeye ve teknik içerik üretmeye devam ediyorum.',
-    'hero.statsHint': 'Kısa bir özet — detaylar için aşağı kaydır.',
+    'hero.statsHint': 'Portföyü keşfetmek için bölüm çizgisini kullan.',
 
     'nav.ariaLabel': 'Sayfa bölümleri',
     'nav.hero': 'Giriş',
     'nav.about': 'Hakkımda',
     'nav.experience': 'Deneyim',
-    'nav.projects': 'Projeler',
+    'nav.projects': 'Çalışmalar',
+    'nav.expertise': 'Uzmanlık',
+    'nav.teaching': 'Eğitim',
     'nav.courses': 'Kurslar',
     'nav.certificates': 'Sertifikalar',
     'nav.youtube': 'YouTube',
@@ -288,7 +292,7 @@ const translations = {
       'Online bankacılık keşif programında simülasyonlar, ürün öğrenimi ve birinci biten takım sunumuyla yer aldım.',
     'experience.summary.qnb':
       'Temel bankacılık, iş birimleri ve kariyer atölyelerini kapsayan giriş stajını sertifikayla tamamladım.',
-    'experience.ebebek.current': 'ebebek mobil uygulamasında Android Software Specialist olarak görev yapıyorum',
+    'experience.ebebek.current': 'ebebek mobil uygulamasında Android Software Specialist olarak görev yaptım',
     'experience.ebebek.security': 'SOCRadar güvenlik tarama raporları sonucunda bulunan güvenlik açıklarının giderilmesi',
     'experience.ebebek.payment': 'Craftgate ve One-Stop Shop ödeme teknolojisi entegrasyonu',
     'experience.ebebek.wallet': 'ebebek cüzdan özelliğinin uygulamaya entegrasyonu',

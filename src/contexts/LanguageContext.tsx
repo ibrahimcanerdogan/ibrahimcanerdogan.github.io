@@ -433,7 +433,7 @@ const translations = {
 };
 
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>('tr');
 
   useEffect(() => {
     document.documentElement.lang = language === 'tr' ? 'tr' : 'en';

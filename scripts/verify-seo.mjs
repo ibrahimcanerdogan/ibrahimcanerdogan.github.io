@@ -87,12 +87,15 @@ for (const token of [
 }
 
 function routeHtml(locale, route = "") {
-  const prefix = locale === "en" ? "en/" : "";
-  const flat = join("out", prefix + (route ? `${route}.html` : locale === "en" ? "en.html" : "index.html"));
-  const nested = join("out", prefix + route, "index.html");
-  if (existsSync(flat)) return flat;
-  if (existsSync(nested)) return nested;
-  return null;
+  const candidates = route === ""
+    ? locale === "en"
+      ? [join("out", "en.html"), join("out", "en", "index.html")]
+      : [join("out", "index.html")]
+    : locale === "en"
+      ? [join("out", "en", `${route}.html`), join("out", "en", route, "index.html")]
+      : [join("out", `${route}.html`), join("out", route, "index.html")];
+
+  return candidates.find((candidate) => existsSync(candidate)) ?? null;
 }
 
 if (existsSync("out")) {

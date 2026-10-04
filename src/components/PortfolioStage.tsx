@@ -151,9 +151,17 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         founderDescription: "Nisan 2026'da kurduğum Akhisar Dijital ile yazılım, dijital ürün ve iş geliştirmeyi tek çatı altında yürütüyorum.",
         build: "Ne geliştiriyorum",
         engineering: "Software Engineering",
+        engineeringAbout: "Mobil, web ve ürün tarafında sürdürülebilir yazılım sistemleri geliştiriyorum.",
+        engineeringMeta: "Kotlin · Next.js · Architecture",
         products: "Mobile & Web Products",
+        productsAbout: "Fikirden canlıya kadar kullanıcı odaklı mobil ve web ürünleri çıkarıyorum.",
+        productsMeta: "Product · UX · Delivery",
         business: "Entrepreneurship",
+        businessAbout: "Akhisar Dijital ile teknoloji, operasyon ve iş geliştirmeyi birlikte yürütüyorum.",
+        businessMeta: "Akhisar Dijital · Founder",
         education: "Technical Education",
+        educationAbout: "Üretim deneyimimi Udemy, YouTube ve açık kaynak içeriklerle paylaşıyorum.",
+        educationMeta: "11K+ öğrenci · Udemy · YouTube",
         years: "yıl+ deneyim",
         students: "öğrenci+",
         projects: "seçilmiş proje",
@@ -206,9 +214,17 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
         founderDescription: "I founded Akhisar Dijital in April 2026 to bring software, digital product development, and business building under one roof.",
         build: "What I build",
         engineering: "Software Engineering",
+        engineeringAbout: "I build maintainable software systems across mobile, web, and product environments.",
+        engineeringMeta: "Kotlin · Next.js · Architecture",
         products: "Mobile & Web Products",
+        productsAbout: "I take user-focused mobile and web products from idea to production.",
+        productsMeta: "Product · UX · Delivery",
         business: "Entrepreneurship",
+        businessAbout: "Through Akhisar Dijital, I combine technology, operations, and business development.",
+        businessMeta: "Akhisar Dijital · Founder",
         education: "Technical Education",
+        educationAbout: "I turn production experience into Udemy, YouTube, and open-source learning content.",
+        educationMeta: "11K+ students · Udemy · YouTube",
         years: "years+ experience",
         students: "students+",
         projects: "selected projects",
@@ -362,10 +378,24 @@ export default function PortfolioStage({ activeSection, isDarkTheme, onNavigate 
             </div>
           </div>
           <div className="grid min-h-0 grid-cols-2 gap-3 lg:col-span-5">
-            {[c.engineering, c.products, c.business, c.education].map((item, index) => (
-              <div key={item} className={"flex min-h-0 flex-col justify-between rounded-2xl border p-4 " + (index === 2 ? accentCard : card)}>
-                <span className={"text-[10px] font-semibold uppercase tracking-[0.18em] " + muted}>0{index + 1}</span>
-                <p className={display.className + " mt-6 text-base font-semibold leading-tight sm:text-lg " + title}>{item}</p>
+            {[
+              { title: c.engineering, description: c.engineeringAbout, meta: c.engineeringMeta },
+              { title: c.products, description: c.productsAbout, meta: c.productsMeta },
+              { title: c.business, description: c.businessAbout, meta: c.businessMeta },
+              { title: c.education, description: c.educationAbout, meta: c.educationMeta },
+            ].map((item, index) => (
+              <div key={item.title} className={"flex min-h-0 flex-col rounded-2xl border p-4 " + (index === 2 ? accentCard : card)}>
+                <div className="flex items-center justify-between gap-3">
+                  <span className={"text-[10px] font-semibold uppercase tracking-[0.18em] " + muted}>0{index + 1}</span>
+                  <span className={"h-1.5 w-1.5 rounded-full " + (index === 2 ? "bg-emerald-500" : isDarkTheme ? "bg-zinc-700" : "bg-zinc-300")} />
+                </div>
+                <div className="mt-auto pt-5">
+                  <p className={display.className + " text-base font-semibold leading-tight sm:text-lg " + title}>{item.title}</p>
+                  <p className={"mt-2 line-clamp-3 text-[11px] leading-4 sm:text-xs sm:leading-5 " + body}>{item.description}</p>
+                  <p className={"mt-3 text-[9px] font-medium leading-tight sm:text-[10px] " + (index === 2 ? (isDarkTheme ? "text-emerald-300" : "text-emerald-800") : muted)}>
+                    {item.meta}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

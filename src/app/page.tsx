@@ -20,7 +20,7 @@ function isSectionId(value: string): value is SectionId {
 }
 
 export default function Home() {
-  const [isDarkTheme, setIsDarkTheme] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [activeSection, setActiveSection] = useState<SectionId>("hero");
 
   useEffect(() => {

@@ -137,21 +137,21 @@ type ShellProps = {
 
 function ScreenShell({ eyebrow, title, description, children, isDarkTheme }: ShellProps) {
   return (
-    <section className="screen-enter flex h-full min-h-0 w-full flex-col">
-      <header className="mb-4 shrink-0 sm:mb-6">
-        <p className={"text-[10px] font-semibold uppercase tracking-[0.24em] sm:text-xs " + (isDarkTheme ? "text-emerald-400/90" : "text-emerald-700")}>
+    <section className="screen-enter flex h-full min-h-0 w-full flex-col overflow-hidden">
+      <header className="mb-3 shrink-0 sm:mb-6">
+        <p className={"text-[9px] font-semibold uppercase tracking-[0.22em] sm:text-xs " + (isDarkTheme ? "text-emerald-400/90" : "text-emerald-700")}>
           {eyebrow}
         </p>
-        <h1 className={display.className + " mt-1.5 text-2xl font-semibold tracking-[-0.04em] sm:text-3xl lg:text-4xl " + (isDarkTheme ? "text-white" : "text-zinc-950")}>
+        <h1 className={display.className + " mt-1 text-[1.35rem] font-semibold tracking-[-0.04em] sm:mt-1.5 sm:text-3xl lg:text-4xl " + (isDarkTheme ? "text-white" : "text-zinc-950")}>
           {title}
         </h1>
         {description ? (
-          <p className={"mt-2 max-w-3xl text-xs leading-relaxed sm:text-sm lg:text-base " + (isDarkTheme ? "text-zinc-400" : "text-zinc-600")}>
+          <p className={"mt-1.5 line-clamp-2 max-w-3xl text-[11px] leading-4 sm:mt-2 sm:line-clamp-none sm:text-sm sm:leading-relaxed lg:text-base " + (isDarkTheme ? "text-zinc-400" : "text-zinc-600")}>
             {description}
           </p>
         ) : null}
       </header>
-      <div className="min-h-0 flex-1">{children}</div>
+      <div className="min-h-0 flex-1 overflow-hidden">{children}</div>
     </section>
   );
 }
@@ -380,32 +380,32 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
   if (activeSection === "about") {
     return (
       <ScreenShell eyebrow={t("about.eyebrow")} title={t("about.title")} description={t("about.highlight")} isDarkTheme={isDarkTheme}>
-        <div className="grid h-full min-h-0 gap-4 lg:grid-cols-12 lg:gap-5">
-          <div className={"flex min-h-0 flex-col justify-between rounded-2xl border p-5 sm:p-6 lg:col-span-7 " + card}>
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
-              <p className={"text-sm leading-6 " + body}>{t("about.description1")}</p>
-              <p className={"text-sm leading-6 " + body}>{t("about.description2")}</p>
+        <div className="grid h-full min-h-0 grid-rows-[minmax(0,1.05fr)_minmax(0,0.95fr)] gap-2.5 lg:grid-cols-12 lg:grid-rows-1 lg:gap-5">
+          <div className={"flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 sm:justify-between sm:rounded-2xl sm:p-6 lg:col-span-7 " + card}>
+            <div className="grid min-h-0 gap-2 sm:grid-cols-2 sm:gap-5">
+              <p className={"line-clamp-5 text-[11px] leading-[1.05rem] sm:line-clamp-none sm:text-sm sm:leading-6 " + body}>{t("about.description1")}</p>
+              <p className={"line-clamp-4 text-[11px] leading-[1.05rem] sm:line-clamp-none sm:text-sm sm:leading-6 " + body}>{t("about.description2")}</p>
             </div>
-            <div className={"mt-5 border-t pt-4 " + (isDarkTheme ? "border-white/[0.08]" : "border-zinc-200")}>
+            <div className={"mt-3 hidden border-t pt-3 sm:block sm:mt-5 sm:pt-4 " + (isDarkTheme ? "border-white/[0.08]" : "border-zinc-200")}>
               <p className={"text-sm leading-6 " + muted}>{t("about.freelance")}</p>
             </div>
           </div>
-          <div className="grid min-h-0 grid-cols-2 gap-3 lg:col-span-5">
+          <div className="grid min-h-0 grid-cols-2 grid-rows-2 gap-2 lg:col-span-5 lg:gap-3">
             {[
               { title: c.engineering, description: c.engineeringAbout, meta: c.engineeringMeta },
               { title: c.products, description: c.productsAbout, meta: c.productsMeta },
               { title: c.business, description: c.businessAbout, meta: c.businessMeta },
               { title: c.education, description: c.educationAbout, meta: c.educationMeta },
             ].map((item, index) => (
-              <div key={item.title} className={"flex min-h-0 flex-col rounded-2xl border p-4 " + (index === 2 ? accentCard : card)}>
+              <div key={item.title} className={"flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 sm:rounded-2xl sm:p-4 " + (index === 2 ? accentCard : card)}>
                 <div className="flex items-center justify-between gap-3">
                   <span className={"text-[10px] font-semibold uppercase tracking-[0.18em] " + muted}>0{index + 1}</span>
                   <span className={"h-1.5 w-1.5 rounded-full " + (index === 2 ? "bg-emerald-500" : isDarkTheme ? "bg-zinc-700" : "bg-zinc-300")} />
                 </div>
-                <div className="mt-auto pt-5">
-                  <p className={display.className + " text-base font-semibold leading-tight sm:text-lg " + title}>{item.title}</p>
-                  <p className={"mt-2 line-clamp-3 text-[11px] leading-4 sm:text-xs sm:leading-5 " + body}>{item.description}</p>
-                  <p className={"mt-3 text-[9px] font-medium leading-tight sm:text-[10px] " + (index === 2 ? (isDarkTheme ? "text-emerald-300" : "text-emerald-800") : muted)}>
+                <div className="mt-auto pt-2 sm:pt-5">
+                  <p className={display.className + " text-sm font-semibold leading-tight sm:text-lg " + title}>{item.title}</p>
+                  <p className={"mt-1 line-clamp-2 text-[9px] leading-3.5 sm:mt-2 sm:line-clamp-3 sm:text-xs sm:leading-5 " + body}>{item.description}</p>
+                  <p className={"mt-1.5 truncate text-[8px] font-medium leading-tight sm:mt-3 sm:text-[10px] " + (index === 2 ? (isDarkTheme ? "text-emerald-300" : "text-emerald-800") : muted)}>
                     {item.meta}
                   </p>
                 </div>
@@ -450,20 +450,20 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
 
     return (
       <ScreenShell eyebrow={t("experience.eyebrow")} title={t("experience.title")} description={t("experience.roadmapSubtitle")} isDarkTheme={isDarkTheme}>
-        <div className="grid h-full min-h-0 gap-3 sm:grid-cols-2 lg:gap-4">
+        <div className="grid h-full min-h-0 grid-rows-4 gap-2 sm:grid-cols-2 sm:grid-rows-2 sm:gap-3 lg:gap-4">
           {items.map((item, index) => (
-            <article key={item.company} className={"relative flex min-h-0 flex-col rounded-2xl border p-4 sm:p-5 " + (item.current ? accentCard : card)}>
+            <article key={item.company} className={"relative flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 sm:rounded-2xl sm:p-5 " + (item.current ? accentCard : card)}>
               <div className="flex items-start justify-between gap-3">
                 <div>
-                  <p className={"text-[10px] font-semibold uppercase tracking-[0.16em] " + (item.current ? (isDarkTheme ? "text-emerald-300" : "text-emerald-800") : muted)}>
+                  <p className={"text-[9px] font-semibold uppercase tracking-[0.14em] sm:text-[10px] sm:tracking-[0.16em] " + (item.current ? (isDarkTheme ? "text-emerald-300" : "text-emerald-800") : muted)}>
                     {item.date}
                   </p>
-                  <h3 className={display.className + " mt-2 text-base font-semibold sm:text-lg " + title}>{item.role}</h3>
-                  <p className={"mt-0.5 text-xs font-medium sm:text-sm " + (isDarkTheme ? "text-emerald-300/90" : "text-emerald-800")}>{item.company}</p>
+                  <h3 className={display.className + " mt-1 text-sm font-semibold sm:mt-2 sm:text-lg " + title}>{item.role}</h3>
+                  <p className={"mt-0.5 text-[10px] font-medium sm:text-sm " + (isDarkTheme ? "text-emerald-300/90" : "text-emerald-800")}>{item.company}</p>
                 </div>
                 <span className={"text-xs font-semibold tabular-nums " + muted}>0{index + 1}</span>
               </div>
-              <p className={"mt-3 line-clamp-3 text-xs leading-5 sm:text-sm sm:leading-6 " + body}>{item.description}</p>
+              <p className={"mt-2 line-clamp-2 text-[10px] leading-4 sm:mt-3 sm:line-clamp-3 sm:text-sm sm:leading-6 " + body}>{item.description}</p>
             </article>
           ))}
         </div>
@@ -475,33 +475,33 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
     return (
       <ScreenShell eyebrow={c.selectedWork} title={c.workTitle} description={c.workDescription} isDarkTheme={isDarkTheme}>
         <div className="flex h-full min-h-0 flex-col">
-          <div className="grid min-h-0 flex-1 gap-3 sm:grid-cols-3 lg:gap-4">
+          <div className="grid min-h-0 flex-1 grid-rows-3 gap-2 sm:grid-cols-3 sm:grid-rows-1 sm:gap-3 lg:gap-4">
             {PROJECTS.map((project, index) => (
               <a
                 key={project.titleKey}
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={"group flex min-h-0 flex-col rounded-2xl border p-4 transition sm:p-5 " + card + " " + cardHover + (index > 0 ? " max-sm:hidden" : "")}
+                className={"group flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 transition sm:rounded-2xl sm:p-5 " + card + " " + cardHover}
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className={"text-[10px] font-semibold uppercase tracking-[0.16em] " + muted}>0{index + 1}</span>
                   <ArrowIcon />
                 </div>
-                <h3 className={display.className + " mt-4 text-base font-semibold leading-tight sm:text-lg " + title}>{t(project.titleKey)}</h3>
-                <dl className="mt-3 space-y-2">
+                <h3 className={display.className + " mt-2 line-clamp-1 text-sm font-semibold leading-tight sm:mt-4 sm:text-lg " + title}>{t(project.titleKey)}</h3>
+                <dl className="mt-2 space-y-1 sm:mt-3 sm:space-y-2">
                   {[
                     [c.problemLabel, project.caseStudy[language].problem],
                     [c.roleLabel, project.caseStudy[language].role],
                     [c.outcomeLabel, project.caseStudy[language].outcome],
                   ].map(([label, value]) => (
                     <div key={label}>
-                      <dt className={"text-[9px] font-semibold uppercase tracking-[0.14em] " + (isDarkTheme ? "text-emerald-300/80" : "text-emerald-800")}>{label}</dt>
-                      <dd className={"mt-0.5 line-clamp-2 text-[10px] leading-4 sm:text-[11px] " + body}>{value}</dd>
+                      <dt className={"text-[8px] font-semibold uppercase tracking-[0.12em] sm:text-[9px] sm:tracking-[0.14em] " + (isDarkTheme ? "text-emerald-300/80" : "text-emerald-800")}>{label}</dt>
+                      <dd className={"mt-0.5 line-clamp-1 text-[9px] leading-3.5 sm:line-clamp-2 sm:text-[11px] sm:leading-4 " + body}>{value}</dd>
                     </div>
                   ))}
                 </dl>
-                <div className="mt-auto flex flex-wrap gap-1.5 pt-3">
+                <div className="mt-auto flex flex-wrap gap-1 pt-2 sm:gap-1.5 sm:pt-3">
                   {project.tags.map((tag) => (
                     <span key={tag} className={"rounded-full border px-2 py-1 text-[9px] font-medium sm:text-[10px] " + chip}>{tag}</span>
                   ))}
@@ -509,10 +509,10 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
               </a>
             ))}
           </div>
-          <div className={"mt-3 flex shrink-0 flex-wrap items-center gap-2 border-t pt-3 " + (isDarkTheme ? "border-white/[0.07]" : "border-zinc-200")}>
+          <div className={"mt-2 flex shrink-0 flex-wrap items-center gap-1.5 border-t pt-2 sm:mt-3 sm:gap-2 sm:pt-3 " + (isDarkTheme ? "border-white/[0.07]" : "border-zinc-200")}>
             <span className={"mr-1 text-[10px] font-semibold uppercase tracking-[0.16em] " + muted}>{c.moreWork}</span>
             {MORE_PROJECTS.map((project) => (
-              <a key={project.titleKey} href={project.href} target="_blank" rel="noopener noreferrer" className={"inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition " + card + " " + cardHover + " " + title}>
+              <a key={project.titleKey} href={project.href} target="_blank" rel="noopener noreferrer" className={"inline-flex items-center gap-1 rounded-lg border px-2 py-1 text-[10px] font-medium transition sm:gap-1.5 sm:px-3 sm:py-1.5 sm:text-xs " + card + " " + cardHover + " " + title}>
                 {t(project.titleKey)}
                 <ArrowIcon />
               </a>
@@ -552,27 +552,27 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
   if (activeSection === "teaching") {
     return (
       <ScreenShell eyebrow={c.teaching} title={c.teachingTitle} description={c.teachingDescription} isDarkTheme={isDarkTheme}>
-        <div className="grid h-full min-h-0 gap-3 sm:grid-cols-2 lg:gap-4">
-          <article className={"flex min-h-0 flex-col rounded-2xl border p-5 sm:p-6 " + accentCard}>
+        <div className="grid h-full min-h-0 grid-rows-2 gap-2 sm:grid-cols-2 sm:grid-rows-1 sm:gap-3 lg:gap-4">
+          <article className={"flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 sm:rounded-2xl sm:p-6 " + accentCard}>
             <div className="flex items-center justify-between gap-4">
               <p className={"text-[10px] font-semibold uppercase tracking-[0.18em] " + (isDarkTheme ? "text-emerald-300" : "text-emerald-800")}>{c.udemy}</p>
               <span className={display.className + " text-xl font-semibold sm:text-2xl " + title}>11K+</span>
             </div>
-            <h3 className={display.className + " mt-4 text-lg font-semibold sm:text-2xl " + title}>{t("courses.compose.title")}</h3>
-            <p className={"mt-3 line-clamp-3 text-xs leading-5 sm:text-sm sm:leading-6 " + body}>{c.udemyText}</p>
+            <h3 className={display.className + " mt-2 line-clamp-1 text-base font-semibold sm:mt-4 sm:text-2xl " + title}>{t("courses.compose.title")}</h3>
+            <p className={"mt-1.5 line-clamp-2 text-[10px] leading-4 sm:mt-3 sm:line-clamp-3 sm:text-sm sm:leading-6 " + body}>{c.udemyText}</p>
             <a href="https://www.udemy.com/user/ibrahim-can-erdogan/" target="_blank" rel="noopener noreferrer" className={"mt-auto inline-flex items-center gap-2 pt-4 text-sm font-semibold " + (isDarkTheme ? "text-emerald-300" : "text-emerald-800")}>
               {c.openProfile}
               <ArrowIcon />
             </a>
           </article>
-          <article className={"flex min-h-0 flex-col rounded-2xl border p-5 sm:p-6 " + card}>
+          <article className={"flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 sm:rounded-2xl sm:p-6 " + card}>
             <div className="flex items-center justify-between gap-4">
               <p className={"text-[10px] font-semibold uppercase tracking-[0.18em] " + muted}>{c.youtube}</p>
               <span className={"rounded-full border px-2.5 py-1 text-[10px] font-medium " + chip}>Kotlin · Compose</span>
             </div>
-            <h3 className={display.className + " mt-4 text-lg font-semibold sm:text-2xl " + title}>{t("youtube.title")}</h3>
-            <p className={"mt-3 line-clamp-3 text-xs leading-5 sm:text-sm sm:leading-6 " + body}>{c.youtubeText}</p>
-            <div className={"mt-4 space-y-2 border-t pt-3 " + (isDarkTheme ? "border-white/[0.07]" : "border-zinc-200")}>
+            <h3 className={display.className + " mt-2 line-clamp-1 text-base font-semibold sm:mt-4 sm:text-2xl " + title}>{t("youtube.title")}</h3>
+            <p className={"mt-1.5 line-clamp-2 text-[10px] leading-4 sm:mt-3 sm:line-clamp-3 sm:text-sm sm:leading-6 " + body}>{c.youtubeText}</p>
+            <div className={"mt-2 hidden space-y-2 border-t pt-2 sm:block sm:mt-4 sm:pt-3 " + (isDarkTheme ? "border-white/[0.07]" : "border-zinc-200")}>
               {[t("youtube.video1.title"), t("youtube.video2.title"), t("youtube.video3.title")].map((video) => (
                 <p key={video} className={"truncate text-[11px] sm:text-xs " + muted}>• {video}</p>
               ))}
@@ -614,16 +614,16 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
 
     return (
       <ScreenShell eyebrow={c.credentials} title={c.credentialsTitle} description={c.credentialsDescription} isDarkTheme={isDarkTheme}>
-        <div className="grid h-full min-h-0 gap-3 sm:grid-cols-3 lg:gap-4">
+        <div className="grid h-full min-h-0 grid-rows-3 gap-2 sm:grid-cols-3 sm:grid-rows-1 sm:gap-3 lg:gap-4">
           {certs.map((certificate, index) => (
-            <article key={certificate.name} className={"flex min-h-0 flex-col rounded-2xl border p-4 sm:p-5 " + (index === 0 ? accentCard : card)}>
+            <article key={certificate.name} className={"flex min-h-0 flex-col overflow-hidden rounded-xl border p-3 sm:rounded-2xl sm:p-5 " + (index === 0 ? accentCard : card)}>
               <span className={"text-[10px] font-semibold uppercase tracking-[0.16em] " + muted}>0{index + 1}</span>
-              <h3 className={display.className + " mt-4 text-base font-semibold leading-snug sm:text-lg " + title}>{certificate.name}</h3>
-              <p className={"mt-2 text-xs font-semibold " + (isDarkTheme ? "text-emerald-300/90" : "text-emerald-800")}>{certificate.issuer}</p>
-              <p className={"mt-2 text-xs " + muted}>{certificate.date}</p>
-              <div className="mt-auto pt-4">
+              <h3 className={display.className + " mt-2 line-clamp-2 text-sm font-semibold leading-snug sm:mt-4 sm:text-lg " + title}>{certificate.name}</h3>
+              <p className={"mt-1 text-[10px] font-semibold sm:mt-2 sm:text-xs " + (isDarkTheme ? "text-emerald-300/90" : "text-emerald-800")}>{certificate.issuer}</p>
+              <p className={"mt-1 text-[9px] sm:mt-2 sm:text-xs " + muted}>{certificate.date}</p>
+              <div className="mt-auto pt-2 sm:pt-4">
                 <p className={"text-[9px] font-semibold uppercase tracking-[0.14em] " + muted}>{c.credentialId}</p>
-                <p className={"mt-1 break-all font-mono text-[9px] leading-4 sm:text-[10px] " + body}>{certificate.qualificationId}</p>
+                <p className={"mt-0.5 line-clamp-1 break-all font-mono text-[8px] leading-3 sm:mt-1 sm:line-clamp-none sm:text-[10px] sm:leading-4 " + body}>{certificate.qualificationId}</p>
                 {certificate.verifyHref ? (
                   <a
                     href={certificate.verifyHref}
@@ -645,39 +645,39 @@ export default function PortfolioStage({ activeSection, isDarkTheme }: Props) {
 
   return (
     <ScreenShell eyebrow={t("footer.eyebrow")} title={c.contactTitle} description={c.contactDescription} isDarkTheme={isDarkTheme}>
-      <div className="grid h-full min-h-0 gap-4 lg:grid-cols-12">
-        <div className={"flex min-h-0 flex-col justify-between rounded-2xl border p-5 sm:p-6 lg:col-span-7 " + accentCard}>
+      <div className="grid h-full min-h-0 grid-rows-[auto_minmax(0,1fr)] gap-2 lg:grid-cols-12 lg:grid-rows-1 lg:gap-4">
+        <div className={"flex min-h-0 flex-col justify-between overflow-hidden rounded-xl border p-3 sm:rounded-2xl sm:p-6 lg:col-span-7 " + accentCard}>
           <div>
             <p className={"text-[10px] font-semibold uppercase tracking-[0.18em] " + (isDarkTheme ? "text-emerald-300" : "text-emerald-800")}>{c.available}</p>
-            <a href={"mailto:" + EMAIL} className={display.className + " mt-3 block break-all text-xl font-semibold tracking-tight sm:text-2xl lg:text-3xl " + title}>
+            <a href={"mailto:" + EMAIL} className={display.className + " mt-2 block break-all text-base font-semibold tracking-tight sm:mt-3 sm:text-2xl lg:text-3xl " + title}>
               {EMAIL}
             </a>
-            <p className={"mt-4 max-w-xl text-sm leading-6 " + body}>{t("footer.subtitle")}</p>
+            <p className={"mt-2 line-clamp-2 max-w-xl text-[10px] leading-4 sm:mt-4 sm:line-clamp-none sm:text-sm sm:leading-6 " + body}>{t("footer.subtitle")}</p>
           </div>
-          <div className="mt-5 flex flex-wrap gap-2">
-            <a href={"mailto:" + EMAIL} className="rounded-xl bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-zinc-950 transition hover:bg-emerald-400">
+          <div className="mt-2 flex flex-wrap gap-1.5 sm:mt-5 sm:gap-2">
+            <a href={"mailto:" + EMAIL} className="rounded-lg bg-emerald-500 px-3 py-1.5 text-[10px] font-semibold text-zinc-950 transition hover:bg-emerald-400 sm:rounded-xl sm:px-4 sm:py-2.5 sm:text-sm">
               {c.contact}
             </a>
-            <a href="https://akhisardijital.com/" target="_blank" rel="noopener noreferrer" className={"inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-semibold transition " + card + " " + cardHover + " " + title}>
+            <a href="https://akhisardijital.com/" target="_blank" rel="noopener noreferrer" className={"inline-flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-[10px] font-semibold transition sm:gap-2 sm:rounded-xl sm:px-4 sm:py-2.5 sm:text-sm " + card + " " + cardHover + " " + title}>
               {c.akhisarDigital}
               <ArrowIcon />
             </a>
           </div>
         </div>
-        <div className="grid min-h-0 grid-cols-2 gap-2.5 lg:col-span-5">
+        <div className="grid min-h-0 grid-cols-3 grid-rows-2 gap-2 lg:col-span-5 lg:grid-cols-2 lg:auto-rows-fr lg:gap-2.5">
           {SOCIALS.map(({ id, label, href }) => (
-            <a key={id} href={href} target="_blank" rel="noopener noreferrer" className={"group flex min-h-0 flex-col justify-between rounded-2xl border p-4 transition " + card + " " + cardHover}>
-              <div className={"flex h-9 w-9 items-center justify-center rounded-xl border transition " + (isDarkTheme ? "border-white/10 bg-white/[0.05] text-zinc-200 group-hover:text-emerald-300" : "border-zinc-200 bg-white text-zinc-700 group-hover:text-emerald-700")}>
+            <a key={id} href={href} target="_blank" rel="noopener noreferrer" className={"group flex min-h-0 flex-col justify-between overflow-hidden rounded-xl border p-2.5 transition sm:rounded-2xl sm:p-4 " + card + " " + cardHover}>
+              <div className={"flex h-7 w-7 items-center justify-center rounded-lg border transition sm:h-9 sm:w-9 sm:rounded-xl " + (isDarkTheme ? "border-white/10 bg-white/[0.05] text-zinc-200 group-hover:text-emerald-300" : "border-zinc-200 bg-white text-zinc-700 group-hover:text-emerald-700")}>
                 <SocialIcon id={id} />
               </div>
-              <div className="mt-4 flex items-end justify-between gap-3">
-                <span className={display.className + " text-sm font-semibold sm:text-base " + title}>{label}</span>
+              <div className="mt-2 flex items-end justify-between gap-2 sm:mt-4 sm:gap-3">
+                <span className={display.className + " truncate text-[10px] font-semibold sm:text-base " + title}>{label}</span>
                 <ArrowIcon />
               </div>
             </a>
           ))}
-          <div className={"flex min-h-0 items-end rounded-2xl border p-4 " + card}>
-            <span className={"text-xs " + muted}>{t("footer.location")}</span>
+          <div className={"flex min-h-0 items-end overflow-hidden rounded-xl border p-2.5 sm:rounded-2xl sm:p-4 " + card}>
+            <span className={"truncate text-[9px] sm:text-xs " + muted}>{t("footer.location")}</span>
           </div>
         </div>
       </div>
